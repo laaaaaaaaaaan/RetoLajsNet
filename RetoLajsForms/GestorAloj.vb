@@ -78,7 +78,7 @@ Public Class GestorAloj
 
     Protected Sub filtrarTipoAlojamiento()
         Try
-            Dim da As New MySqlDataAdapter("select * from alojamiento", MysqlConnString)
+            Dim da As New MySqlDataAdapter("select * from alojamiento where tipo='" & localidad & "' ", MysqlConnString)
             Label1.Text = localidad
             Dim DT As New DataTable
             da.Fill(DT)
@@ -89,8 +89,9 @@ Public Class GestorAloj
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        Label5.Text = ComboBox2.Text
         Try
-            localidad = ComboBox1.SelectedValue
+            localidad = ComboBox2.Text
             filtrarLocalidad()
         Catch ex As Exception
             MsgBox("No va por: " & ex.Message, MsgBoxStyle.Critical,)
@@ -99,7 +100,7 @@ Public Class GestorAloj
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
         Try
-            localidad = ComboBox2.SelectedValue
+            localidad = ComboBox1.Text
             filtrarTipoAlojamiento()
         Catch ex As Exception
             MsgBox("No va por: " & ex.Message, MsgBoxStyle.Critical,)
