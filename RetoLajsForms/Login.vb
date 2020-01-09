@@ -16,16 +16,22 @@ Public Class Login
         GestorReservas.Show()
     End Sub
 
-    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
+    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Loging.Click
         Try
-            Dim valor() As String
             Dim da As New MySqlDataAdapter("select * from cliente", MysqlConnString)
-            ':::Creamos el objeto DataTable que recibe la informacion del DataAdapter
             Dim DT As New DataTable
-            ':::Pasamos la informacion del DataAdapter al DataTable mediante la propiedad Fill
             da.Fill(DT)
             For Each row As DataRow In DT.Rows
-                valor(0) = CStr(row("username"))
+                Dim usuario As String = CStr(row("username"))
+                Dim password As String = CStr(row("password"))
+                If (TextBox1.Text = usuario And TextBox2.Text = password) Then
+                    Gestor.Show()
+                    Me.Hide()
+
+                Else
+                    Label3.Visible() = True
+                End If
+
             Next
 
         Catch ex As Exception

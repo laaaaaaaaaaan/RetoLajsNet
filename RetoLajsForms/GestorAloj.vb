@@ -99,7 +99,7 @@ Public Class GestorAloj
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         Try
-            localidad = ComboBox1.SelectedItem.ToString()
+            localidad = ComboBox1.SelectedValue
             filtrarLocalidad()
         Catch ex As Exception
             MsgBox("No va por: " & ex.Message, MsgBoxStyle.Critical,)
@@ -108,7 +108,7 @@ Public Class GestorAloj
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
         Try
-            localidad = ComboBox2.SelectedItem.ToString()
+            localidad = ComboBox2.SelectedValue
             filtrarTipoAlojamiento()
         Catch ex As Exception
             MsgBox("No va por: " & ex.Message, MsgBoxStyle.Critical,)

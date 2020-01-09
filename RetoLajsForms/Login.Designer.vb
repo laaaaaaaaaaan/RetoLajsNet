@@ -27,65 +27,109 @@ Partial Class Login
         Me.Button3 = New System.Windows.Forms.Button()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.Button4 = New System.Windows.Forms.Button()
+        Me.Loging = New System.Windows.Forms.Button()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.TextBox3 = New System.Windows.Forms.TextBox()
         Me.SuspendLayout()
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(83, 162)
+        Me.Button1.Location = New System.Drawing.Point(12, 231)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(184, 96)
+        Me.Button1.Size = New System.Drawing.Size(103, 40)
         Me.Button1.TabIndex = 0
         Me.Button1.Text = "Gestionar Usuarios"
         Me.Button1.UseVisualStyleBackColor = True
         '
         'Button2
         '
-        Me.Button2.Location = New System.Drawing.Point(300, 162)
+        Me.Button2.Location = New System.Drawing.Point(135, 235)
         Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(184, 96)
+        Me.Button2.Size = New System.Drawing.Size(78, 36)
         Me.Button2.TabIndex = 1
         Me.Button2.Text = "Gestionar Alojamientos"
         Me.Button2.UseVisualStyleBackColor = True
         '
         'Button3
         '
-        Me.Button3.Location = New System.Drawing.Point(518, 162)
+        Me.Button3.Location = New System.Drawing.Point(230, 234)
         Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(184, 96)
+        Me.Button3.Size = New System.Drawing.Size(94, 38)
         Me.Button3.TabIndex = 2
         Me.Button3.Text = "Gestionar Reservas"
         Me.Button3.UseVisualStyleBackColor = True
         '
         'TextBox1
         '
-        Me.TextBox1.Location = New System.Drawing.Point(222, 43)
+        Me.TextBox1.Location = New System.Drawing.Point(154, 30)
         Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(100, 20)
+        Me.TextBox1.Size = New System.Drawing.Size(134, 20)
         Me.TextBox1.TabIndex = 3
         '
         'TextBox2
         '
-        Me.TextBox2.Location = New System.Drawing.Point(222, 84)
+        Me.TextBox2.Location = New System.Drawing.Point(154, 65)
         Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(100, 20)
+        Me.TextBox2.Size = New System.Drawing.Size(134, 20)
         Me.TextBox2.TabIndex = 4
         '
-        'Button4
+        'Loging
         '
-        Me.Button4.Location = New System.Drawing.Point(410, 39)
-        Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(75, 23)
-        Me.Button4.TabIndex = 5
-        Me.Button4.Text = "Button4"
-        Me.Button4.UseVisualStyleBackColor = True
+        Me.Loging.Location = New System.Drawing.Point(154, 150)
+        Me.Loging.Name = "Loging"
+        Me.Loging.Size = New System.Drawing.Size(105, 52)
+        Me.Loging.TabIndex = 5
+        Me.Loging.Text = "Login"
+        Me.Loging.UseVisualStyleBackColor = True
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(28, 33)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(43, 13)
+        Me.Label1.TabIndex = 6
+        Me.Label1.Text = "Usuario"
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(28, 72)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(61, 13)
+        Me.Label2.TabIndex = 7
+        Me.Label2.Text = "Contraseña"
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.ForeColor = System.Drawing.Color.Red
+        Me.Label3.Location = New System.Drawing.Point(132, 104)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(156, 13)
+        Me.Label3.TabIndex = 8
+        Me.Label3.Text = "Datos erroneos pruebe otra vez"
+        Me.Label3.Visible = False
+        '
+        'TextBox3
+        '
+        Me.TextBox3.Location = New System.Drawing.Point(40, 150)
+        Me.TextBox3.Name = "TextBox3"
+        Me.TextBox3.Size = New System.Drawing.Size(100, 20)
+        Me.TextBox3.TabIndex = 9
         '
         'Login
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 450)
-        Me.Controls.Add(Me.Button4)
+        Me.ClientSize = New System.Drawing.Size(371, 329)
+        Me.Controls.Add(Me.TextBox3)
+        Me.Controls.Add(Me.Label3)
+        Me.Controls.Add(Me.Label2)
+        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.Loging)
         Me.Controls.Add(Me.TextBox2)
         Me.Controls.Add(Me.TextBox1)
         Me.Controls.Add(Me.Button3)
@@ -103,5 +147,9 @@ Partial Class Login
     Friend WithEvents Button3 As Button
     Friend WithEvents TextBox1 As TextBox
     Friend WithEvents TextBox2 As TextBox
-    Friend WithEvents Button4 As Button
+    Friend WithEvents Loging As Button
+    Friend WithEvents Label1 As Label
+    Friend WithEvents Label2 As Label
+    Friend WithEvents Label3 As Label
+    Friend WithEvents TextBox3 As TextBox
 End Class

@@ -31,13 +31,14 @@ Partial Class GestorAloj
         Me.ComboBox2 = New System.Windows.Forms.ComboBox()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button3 = New System.Windows.Forms.Button()
+        Me.Label4 = New System.Windows.Forms.Label()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(121, 63)
+        Me.Label1.Location = New System.Drawing.Point(111, 79)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(48, 13)
         Me.Label1.TabIndex = 0
@@ -45,11 +46,11 @@ Partial Class GestorAloj
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(425, 35)
+        Me.Button1.Location = New System.Drawing.Point(499, 10)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
+        Me.Button1.Size = New System.Drawing.Size(134, 48)
         Me.Button1.TabIndex = 4
-        Me.Button1.Text = "Eliminar"
+        Me.Button1.Text = "Mostrar BBDD"
         Me.Button1.UseVisualStyleBackColor = True
         '
         'DataGridView1
@@ -81,7 +82,7 @@ Partial Class GestorAloj
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(310, 63)
+        Me.Label3.Location = New System.Drawing.Point(308, 79)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(39, 13)
         Me.Label3.TabIndex = 7
@@ -100,25 +101,35 @@ Partial Class GestorAloj
         '
         Me.Button2.Location = New System.Drawing.Point(261, 10)
         Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(75, 23)
+        Me.Button2.Size = New System.Drawing.Size(183, 23)
         Me.Button2.TabIndex = 9
-        Me.Button2.Text = "Filtro1"
+        Me.Button2.Text = "Filtro por localidad"
         Me.Button2.UseVisualStyleBackColor = True
         '
         'Button3
         '
         Me.Button3.Location = New System.Drawing.Point(261, 34)
         Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(75, 23)
+        Me.Button3.Size = New System.Drawing.Size(183, 23)
         Me.Button3.TabIndex = 10
-        Me.Button3.Text = "Filtro2"
+        Me.Button3.Text = "Filtro por tipo de alojamiento"
         Me.Button3.UseVisualStyleBackColor = True
         '
-        'Form2
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(655, 20)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(39, 13)
+        Me.Label4.TabIndex = 11
+        Me.Label4.Text = "Label4"
+        '
+        'GestorAloj
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.ComboBox2)
@@ -128,7 +139,7 @@ Partial Class GestorAloj
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.Label1)
-        Me.Name = "Form2"
+        Me.Name = "GestorAloj"
         Me.Text = "Form2"
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
@@ -145,4 +156,5 @@ Partial Class GestorAloj
     Friend WithEvents ComboBox2 As ComboBox
     Friend WithEvents Button2 As Button
     Friend WithEvents Button3 As Button
+    Friend WithEvents Label4 As Label
 End Class
