@@ -6,6 +6,7 @@ Public Class GestorAloj
     Dim MysqlConnString As String = "server=192.168.101.35; user id= lajs ; password=lajs ; database=alojamientos"
     Public MysqlConexion As MySqlConnection = New MySqlConnection(MysqlConnString)
     Dim localidad As String
+    Dim valorBorrar As String
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         Probarconexion()
@@ -33,7 +34,6 @@ Public Class GestorAloj
         Catch ex As Exception
             MsgBox("No se lograron cargar los datos por: " & ex.Message, MsgBoxStyle.Critical,)
         End Try
-
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
@@ -41,6 +41,7 @@ Public Class GestorAloj
             MysqlConexion.Open()
             MsgBox("la conexión fue exitosa")
             llamodatos()
+            ComboBox1.SelectedValue = "Sin Filtro"
             MysqlConexion.Close()
         Catch ex As Exception
             MsgBox("La conexión no fue exitosa")
@@ -50,16 +51,12 @@ Public Class GestorAloj
     Protected Sub llamodatos()
         Try
             Dim da As New MySqlDataAdapter("select * from alojamiento", MysqlConnString)
-            ':::Creamos el objeto DataTable que recibe la informacion del DataAdapter
             Dim DT As New DataTable
-            ':::Pasamos la informacion del DataAdapter al DataTable mediante la propiedad Fill
             da.Fill(DT)
-            ':::Ahora mostramos los datos en el DataGridView
             DataGridView1.DataSource = DT
         Catch ex As Exception
             MsgBox("No se logro realizar la consulta por: " & ex.Message, MsgBoxStyle.Critical,)
         End Try
-
     End Sub
 
     Private Sub Label2_Click(sender As Object, e As EventArgs) Handles Label2.Click
@@ -71,11 +68,8 @@ Public Class GestorAloj
         Try
             Dim da As New MySqlDataAdapter("select * from alojamiento where localidad='" & localidad & "' ", MysqlConnString)
             Label1.Text = localidad
-            ':::Creamos el objeto DataTable que recibe la informacion del DataAdapter
             Dim DT As New DataTable
-            ':::Pasamos la informacion del DataAdapter al DataTable mediante la propiedad Fill
             da.Fill(DT)
-            ':::Ahora mostramos los datos en el DataGridView
             DataGridView1.DataSource = DT
         Catch ex As Exception
             MsgBox("No se logro realizar la consulta por: " & ex.Message, MsgBoxStyle.Critical,)
@@ -86,11 +80,8 @@ Public Class GestorAloj
         Try
             Dim da As New MySqlDataAdapter("select * from alojamiento", MysqlConnString)
             Label1.Text = localidad
-            ':::Creamos el objeto DataTable que recibe la informacion del DataAdapter
             Dim DT As New DataTable
-            ':::Pasamos la informacion del DataAdapter al DataTable mediante la propiedad Fill
             da.Fill(DT)
-            ':::Ahora mostramos los datos en el DataGridView
             DataGridView1.DataSource = DT
         Catch ex As Exception
             MsgBox("No se logro realizar la consulta por: " & ex.Message, MsgBoxStyle.Critical,)
@@ -113,5 +104,27 @@ Public Class GestorAloj
         Catch ex As Exception
             MsgBox("No va por: " & ex.Message, MsgBoxStyle.Critical,)
         End Try
+    End Sub
+
+    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
+        Gestor.Show()
+        Me.Hide()
+    End Sub
+
+    Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
+        Try
+            Dim da As New MySqlDataAdapter("delete from alojamiento where idAloj='" & valorBorrar & "' ", MysqlConnString)
+            Dim DT As New DataTable
+            da.Fill(DT)
+            DataGridView1.DataSource = DT
+            llamodatos()
+        Catch ex As Exception
+            MsgBox("No se logro realizar la consulta por: " & ex.Message, MsgBoxStyle.Critical,)
+        End Try
+    End Sub
+
+    Private Sub DataGridView1_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellClick
+        valorBorrar = DataGridView1.Rows(e.RowIndex).Cells("idAloj").Value.ToString
+        Label5.Text = valorBorrar
     End Sub
 End Class

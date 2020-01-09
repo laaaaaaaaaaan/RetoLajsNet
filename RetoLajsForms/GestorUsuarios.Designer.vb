@@ -35,9 +35,9 @@ Partial Class GestorUsuarios
         Me.Label1.AutoSize = True
         Me.Label1.Location = New System.Drawing.Point(121, 72)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(66, 13)
+        Me.Label1.Size = New System.Drawing.Size(48, 13)
         Me.Label1.TabIndex = 0
-        Me.Label1.Text = "Alojamientos"
+        Me.Label1.Text = "Usuarios"
         '
         'DataGridView1
         '
@@ -52,9 +52,9 @@ Partial Class GestorUsuarios
         '
         Me.Button1.Location = New System.Drawing.Point(459, 29)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
+        Me.Button1.Size = New System.Drawing.Size(117, 23)
         Me.Button1.TabIndex = 2
-        Me.Button1.Text = "Eliminar"
+        Me.Button1.Text = "Eliminar Usuario"
         Me.Button1.UseVisualStyleBackColor = True
         '
         'Button2

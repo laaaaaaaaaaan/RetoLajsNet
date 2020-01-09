@@ -24,10 +24,13 @@ Public Class Login
             For Each row As DataRow In DT.Rows
                 Dim usuario As String = CStr(row("username"))
                 Dim password As String = CStr(row("password"))
+                MsgBox(usuario & password)
                 If (TextBox1.Text = usuario And TextBox2.Text = password) Then
                     Gestor.Show()
                     Me.Hide()
-
+                    TextBox1.Clear()
+                    TextBox2.Clear()
+                    Label3.Visible() = False
                 Else
                     Label3.Visible() = True
                 End If

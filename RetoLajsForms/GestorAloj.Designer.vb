@@ -32,6 +32,9 @@ Partial Class GestorAloj
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.Label4 = New System.Windows.Forms.Label()
+        Me.Button4 = New System.Windows.Forms.Button()
+        Me.Button5 = New System.Windows.Forms.Button()
+        Me.Label5 = New System.Windows.Forms.Label()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -40,15 +43,15 @@ Partial Class GestorAloj
         Me.Label1.AutoSize = True
         Me.Label1.Location = New System.Drawing.Point(111, 79)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(48, 13)
+        Me.Label1.Size = New System.Drawing.Size(66, 13)
         Me.Label1.TabIndex = 0
-        Me.Label1.Text = "Usuarios"
+        Me.Label1.Text = "Alojamientos"
         '
         'Button1
         '
         Me.Button1.Location = New System.Drawing.Point(499, 10)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(134, 48)
+        Me.Button1.Size = New System.Drawing.Size(134, 24)
         Me.Button1.TabIndex = 4
         Me.Button1.Text = "Mostrar BBDD"
         Me.Button1.UseVisualStyleBackColor = True
@@ -124,11 +127,41 @@ Partial Class GestorAloj
         Me.Label4.TabIndex = 11
         Me.Label4.Text = "Label4"
         '
+        'Button4
+        '
+        Me.Button4.Location = New System.Drawing.Point(526, 79)
+        Me.Button4.Name = "Button4"
+        Me.Button4.Size = New System.Drawing.Size(75, 23)
+        Me.Button4.TabIndex = 12
+        Me.Button4.Text = "Atras"
+        Me.Button4.UseVisualStyleBackColor = True
+        '
+        'Button5
+        '
+        Me.Button5.Location = New System.Drawing.Point(499, 41)
+        Me.Button5.Name = "Button5"
+        Me.Button5.Size = New System.Drawing.Size(134, 23)
+        Me.Button5.TabIndex = 13
+        Me.Button5.Text = "Eliminar Alojamiento"
+        Me.Button5.UseVisualStyleBackColor = True
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(48, 79)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(39, 13)
+        Me.Label5.TabIndex = 14
+        Me.Label5.Text = "Label5"
+        '
         'GestorAloj
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.Controls.Add(Me.Label5)
+        Me.Controls.Add(Me.Button5)
+        Me.Controls.Add(Me.Button4)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.Button2)
@@ -157,4 +190,7 @@ Partial Class GestorAloj
     Friend WithEvents Button2 As Button
     Friend WithEvents Button3 As Button
     Friend WithEvents Label4 As Label
+    Friend WithEvents Button4 As Button
+    Friend WithEvents Button5 As Button
+    Friend WithEvents Label5 As Label
 End Class
