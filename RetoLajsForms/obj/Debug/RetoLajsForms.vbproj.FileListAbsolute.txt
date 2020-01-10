@@ -22,3 +22,4 @@ C:\Users\IN1DM3B_13\source\repos\RetoLajsForms\RetoLajsForms\obj\Debug\RetoLajsF
 C:\Users\IN1DM3B_13\source\repos\RetoLajsForms\RetoLajsForms\obj\Debug\RetoLajsForms.GestorAloj.resources
 C:\Users\IN1DM3B_13\source\repos\RetoLajsForms\RetoLajsForms\obj\Debug\RetoLajsForms.GestorUsuarios.resources
 C:\Users\IN1DM3B_13\source\repos\RetoLajsForms\RetoLajsForms\obj\Debug\RetoLajsForms.GestorReservas.resources
+C:\Users\IN1DM3B_13\source\repos\RetoLajsForms\RetoLajsForms\obj\Debug\RetoLajsForms.NuevoCliente.resources
