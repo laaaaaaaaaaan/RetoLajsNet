@@ -3,6 +3,7 @@ Imports System.Text
 Imports MySql.Data.MySqlClient
 
 Public Class Login
+    Public user As String
     Dim MysqlConnString As String = "server=192.168.101.35; user id= lajs ; password=lajs ; database=alojamientos;Convert Zero Datetime=True"
     Public MysqlConexion As MySqlConnection = New MySqlConnection(MysqlConnString)
 
@@ -37,15 +38,11 @@ Public Class Login
                 Else
                     Label3.Visible() = True
                 End If
-
             Next
-
         Catch ex As Exception
             MsgBox("No se logro realizar la consulta por: " & ex.Message, MsgBoxStyle.Critical,)
         End Try
-        If TextBox1.Text = "sdf" Then
-
-        End If
+        user = TextBox1.Text
     End Sub
 
     Shared Function GetHash(theInput As String) As String
@@ -66,4 +63,8 @@ Public Class Login
             Return sBuilder.ToString()
         End Using
     End Function
+
+    Private Sub Login_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        TextBox2.PasswordChar = "*"
+    End Sub
 End Class

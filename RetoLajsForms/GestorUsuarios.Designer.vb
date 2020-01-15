@@ -74,7 +74,7 @@ Partial Class GestorUsuarios
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(173, 29)
         Me.Button1.TabIndex = 2
-        Me.Button1.Text = "Eliminar Usuario seleccionado"
+        Me.Button1.Text = "Eliminar usuario seleccionado"
         Me.Button1.UseVisualStyleBackColor = True
         '
         'TextBox1
@@ -134,7 +134,7 @@ Partial Class GestorUsuarios
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 17.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 17.0!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label8.Location = New System.Drawing.Point(92, 384)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(329, 29)
@@ -202,7 +202,7 @@ Partial Class GestorUsuarios
         Me.Button10.Name = "Button10"
         Me.Button10.Size = New System.Drawing.Size(118, 65)
         Me.Button10.TabIndex = 23
-        Me.Button10.Text = "Filtrar por filtros seleccionados"
+        Me.Button10.Text = "Filtrar por campos seleccionados"
         Me.Button10.UseVisualStyleBackColor = True
         '
         'CheckBox1
@@ -275,13 +275,14 @@ Partial Class GestorUsuarios
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(118, 67)
         Me.Button3.TabIndex = 31
-        Me.Button3.Text = "Modificar por filtros seleccionados"
+        Me.Button3.Text = "Modificar por campos seleccionados"
         Me.Button3.UseVisualStyleBackColor = True
         '
         'GestorUsuarios
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(896, 604)
         Me.Controls.Add(Me.Button3)
@@ -309,6 +310,7 @@ Partial Class GestorUsuarios
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.Label1)
+        Me.MaximizeBox = False
         Me.Name = "GestorUsuarios"
         Me.Text = "LAJS: Gestor de usuarios"
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()

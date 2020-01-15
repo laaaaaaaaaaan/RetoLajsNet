@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class GestorAloj
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class GestorAloj
     'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
     'Se puede modificar usando el Diseñador de Windows Forms.  
     'No lo modifique con el editor de código.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Button1 = New System.Windows.Forms.Button()
@@ -65,6 +65,7 @@ Partial Class GestorAloj
         '
         'Button1
         '
+        Me.Button1.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Button1.Location = New System.Drawing.Point(445, 545)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(116, 79)
@@ -75,9 +76,9 @@ Partial Class GestorAloj
         'DataGridView1
         '
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(78, 214)
+        Me.DataGridView1.Location = New System.Drawing.Point(78, 204)
         Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(617, 272)
+        Me.DataGridView1.Size = New System.Drawing.Size(617, 282)
         Me.DataGridView1.TabIndex = 3
         '
         'ComboBox1
@@ -100,6 +101,7 @@ Partial Class GestorAloj
         '
         'Button4
         '
+        Me.Button4.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Button4.Location = New System.Drawing.Point(620, 599)
         Me.Button4.Name = "Button4"
         Me.Button4.Size = New System.Drawing.Size(75, 23)
@@ -109,6 +111,7 @@ Partial Class GestorAloj
         '
         'Button5
         '
+        Me.Button5.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Button5.Location = New System.Drawing.Point(576, 24)
         Me.Button5.Name = "Button5"
         Me.Button5.Size = New System.Drawing.Size(119, 30)
@@ -293,9 +296,10 @@ Partial Class GestorAloj
         '
         'Button7
         '
+        Me.Button7.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Button7.Location = New System.Drawing.Point(320, 546)
         Me.Button7.Name = "Button7"
-        Me.Button7.Size = New System.Drawing.Size(94, 79)
+        Me.Button7.Size = New System.Drawing.Size(104, 79)
         Me.Button7.TabIndex = 33
         Me.Button7.Text = "Filtrar por los campos seleccionados"
         Me.Button7.UseVisualStyleBackColor = True
@@ -344,6 +348,7 @@ Partial Class GestorAloj
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(800, 639)
         Me.Controls.Add(Me.Label2)
@@ -375,6 +380,7 @@ Partial Class GestorAloj
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.Label1)
+        Me.MaximizeBox = False
         Me.Name = "GestorAloj"
         Me.Text = "LAJS: Gestor de alojamientos"
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()

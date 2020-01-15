@@ -31,6 +31,7 @@ Partial Class Login
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'Button1
@@ -62,23 +63,23 @@ Partial Class Login
         '
         'TextBox1
         '
-        Me.TextBox1.Location = New System.Drawing.Point(154, 30)
+        Me.TextBox1.Location = New System.Drawing.Point(172, 45)
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.Size = New System.Drawing.Size(134, 20)
         Me.TextBox1.TabIndex = 3
         '
         'TextBox2
         '
-        Me.TextBox2.Location = New System.Drawing.Point(154, 65)
+        Me.TextBox2.Location = New System.Drawing.Point(172, 87)
         Me.TextBox2.Name = "TextBox2"
         Me.TextBox2.Size = New System.Drawing.Size(134, 20)
         Me.TextBox2.TabIndex = 4
         '
         'Loging
         '
-        Me.Loging.Location = New System.Drawing.Point(123, 129)
+        Me.Loging.Location = New System.Drawing.Point(129, 155)
         Me.Loging.Name = "Loging"
-        Me.Loging.Size = New System.Drawing.Size(105, 52)
+        Me.Loging.Size = New System.Drawing.Size(105, 32)
         Me.Loging.TabIndex = 5
         Me.Loging.Text = "Login"
         Me.Loging.UseVisualStyleBackColor = True
@@ -86,18 +87,20 @@ Partial Class Login
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(28, 33)
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(46, 48)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(46, 13)
+        Me.Label1.Size = New System.Drawing.Size(116, 15)
         Me.Label1.TabIndex = 6
-        Me.Label1.Text = "Usuario:"
+        Me.Label1.Text = "Nombre de usuario:"
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(28, 72)
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(46, 90)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(64, 13)
+        Me.Label2.Size = New System.Drawing.Size(73, 15)
         Me.Label2.TabIndex = 7
         Me.Label2.Text = "Contraseña:"
         '
@@ -105,19 +108,32 @@ Partial Class Login
         '
         Me.Label3.AutoSize = True
         Me.Label3.ForeColor = System.Drawing.Color.Red
-        Me.Label3.Location = New System.Drawing.Point(132, 104)
+        Me.Label3.Location = New System.Drawing.Point(107, 122)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(156, 13)
         Me.Label3.TabIndex = 8
         Me.Label3.Text = "Datos erróneos pruebe otra vez"
         Me.Label3.Visible = False
         '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.ForeColor = System.Drawing.Color.DeepSkyBlue
+        Me.Label4.Location = New System.Drawing.Point(125, 13)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(127, 24)
+        Me.Label4.TabIndex = 9
+        Me.Label4.Text = "Inicio sesión"
+        '
         'Login
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(371, 289)
+        Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
@@ -127,8 +143,9 @@ Partial Class Login
         Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Button1)
+        Me.MaximizeBox = False
         Me.Name = "Login"
-        Me.Text = "LAJS: Gestor"
+        Me.Text = "LAJS: Inicio de sesión"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -143,4 +160,5 @@ Partial Class Login
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents Label3 As Label
+    Friend WithEvents Label4 As Label
 End Class

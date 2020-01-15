@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class NuevoCliente
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class NuevoCliente
     'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
     'Se puede modificar usando el Diseñador de Windows Forms.  
     'No lo modifique con el editor de código.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(NuevoCliente))
         Me.Label1 = New System.Windows.Forms.Label()
@@ -44,7 +44,6 @@ Partial Class NuevoCliente
         Me.Label10 = New System.Windows.Forms.Label()
         Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
         Me.Label12 = New System.Windows.Forms.Label()
-        Me.Label13 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'Label1
@@ -182,11 +181,11 @@ Partial Class NuevoCliente
         '
         Me.Label9.AutoSize = True
         Me.Label9.ForeColor = System.Drawing.Color.Red
-        Me.Label9.Location = New System.Drawing.Point(45, 430)
+        Me.Label9.Location = New System.Drawing.Point(133, 429)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(238, 13)
         Me.Label9.TabIndex = 18
-        Me.Label9.Text = "Faltan datos por rellenar o los datos son erroneos"
+        Me.Label9.Text = "Faltan datos por rellenar o los datos son erróneos"
         Me.Label9.Visible = False
         '
         'TextBox6
@@ -210,9 +209,9 @@ Partial Class NuevoCliente
         Me.Label10.AutoSize = True
         Me.Label10.Location = New System.Drawing.Point(45, 301)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(115, 13)
+        Me.Label10.Size = New System.Drawing.Size(113, 13)
         Me.Label10.TabIndex = 22
-        Me.Label10.Text = "*Decha de nacimiento:"
+        Me.Label10.Text = "*Fecha de nacimiento:"
         '
         'DateTimePicker1
         '
@@ -232,21 +231,12 @@ Partial Class NuevoCliente
         Me.Label12.TabIndex = 26
         Me.Label12.Text = "           "
         '
-        'Label13
-        '
-        Me.Label13.AutoSize = True
-        Me.Label13.Location = New System.Drawing.Point(256, 13)
-        Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(45, 13)
-        Me.Label13.TabIndex = 27
-        Me.Label13.Text = "Label13"
-        '
         'NuevoCliente
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.ClientSize = New System.Drawing.Size(504, 544)
-        Me.Controls.Add(Me.Label13)
         Me.Controls.Add(Me.Label12)
         Me.Controls.Add(Me.DateTimePicker1)
         Me.Controls.Add(Me.Label10)
@@ -268,6 +258,7 @@ Partial Class NuevoCliente
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
+        Me.MaximizeBox = False
         Me.Name = "NuevoCliente"
         Me.Text = "Creación nuevo usuario"
         Me.ResumeLayout(False)
@@ -296,5 +287,4 @@ Partial Class NuevoCliente
     Friend WithEvents Label10 As Label
     Friend WithEvents DateTimePicker1 As DateTimePicker
     Friend WithEvents Label12 As Label
-    Friend WithEvents Label13 As Label
 End Class
