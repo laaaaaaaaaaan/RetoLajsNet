@@ -94,6 +94,7 @@ Partial Class GestorReservas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(800, 450)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
@@ -103,7 +104,7 @@ Partial Class GestorReservas
         Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.Label1)
         Me.Name = "GestorReservas"
-        Me.Text = "Form4"
+        Me.Text = "LAJS: Gestor de reservas"
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()

@@ -35,27 +35,27 @@ Partial Class Login
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(12, 231)
+        Me.Button1.Location = New System.Drawing.Point(12, 212)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(103, 40)
         Me.Button1.TabIndex = 0
-        Me.Button1.Text = "Gestionar Usuarios"
+        Me.Button1.Text = "Gestionar Alojamientos"
         Me.Button1.UseVisualStyleBackColor = True
         '
         'Button2
         '
-        Me.Button2.Location = New System.Drawing.Point(135, 235)
+        Me.Button2.Location = New System.Drawing.Point(135, 212)
         Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(78, 36)
+        Me.Button2.Size = New System.Drawing.Size(80, 40)
         Me.Button2.TabIndex = 1
-        Me.Button2.Text = "Gestionar Alojamientos"
+        Me.Button2.Text = "Gestionar Usuarios"
         Me.Button2.UseVisualStyleBackColor = True
         '
         'Button3
         '
-        Me.Button3.Location = New System.Drawing.Point(230, 234)
+        Me.Button3.Location = New System.Drawing.Point(234, 212)
         Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(94, 38)
+        Me.Button3.Size = New System.Drawing.Size(94, 41)
         Me.Button3.TabIndex = 2
         Me.Button3.Text = "Gestionar Reservas"
         Me.Button3.UseVisualStyleBackColor = True
@@ -76,7 +76,7 @@ Partial Class Login
         '
         'Loging
         '
-        Me.Loging.Location = New System.Drawing.Point(154, 150)
+        Me.Loging.Location = New System.Drawing.Point(123, 129)
         Me.Loging.Name = "Loging"
         Me.Loging.Size = New System.Drawing.Size(105, 52)
         Me.Loging.TabIndex = 5
@@ -88,18 +88,18 @@ Partial Class Login
         Me.Label1.AutoSize = True
         Me.Label1.Location = New System.Drawing.Point(28, 33)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(43, 13)
+        Me.Label1.Size = New System.Drawing.Size(46, 13)
         Me.Label1.TabIndex = 6
-        Me.Label1.Text = "Usuario"
+        Me.Label1.Text = "Usuario:"
         '
         'Label2
         '
         Me.Label2.AutoSize = True
         Me.Label2.Location = New System.Drawing.Point(28, 72)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(61, 13)
+        Me.Label2.Size = New System.Drawing.Size(64, 13)
         Me.Label2.TabIndex = 7
-        Me.Label2.Text = "Contraseña"
+        Me.Label2.Text = "Contraseña:"
         '
         'Label3
         '
@@ -109,14 +109,15 @@ Partial Class Login
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(156, 13)
         Me.Label3.TabIndex = 8
-        Me.Label3.Text = "Datos erroneos pruebe otra vez"
+        Me.Label3.Text = "Datos erróneos pruebe otra vez"
         Me.Label3.Visible = False
         '
         'Login
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(371, 329)
+        Me.BackColor = System.Drawing.Color.White
+        Me.ClientSize = New System.Drawing.Size(371, 289)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
@@ -127,7 +128,7 @@ Partial Class Login
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Button1)
         Me.Name = "Login"
-        Me.Text = "Form1"
+        Me.Text = "LAJS: Gestor"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

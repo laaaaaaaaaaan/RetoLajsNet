@@ -2,7 +2,7 @@
 
 Public Class GestorReservas
 
-    Dim MysqlConnString As String = "server=192.168.101.35; user id= lajs ; password=lajs ; database=alojamientos"
+    Dim MysqlConnString As String = "server=192.168.101.35; user id= lajs ; password=lajs ; database=alojamientos;Convert Zero Datetime=True"
     Public MysqlConexion As MySqlConnection = New MySqlConnection(MysqlConnString)
 
     Protected Sub llamodatos()
