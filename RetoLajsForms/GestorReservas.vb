@@ -121,6 +121,7 @@ Public Class GestorReservas
             da.Fill(DT)
             DataGridView1.DataSource = DT
             llamodatos()
+            MsgBox("Se ha eliminado el alojamiento con exito")
         Catch ex As Exception
             MsgBox("No se logro realizar la consulta por: " & ex.Message, MsgBoxStyle.Critical,)
         End Try
@@ -183,4 +184,7 @@ Public Class GestorReservas
         Label15.Visible = False
     End Sub
 
+    Private Sub GestorReservas_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+        Login.Close()
+    End Sub
 End Class

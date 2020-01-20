@@ -55,9 +55,9 @@ Partial Class GestorReservas
         '
         Me.Button1.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.Location = New System.Drawing.Point(479, 456)
+        Me.Button1.Location = New System.Drawing.Point(461, 461)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(140, 51)
+        Me.Button1.Size = New System.Drawing.Size(160, 40)
         Me.Button1.TabIndex = 5
         Me.Button1.Text = "Eliminar filtros"
         Me.Button1.UseVisualStyleBackColor = True
@@ -102,6 +102,7 @@ Partial Class GestorReservas
         'Button2
         '
         Me.Button2.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button2.Location = New System.Drawing.Point(429, 134)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(190, 39)
@@ -297,7 +298,7 @@ Partial Class GestorReservas
         Me.Button7.Image = CType(resources.GetObject("Button7.Image"), System.Drawing.Image)
         Me.Button7.Location = New System.Drawing.Point(415, 459)
         Me.Button7.Name = "Button7"
-        Me.Button7.Size = New System.Drawing.Size(40, 45)
+        Me.Button7.Size = New System.Drawing.Size(40, 42)
         Me.Button7.TabIndex = 40
         Me.Button7.UseVisualStyleBackColor = True
         '
@@ -333,8 +334,10 @@ Partial Class GestorReservas
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.Label1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
         Me.Name = "GestorReservas"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "LAJS: Gestor de reservas"
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)

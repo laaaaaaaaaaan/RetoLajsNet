@@ -22,9 +22,7 @@ Partial Class Login
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.Button3 = New System.Windows.Forms.Button()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Login))
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.TextBox2 = New System.Windows.Forms.TextBox()
         Me.Loging = New System.Windows.Forms.Button()
@@ -33,33 +31,6 @@ Partial Class Login
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
-        '
-        'Button1
-        '
-        Me.Button1.Location = New System.Drawing.Point(20, 237)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(103, 40)
-        Me.Button1.TabIndex = 0
-        Me.Button1.Text = "Gestionar Alojamientos"
-        Me.Button1.UseVisualStyleBackColor = True
-        '
-        'Button2
-        '
-        Me.Button2.Location = New System.Drawing.Point(143, 237)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(80, 40)
-        Me.Button2.TabIndex = 1
-        Me.Button2.Text = "Gestionar Usuarios"
-        Me.Button2.UseVisualStyleBackColor = True
-        '
-        'Button3
-        '
-        Me.Button3.Location = New System.Drawing.Point(242, 237)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(94, 41)
-        Me.Button3.TabIndex = 2
-        Me.Button3.Text = "Gestionar Reservas"
-        Me.Button3.UseVisualStyleBackColor = True
         '
         'TextBox1
         '
@@ -79,7 +50,7 @@ Partial Class Login
         '
         Me.Loging.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Loging.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Loging.Location = New System.Drawing.Point(51, 175)
+        Me.Loging.Location = New System.Drawing.Point(51, 189)
         Me.Loging.Name = "Loging"
         Me.Loging.Size = New System.Drawing.Size(257, 27)
         Me.Loging.TabIndex = 5
@@ -110,7 +81,7 @@ Partial Class Login
         '
         Me.Label3.AutoSize = True
         Me.Label3.ForeColor = System.Drawing.Color.Red
-        Me.Label3.Location = New System.Drawing.Point(98, 149)
+        Me.Label3.Location = New System.Drawing.Point(96, 155)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(156, 13)
         Me.Label3.TabIndex = 8
@@ -134,7 +105,7 @@ Partial Class Login
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(371, 289)
+        Me.ClientSize = New System.Drawing.Size(369, 271)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
@@ -142,20 +113,15 @@ Partial Class Login
         Me.Controls.Add(Me.Loging)
         Me.Controls.Add(Me.TextBox2)
         Me.Controls.Add(Me.TextBox1)
-        Me.Controls.Add(Me.Button3)
-        Me.Controls.Add(Me.Button2)
-        Me.Controls.Add(Me.Button1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
         Me.Name = "Login"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "LAJS: Inicio de sesión"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
-
-    Friend WithEvents Button1 As Button
-    Friend WithEvents Button2 As Button
-    Friend WithEvents Button3 As Button
     Friend WithEvents TextBox1 As TextBox
     Friend WithEvents TextBox2 As TextBox
     Friend WithEvents Loging As Button

@@ -78,9 +78,10 @@ Partial Class GestorUsuarios
         'Button1
         '
         Me.Button1.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Button1.Location = New System.Drawing.Point(624, 16)
+        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.Location = New System.Drawing.Point(614, 16)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(173, 29)
+        Me.Button1.Size = New System.Drawing.Size(183, 29)
         Me.Button1.TabIndex = 2
         Me.Button1.Text = "Eliminar usuario seleccionado"
         Me.Button1.UseVisualStyleBackColor = True
@@ -161,9 +162,10 @@ Partial Class GestorUsuarios
         'Button8
         '
         Me.Button8.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Button8.Location = New System.Drawing.Point(482, 16)
+        Me.Button8.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button8.Location = New System.Drawing.Point(464, 16)
         Me.Button8.Name = "Button8"
-        Me.Button8.Size = New System.Drawing.Size(126, 29)
+        Me.Button8.Size = New System.Drawing.Size(144, 29)
         Me.Button8.TabIndex = 21
         Me.Button8.Text = "Agregar nuevo usuario"
         Me.Button8.UseVisualStyleBackColor = True
@@ -174,7 +176,7 @@ Partial Class GestorUsuarios
         Me.Button9.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button9.Location = New System.Drawing.Point(482, 391)
         Me.Button9.Name = "Button9"
-        Me.Button9.Size = New System.Drawing.Size(227, 42)
+        Me.Button9.Size = New System.Drawing.Size(225, 40)
         Me.Button9.TabIndex = 22
         Me.Button9.Text = "Eliminar filtros"
         Me.Button9.UseVisualStyleBackColor = True
@@ -390,8 +392,10 @@ Partial Class GestorUsuarios
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.Label1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
         Me.Name = "GestorUsuarios"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "LAJS: Gestor de usuarios"
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)

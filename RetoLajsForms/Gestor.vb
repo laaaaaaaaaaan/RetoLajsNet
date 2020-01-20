@@ -35,4 +35,7 @@
         Me.Hide()
     End Sub
 
+    Private Sub Gestor_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+        Login.Close()
+    End Sub
 End Class

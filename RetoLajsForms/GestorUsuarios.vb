@@ -262,6 +262,7 @@ Public Class GestorUsuarios
             da.Fill(DT)
             DataGridView1.DataSource = DT
             llamodatos()
+            MsgBox("Se ha eliminado el usuario con exito")
         Catch ex As Exception
             MsgBox("No se logro realizar la consulta por: " & ex.Message, MsgBoxStyle.Critical,)
         End Try
@@ -447,5 +448,9 @@ Public Class GestorUsuarios
             TextBox6.PasswordChar = "*"
             TextBox6.Focus()
         End If
+    End Sub
+
+    Private Sub GestorUsuarios_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+        Login.Close()
     End Sub
 End Class

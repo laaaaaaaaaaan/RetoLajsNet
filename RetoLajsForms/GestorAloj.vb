@@ -103,7 +103,7 @@ Public Class GestorAloj
 
     Protected Sub filtrarLocalidadYCapacidad()
         Try
-            Dim da As New MySqlDataAdapter("select * from alojamiento where localidad='" & ComboBox2.Text & "' AND capacidad='" & TextBox1.Text & "' ", conexion.MysqlConnString)
+            Dim da As New MySqlDataAdapter("select * from alojamiento where localidad='" & ComboBox2.Text & "' AND capacidad >='" & TextBox1.Text & "' ", conexion.MysqlConnString)
             Dim DT As New DataTable
             da.Fill(DT)
             DataGridView1.DataSource = DT
@@ -114,7 +114,7 @@ Public Class GestorAloj
 
     Protected Sub filtrarTipoYCapacidad()
         Try
-            Dim da As New MySqlDataAdapter("select * from alojamiento where tipo='" & ComboBox1.Text & "' AND capacidad='" & TextBox1.Text & "' ", conexion.MysqlConnString)
+            Dim da As New MySqlDataAdapter("select * from alojamiento where tipo='" & ComboBox1.Text & "' AND capacidad >='" & TextBox1.Text & "' ", conexion.MysqlConnString)
             Dim DT As New DataTable
             da.Fill(DT)
             DataGridView1.DataSource = DT
@@ -125,13 +125,105 @@ Public Class GestorAloj
 
     Protected Sub filtrarLocalidadYCapacidadYTipo()
         Try
-            Dim da As New MySqlDataAdapter("select * from alojamiento where localidad='" & ComboBox2.Text & "'  AND tipo='" & ComboBox1.Text & "' AND capacidad='" & TextBox1.Text & "' ", conexion.MysqlConnString)
+            Dim da As New MySqlDataAdapter("select * from alojamiento where localidad='" & ComboBox2.Text & "'  AND tipo='" & ComboBox1.Text & "' AND capacidad >='" & TextBox1.Text & "' ", conexion.MysqlConnString)
             Dim DT As New DataTable
             da.Fill(DT)
             DataGridView1.DataSource = DT
         Catch ex As Exception
             MsgBox("No se logro realizar la consulta por: " & ex.Message, MsgBoxStyle.Critical,)
         End Try
+    End Sub
+
+    'zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz'
+
+    Protected Sub modificarLocalidad()
+        Try
+            Dim da As New MySqlDataAdapter("UPDATE alojamiento SET localidad='" & ComboBox2.Text & "' WHERE idAloj='" & valorBorrar & "'", conexion.MysqlConnString)
+            Dim DT As New DataTable
+            da.Fill(DT)
+            DataGridView1.DataSource = DT
+        Catch ex As Exception
+            MsgBox("No se logro realizar la consulta por: " & ex.Message, MsgBoxStyle.Critical,)
+        End Try
+    End Sub
+
+    Protected Sub modificarTipoAlojamiento()
+        Try
+            Dim da As New MySqlDataAdapter("UPDATE alojamiento SET tipo='" & ComboBox1.Text & "' WHERE idAloj='" & valorBorrar & "'", conexion.MysqlConnString)
+            Dim DT As New DataTable
+            da.Fill(DT)
+            DataGridView1.DataSource = DT
+        Catch ex As Exception
+            MsgBox("No se logro realizar la consulta por: " & ex.Message, MsgBoxStyle.Critical,)
+        End Try
+    End Sub
+
+    Protected Sub modificarCapacidad()
+        Try
+            Dim da As New MySqlDataAdapter("UPDATE alojamiento SET capacidad='" & TextBox1.Text & "' WHERE idAloj='" & valorBorrar & "'", conexion.MysqlConnString)
+            Dim DT As New DataTable
+            da.Fill(DT)
+            DataGridView1.DataSource = DT
+        Catch ex As Exception
+            MsgBox("No se logro realizar la consulta por: " & ex.Message, MsgBoxStyle.Critical,)
+        End Try
+    End Sub
+
+    Protected Sub modificarLocalidadYTipo()
+        Try
+
+            Dim da As New MySqlDataAdapter("UPDATE alojamiento SET localidad='" & ComboBox2.Text & "', tipo='" & ComboBox1.Text & "' WHERE idAloj='" & valorBorrar & "'", conexion.MysqlConnString)
+            Dim DT As New DataTable
+            da.Fill(DT)
+            DataGridView1.DataSource = DT
+        Catch ex As Exception
+            MsgBox("No se logro realizar la consulta por: " & ex.Message, MsgBoxStyle.Critical,)
+        End Try
+    End Sub
+
+    Protected Sub modificarLocalidadYCapacidad()
+        Try
+            Dim da As New MySqlDataAdapter("UPDATE alojamiento SET localidad='" & ComboBox2.Text & "', capacidad='" & TextBox1.Text & "' WHERE idAloj='" & valorBorrar & "'", conexion.MysqlConnString)
+            Dim DT As New DataTable
+            da.Fill(DT)
+            DataGridView1.DataSource = DT
+        Catch ex As Exception
+            MsgBox("No se logro realizar la consulta por: " & ex.Message, MsgBoxStyle.Critical,)
+        End Try
+    End Sub
+
+    Protected Sub modificarTipoYCapacidad()
+        Try
+            Dim da As New MySqlDataAdapter("UPDATE alojamiento SET tipo='" & ComboBox1.Text & "', capacidad='" & TextBox1.Text & "' WHERE idAloj='" & valorBorrar & "'", conexion.MysqlConnString)
+            Dim DT As New DataTable
+            da.Fill(DT)
+            DataGridView1.DataSource = DT
+        Catch ex As Exception
+            MsgBox("No se logro realizar la consulta por: " & ex.Message, MsgBoxStyle.Critical,)
+        End Try
+    End Sub
+
+    Protected Sub modificarLocalidadYCapacidadYTipo()
+        Try
+            Dim da As New MySqlDataAdapter("UPDATE alojamiento SET localidad='" & ComboBox2.Text & "', tipo='" & ComboBox1.Text & "', capacidad='" & TextBox1.Text & "' WHERE idAloj='" & valorBorrar & "'", conexion.MysqlConnString)
+            Dim DT As New DataTable
+            da.Fill(DT)
+            DataGridView1.DataSource = DT
+        Catch ex As Exception
+            MsgBox("No se logro realizar la consulta por: " & ex.Message, MsgBoxStyle.Critical,)
+        End Try
+    End Sub
+
+    'zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz'
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        generarInforme()
+    End Sub
+
+    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
+        Gestor.Show()
+        Me.Hide()
+        limpiarCampos()
     End Sub
 
     Private Sub Button7_Click(sender As Object, e As EventArgs) Handles Button7.Click
@@ -149,15 +241,12 @@ Public Class GestorAloj
             filtrarLocalidad()
             If CheckBox2.Checked Then
                 If CheckBox3.Checked Then
-                    MsgBox("1 , 2 Y 3 CHECK")
                     filtrarLocalidadYCapacidadYTipo()
                 Else
-                    MsgBox("1 Y 2 CHECK")
                     filtrarLocalidadYTipo()
                 End If
             End If
             If CheckBox3.Checked Then
-                MsgBox("1 Y 3 CHECK")
                 filtrarLocalidadYCapacidad()
             End If
         End If
@@ -165,37 +254,48 @@ Public Class GestorAloj
             filtrarTipoAlojamiento()
             If CheckBox3.Checked Then
                 filtrarTipoYCapacidad()
-                MsgBox("3 Y 2 CHECK")
-            Else
-                MsgBox("2 CHECK")
             End If
         End If
         If CheckBox3.Checked And Not (CheckBox1.Checked) And Not (CheckBox2.Checked) Then
-            MsgBox("3 CHECK")
             filtrarCapacidad()
         End If
     End Sub
 
-    Private Sub Button2_Click(sender As Object, e As EventArgs)
-        Try
-            filtrarLocalidad()
-        Catch ex As Exception
-            MsgBox("No va por: " & ex.Message, MsgBoxStyle.Critical,)
-        End Try
-    End Sub
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+        If (ComboBox2.Text = "Sin filtro" Or ComboBox2.Text = " ") Then
+            CheckBox1.CheckState = CheckState.Unchecked
+        End If
+        If (ComboBox1.Text = "Sin filtro" Or ComboBox1.Text = " ") Then
+            CheckBox2.CheckState = CheckState.Unchecked
+        End If
+        If (TextBox1.Text = "") Then
+            CheckBox3.CheckState = CheckState.Unchecked
+        End If
 
-    Private Sub Button3_Click(sender As Object, e As EventArgs)
-        Try
-            filtrarTipoAlojamiento()
-        Catch ex As Exception
-            MsgBox("No va por: " & ex.Message, MsgBoxStyle.Critical,)
-        End Try
-    End Sub
+        If CheckBox1.Checked Then
+            modificarLocalidad()
+            If CheckBox2.Checked Then
+                If CheckBox3.Checked Then
+                    modificarLocalidadYCapacidadYTipo()
+                Else
+                    modificarLocalidadYTipo()
+                End If
+            End If
+            If CheckBox3.Checked Then
+                modificarLocalidadYCapacidad()
+            End If
+        End If
+        If CheckBox2.Checked And Not (CheckBox1.Checked) Then
+            modificarTipoAlojamiento()
+            If CheckBox3.Checked Then
+                modificarTipoYCapacidad()
+            End If
+        End If
+        If CheckBox3.Checked And Not (CheckBox1.Checked) And Not (CheckBox2.Checked) Then
+            modificarCapacidad()
+        End If
 
-    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
-        Gestor.Show()
-        Me.Hide()
-        limpiarCampos()
+        llamodatos()
     End Sub
 
     Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
@@ -236,6 +336,21 @@ Public Class GestorAloj
         End Try
     End Sub
 
+    Protected Sub generarInforme()
+        Try
+            Dim da As New MySqlDataAdapter("select * from alojamiento", conexion.MysqlConnString)
+            Dim DTXML As New DataSet
+            da.Fill(DTXML)
+            DTXML.WriteXml("informeAlojamientos.xml")
+            Dim rutaCompleta As String
+            rutaCompleta = Path.GetFullPath("informeAlojamientos.xml")
+            MsgBox(rutaCompleta)
+            MsgBox("El informe de alojamientos se ha generado satisfactoriamente")
+        Catch ex As Exception
+            MsgBox(ex)
+        End Try
+    End Sub
+
     Protected Sub limpiarCampos()
         TextBox1.Text = ""
         ComboBox1.Text = "Sin filtro"
@@ -255,22 +370,9 @@ Public Class GestorAloj
         CheckBox2.CheckState = CheckState.Unchecked
     End Sub
 
-    Private Sub Button2_Click_1(sender As Object, e As EventArgs) Handles Button2.Click
-        generarInforme()
+    Private Sub GestorAloj_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+        Login.Close()
     End Sub
 
-    Protected Sub generarInforme()
-        Try
-            Dim da As New MySqlDataAdapter("select * from alojamiento", conexion.MysqlConnString)
-            Dim DTXML As New DataSet
-            da.Fill(DTXML)
-            DTXML.WriteXml("informeAlojamientos.xml")
-            Dim rutaCompleta As String
-            rutaCompleta = Path.GetFullPath("informeAlojamientos.xml")
-            MsgBox(rutaCompleta)
-            MsgBox("El informe de alojamientos se ha generado satisfactoriamente")
-        Catch ex As Exception
-            MsgBox(ex)
-        End Try
-    End Sub
+
 End Class

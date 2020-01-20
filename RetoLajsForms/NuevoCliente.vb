@@ -25,6 +25,7 @@ Public Class NuevoCliente
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         GestorUsuarios.Show()
         Me.Hide()
+        limpiarCampos()
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
@@ -172,5 +173,9 @@ Public Class NuevoCliente
         TextBox6.Text = ""
 
         DateTimePicker1.ResetText()
+    End Sub
+
+    Private Sub NuevoCliente_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+        Login.Close()
     End Sub
 End Class

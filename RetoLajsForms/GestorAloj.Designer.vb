@@ -53,6 +53,7 @@ Partial Class GestorAloj
         Me.CheckBox3 = New System.Windows.Forms.CheckBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Button2 = New System.Windows.Forms.Button()
+        Me.Button3 = New System.Windows.Forms.Button()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -69,9 +70,9 @@ Partial Class GestorAloj
         '
         Me.Button1.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.Location = New System.Drawing.Point(476, 546)
+        Me.Button1.Location = New System.Drawing.Point(464, 486)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(116, 79)
+        Me.Button1.Size = New System.Drawing.Size(172, 43)
         Me.Button1.TabIndex = 4
         Me.Button1.Text = "Eliminar filtros"
         Me.Button1.UseVisualStyleBackColor = True
@@ -81,7 +82,7 @@ Partial Class GestorAloj
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.Location = New System.Drawing.Point(78, 204)
         Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(705, 260)
+        Me.DataGridView1.Size = New System.Drawing.Size(705, 269)
         Me.DataGridView1.TabIndex = 3
         '
         'ComboBox1
@@ -89,7 +90,7 @@ Partial Class GestorAloj
         Me.ComboBox1.FormattingEnabled = True
         Me.ComboBox1.Location = New System.Drawing.Point(176, 571)
         Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(121, 21)
+        Me.ComboBox1.Size = New System.Drawing.Size(128, 21)
         Me.ComboBox1.TabIndex = 6
         Me.ComboBox1.Text = "Sin filtro"
         '
@@ -98,7 +99,7 @@ Partial Class GestorAloj
         Me.ComboBox2.FormattingEnabled = True
         Me.ComboBox2.Location = New System.Drawing.Point(176, 544)
         Me.ComboBox2.Name = "ComboBox2"
-        Me.ComboBox2.Size = New System.Drawing.Size(121, 21)
+        Me.ComboBox2.Size = New System.Drawing.Size(128, 21)
         Me.ComboBox2.TabIndex = 8
         Me.ComboBox2.Text = "Sin filtro"
         '
@@ -117,9 +118,9 @@ Partial Class GestorAloj
         '
         Me.Button5.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Button5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button5.Location = New System.Drawing.Point(650, 548)
+        Me.Button5.Location = New System.Drawing.Point(581, 152)
         Me.Button5.Name = "Button5"
-        Me.Button5.Size = New System.Drawing.Size(133, 46)
+        Me.Button5.Size = New System.Drawing.Size(202, 40)
         Me.Button5.TabIndex = 13
         Me.Button5.Text = "Eliminar Alojamiento"
         Me.Button5.UseVisualStyleBackColor = True
@@ -276,7 +277,7 @@ Partial Class GestorAloj
         Me.Label20.Location = New System.Drawing.Point(190, 167)
         Me.Label20.MaximumSize = New System.Drawing.Size(400, 99999)
         Me.Label20.Name = "Label20"
-        Me.Label20.Size = New System.Drawing.Size(400, 34)
+        Me.Label20.Size = New System.Drawing.Size(387, 34)
         Me.Label20.TabIndex = 24
         Me.Label20.Text = "Descripción"
         Me.Label20.Visible = False
@@ -296,14 +297,14 @@ Partial Class GestorAloj
         '
         Me.TextBox1.Location = New System.Drawing.Point(176, 602)
         Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(121, 20)
+        Me.TextBox1.Size = New System.Drawing.Size(128, 20)
         Me.TextBox1.TabIndex = 31
         '
         'Button7
         '
         Me.Button7.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Button7.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button7.Location = New System.Drawing.Point(320, 546)
+        Me.Button7.Location = New System.Drawing.Point(347, 544)
         Me.Button7.Name = "Button7"
         Me.Button7.Size = New System.Drawing.Size(140, 79)
         Me.Button7.TabIndex = 33
@@ -344,7 +345,7 @@ Partial Class GestorAloj
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 17.0!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(72, 501)
+        Me.Label2.Location = New System.Drawing.Point(72, 495)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(329, 29)
         Me.Label2.TabIndex = 37
@@ -353,11 +354,21 @@ Partial Class GestorAloj
         'Button2
         '
         Me.Button2.Image = CType(resources.GetObject("Button2.Image"), System.Drawing.Image)
-        Me.Button2.Location = New System.Drawing.Point(407, 492)
+        Me.Button2.Location = New System.Drawing.Point(407, 487)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(40, 42)
         Me.Button2.TabIndex = 38
         Me.Button2.UseVisualStyleBackColor = True
+        '
+        'Button3
+        '
+        Me.Button3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button3.Location = New System.Drawing.Point(517, 548)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(128, 74)
+        Me.Button3.TabIndex = 39
+        Me.Button3.Text = "Modificar los campos seleccionados"
+        Me.Button3.UseVisualStyleBackColor = True
         '
         'GestorAloj
         '
@@ -366,6 +377,7 @@ Partial Class GestorAloj
         Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(849, 641)
+        Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.CheckBox3)
@@ -396,8 +408,10 @@ Partial Class GestorAloj
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.Label1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
         Me.Name = "GestorAloj"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "LAJS: Gestor de alojamientos"
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
@@ -435,4 +449,5 @@ Partial Class GestorAloj
     Friend WithEvents CheckBox3 As CheckBox
     Friend WithEvents Label2 As Label
     Friend WithEvents Button2 As Button
+    Friend WithEvents Button3 As Button
 End Class
