@@ -4,8 +4,11 @@ Imports MySql.Data.MySqlClient
 
 Public Class Login
     Public user As String
-    Dim MysqlConnString As String = "server=192.168.101.35; user id= lajs ; password=lajs ; database=alojamientos;Convert Zero Datetime=True"
-    Public MysqlConexion As MySqlConnection = New MySqlConnection(MysqlConnString)
+    Dim conexion As New conexion
+
+    Private Sub Login_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        TextBox2.PasswordChar = "*"
+    End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         GestorAloj.Show()
@@ -21,28 +24,33 @@ Public Class Login
 
     Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Loging.Click
         Try
-            Dim da As New MySqlDataAdapter("select * from usuario where admin='1'", MysqlConnString)
+            conexion.MysqlConexion.Open()
+            Dim da As New MySqlDataAdapter("select * from usuario where admin='1'", conexion.MysqlConnString)
+            Dim cmd As MySqlCommand = New MySqlCommand("select * from usuario where admin='1'", conexion.MysqlConexion)
             Dim DT As New DataTable
             da.Fill(DT)
-            For Each row As DataRow In DT.Rows
-                Dim usuario As String = CStr(row("username"))
-                Dim password As String = CStr(row("password"))
-                Dim admin As String = CStr(row("admin"))
-                MsgBox(usuario & password & admin)
-                If (TextBox1.Text = usuario And GetHash(TextBox2.Text) = password And admin = "1") Then
-                    Gestor.Show()
-                    Me.Hide()
-                    TextBox1.Clear()
-                    TextBox2.Clear()
-                    Label3.Visible() = False
-                Else
-                    Label3.Visible() = True
-                End If
-            Next
+            Dim reader As MySqlDataReader = cmd.ExecuteReader()
+            While reader.Read()
+                For Each row As DataRow In DT.Rows
+                    Dim usuario As String = CStr(row("username"))
+                    Dim password As String = CStr(row("password"))
+                    Dim admin As String = CStr(row("admin"))
+                    If (TextBox1.Text = usuario And GetHash(TextBox2.Text) = password And admin = "1") Then
+                        Gestor.Show()
+                        Me.Hide()
+                        TextBox1.Clear()
+                        TextBox2.Clear()
+                        Label3.Visible() = False
+                    Else
+                        Label3.Visible() = True
+                    End If
+                Next
+            End While
+            conexion.MysqlConexion.Close()
         Catch ex As Exception
             MsgBox("No se logro realizar la consulta por: " & ex.Message, MsgBoxStyle.Critical,)
         End Try
-        user = TextBox1.Text
+
     End Sub
 
     Shared Function GetHash(theInput As String) As String
@@ -64,7 +72,4 @@ Public Class Login
         End Using
     End Function
 
-    Private Sub Login_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        TextBox2.PasswordChar = "*"
-    End Sub
 End Class

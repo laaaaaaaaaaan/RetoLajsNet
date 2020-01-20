@@ -36,7 +36,7 @@ Partial Class Login
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(12, 212)
+        Me.Button1.Location = New System.Drawing.Point(20, 237)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(103, 40)
         Me.Button1.TabIndex = 0
@@ -45,7 +45,7 @@ Partial Class Login
         '
         'Button2
         '
-        Me.Button2.Location = New System.Drawing.Point(135, 212)
+        Me.Button2.Location = New System.Drawing.Point(143, 237)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(80, 40)
         Me.Button2.TabIndex = 1
@@ -54,7 +54,7 @@ Partial Class Login
         '
         'Button3
         '
-        Me.Button3.Location = New System.Drawing.Point(234, 212)
+        Me.Button3.Location = New System.Drawing.Point(242, 237)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(94, 41)
         Me.Button3.TabIndex = 2
@@ -63,23 +63,25 @@ Partial Class Login
         '
         'TextBox1
         '
-        Me.TextBox1.Location = New System.Drawing.Point(172, 45)
+        Me.TextBox1.Location = New System.Drawing.Point(174, 76)
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.Size = New System.Drawing.Size(134, 20)
         Me.TextBox1.TabIndex = 3
         '
         'TextBox2
         '
-        Me.TextBox2.Location = New System.Drawing.Point(172, 87)
+        Me.TextBox2.Location = New System.Drawing.Point(174, 113)
         Me.TextBox2.Name = "TextBox2"
         Me.TextBox2.Size = New System.Drawing.Size(134, 20)
         Me.TextBox2.TabIndex = 4
         '
         'Loging
         '
-        Me.Loging.Location = New System.Drawing.Point(129, 155)
+        Me.Loging.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Loging.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Loging.Location = New System.Drawing.Point(51, 175)
         Me.Loging.Name = "Loging"
-        Me.Loging.Size = New System.Drawing.Size(105, 32)
+        Me.Loging.Size = New System.Drawing.Size(257, 27)
         Me.Loging.TabIndex = 5
         Me.Loging.Text = "Login"
         Me.Loging.UseVisualStyleBackColor = True
@@ -88,7 +90,7 @@ Partial Class Login
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(46, 48)
+        Me.Label1.Location = New System.Drawing.Point(48, 79)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(116, 15)
         Me.Label1.TabIndex = 6
@@ -98,7 +100,7 @@ Partial Class Login
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(46, 90)
+        Me.Label2.Location = New System.Drawing.Point(48, 116)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(73, 15)
         Me.Label2.TabIndex = 7
@@ -108,7 +110,7 @@ Partial Class Login
         '
         Me.Label3.AutoSize = True
         Me.Label3.ForeColor = System.Drawing.Color.Red
-        Me.Label3.Location = New System.Drawing.Point(107, 122)
+        Me.Label3.Location = New System.Drawing.Point(98, 149)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(156, 13)
         Me.Label3.TabIndex = 8
@@ -118,11 +120,11 @@ Partial Class Login
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 17.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.Color.DeepSkyBlue
-        Me.Label4.Location = New System.Drawing.Point(125, 13)
+        Me.Label4.Location = New System.Drawing.Point(108, 19)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(127, 24)
+        Me.Label4.Size = New System.Drawing.Size(160, 29)
         Me.Label4.TabIndex = 9
         Me.Label4.Text = "Inicio sesión"
         '

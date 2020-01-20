@@ -1,0 +1,43 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+  <Table>
+    <idUsr>2</idUsr>
+    <admin>1</admin>
+    <apellidos>olefir oleksii</apellidos>
+    <dni>12345678Z</dni>
+    <fechaNac>0001-01-01T00:00:00+01:00</fechaNac>
+    <nombre>alosha</nombre>
+    <password>66917C22BA46BD8D3CCA48B18F20C171</password>
+    <username>alosha</username>
+  </Table>
+  <Table>
+    <idUsr>34</idUsr>
+    <admin>1</admin>
+    <apellidos>nO</apellidos>
+    <dni>86407141M</dni>
+    <fechaNac>0001-01-01T00:00:00+01:00</fechaNac>
+    <nombre>Lander</nombre>
+    <password>21232F297A57A5A743894A0E4A801FC3</password>
+    <username>Lan</username>
+  </Table>
+  <Table>
+    <idUsr>35</idUsr>
+    <admin>1</admin>
+    <apellidos>Urtaran De la Paz</apellidos>
+    <dni>18728689L</dni>
+    <fechaNac>0001-01-01T00:00:00+01:00</fechaNac>
+    <nombre>Jon</nombre>
+    <password>21232F297A57A5A743894A0E4A801FC3</password>
+    <username>DonJonUrtaranDLP</username>
+  </Table>
+  <Table>
+    <idUsr>36</idUsr>
+    <admin>0</admin>
+    <apellidos>urtaran de la paz </apellidos>
+    <dni>12345678X</dni>
+    <fechaNac>2018-03-21T00:00:00+01:00</fechaNac>
+    <nombre>jon</nombre>
+    <password>81DC9BDB52D04DC20036DBD8313ED055</password>
+    <username>JonA</username>
+  </Table>
+</NewDataSet>

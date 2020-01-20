@@ -28,7 +28,6 @@ Partial Class NuevoCliente
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.RadioButton1 = New System.Windows.Forms.RadioButton()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
@@ -91,24 +90,12 @@ Partial Class NuevoCliente
         Me.Label5.TabIndex = 4
         Me.Label5.Text = "*Repita su contraseña:"
         '
-        'RadioButton1
-        '
-        Me.RadioButton1.AutoSize = True
-        Me.RadioButton1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.RadioButton1.Location = New System.Drawing.Point(50, 361)
-        Me.RadioButton1.Name = "RadioButton1"
-        Me.RadioButton1.Size = New System.Drawing.Size(321, 17)
-        Me.RadioButton1.TabIndex = 6
-        Me.RadioButton1.TabStop = True
-        Me.RadioButton1.Text = "*Acepto las Condiciones del servicio y la Política de privacidad"
-        Me.RadioButton1.UseVisualStyleBackColor = True
-        '
         'Label6
         '
         Me.Label6.AutoSize = True
         Me.Label6.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(45, 405)
+        Me.Label6.Location = New System.Drawing.Point(47, 375)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(137, 13)
         Me.Label6.TabIndex = 7
@@ -116,6 +103,7 @@ Partial Class NuevoCliente
         '
         'Button1
         '
+        Me.Button1.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Button1.Location = New System.Drawing.Point(48, 462)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(134, 37)
@@ -125,6 +113,7 @@ Partial Class NuevoCliente
         '
         'Button2
         '
+        Me.Button2.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Button2.Location = New System.Drawing.Point(303, 462)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(133, 37)
@@ -181,7 +170,7 @@ Partial Class NuevoCliente
         '
         Me.Label9.AutoSize = True
         Me.Label9.ForeColor = System.Drawing.Color.Red
-        Me.Label9.Location = New System.Drawing.Point(133, 429)
+        Me.Label9.Location = New System.Drawing.Point(136, 420)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(238, 13)
         Me.Label9.TabIndex = 18
@@ -252,7 +241,6 @@ Partial Class NuevoCliente
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Label6)
-        Me.Controls.Add(Me.RadioButton1)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label4)
@@ -271,7 +259,6 @@ Partial Class NuevoCliente
     Friend WithEvents Label3 As Label
     Friend WithEvents Label4 As Label
     Friend WithEvents Label5 As Label
-    Friend WithEvents RadioButton1 As RadioButton
     Friend WithEvents Label6 As Label
     Friend WithEvents Button1 As Button
     Friend WithEvents Button2 As Button

@@ -22,6 +22,7 @@ Partial Class GestorAloj
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(GestorAloj))
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
@@ -51,6 +52,7 @@ Partial Class GestorAloj
         Me.CheckBox2 = New System.Windows.Forms.CheckBox()
         Me.CheckBox3 = New System.Windows.Forms.CheckBox()
         Me.Label2 = New System.Windows.Forms.Label()
+        Me.Button2 = New System.Windows.Forms.Button()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -66,7 +68,8 @@ Partial Class GestorAloj
         'Button1
         '
         Me.Button1.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Button1.Location = New System.Drawing.Point(445, 545)
+        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.Location = New System.Drawing.Point(476, 546)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(116, 79)
         Me.Button1.TabIndex = 4
@@ -78,7 +81,7 @@ Partial Class GestorAloj
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.Location = New System.Drawing.Point(78, 204)
         Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(617, 282)
+        Me.DataGridView1.Size = New System.Drawing.Size(705, 260)
         Me.DataGridView1.TabIndex = 3
         '
         'ComboBox1
@@ -102,7 +105,8 @@ Partial Class GestorAloj
         'Button4
         '
         Me.Button4.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Button4.Location = New System.Drawing.Point(620, 599)
+        Me.Button4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button4.Location = New System.Drawing.Point(708, 600)
         Me.Button4.Name = "Button4"
         Me.Button4.Size = New System.Drawing.Size(75, 23)
         Me.Button4.TabIndex = 12
@@ -112,9 +116,10 @@ Partial Class GestorAloj
         'Button5
         '
         Me.Button5.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Button5.Location = New System.Drawing.Point(576, 24)
+        Me.Button5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button5.Location = New System.Drawing.Point(650, 548)
         Me.Button5.Name = "Button5"
-        Me.Button5.Size = New System.Drawing.Size(119, 30)
+        Me.Button5.Size = New System.Drawing.Size(133, 46)
         Me.Button5.TabIndex = 13
         Me.Button5.Text = "Eliminar Alojamiento"
         Me.Button5.UseVisualStyleBackColor = True
@@ -297,9 +302,10 @@ Partial Class GestorAloj
         'Button7
         '
         Me.Button7.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button7.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button7.Location = New System.Drawing.Point(320, 546)
         Me.Button7.Name = "Button7"
-        Me.Button7.Size = New System.Drawing.Size(104, 79)
+        Me.Button7.Size = New System.Drawing.Size(140, 79)
         Me.Button7.TabIndex = 33
         Me.Button7.Text = "Filtrar por los campos seleccionados"
         Me.Button7.UseVisualStyleBackColor = True
@@ -337,12 +343,21 @@ Partial Class GestorAloj
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 17.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 17.0!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.Location = New System.Drawing.Point(72, 501)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(329, 29)
         Me.Label2.TabIndex = 37
         Me.Label2.Text = "FILTROS/MODIFICACIONES"
+        '
+        'Button2
+        '
+        Me.Button2.Image = CType(resources.GetObject("Button2.Image"), System.Drawing.Image)
+        Me.Button2.Location = New System.Drawing.Point(407, 492)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(40, 42)
+        Me.Button2.TabIndex = 38
+        Me.Button2.UseVisualStyleBackColor = True
         '
         'GestorAloj
         '
@@ -350,7 +365,8 @@ Partial Class GestorAloj
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(800, 639)
+        Me.ClientSize = New System.Drawing.Size(849, 641)
+        Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.CheckBox3)
         Me.Controls.Add(Me.CheckBox2)
@@ -418,4 +434,5 @@ Partial Class GestorAloj
     Friend WithEvents CheckBox2 As CheckBox
     Friend WithEvents CheckBox3 As CheckBox
     Friend WithEvents Label2 As Label
+    Friend WithEvents Button2 As Button
 End Class

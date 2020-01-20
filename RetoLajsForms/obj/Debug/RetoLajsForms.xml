@@ -37,6 +37,11 @@ RetoLajsForms
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
 </summary>
 </member>
+<member name="P:RetoLajsForms.My.Resources.Resources.ojo">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="P:RetoLajsForms.My.Resources.Resources.persona">
 <summary>
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.

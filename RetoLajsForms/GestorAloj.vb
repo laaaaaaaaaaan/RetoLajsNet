@@ -1,11 +1,8 @@
-﻿Imports MySql.Data.MySqlClient
+﻿Imports System.IO
+Imports MySql.Data.MySqlClient
 
 Public Class GestorAloj
-
-    Private MysqlCommand As New MySqlCommand
-    Dim MysqlConnString As String = "server=192.168.101.35; user id= lajs ; password=lajs ; database=alojamientos;Convert Zero Datetime=True"
-    Public MysqlConexion As MySqlConnection = New MySqlConnection(MysqlConnString)
-    Dim localidad As String
+    Dim conexion As New conexion
     Dim valorBorrar As String
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
@@ -15,13 +12,12 @@ Public Class GestorAloj
 
     Public Sub RellenarComboBox()
         Try
-            Dim da As New MySqlDataAdapter("select distinct tipo from alojamiento", MysqlConnString)
-            Dim da2 As New MySqlDataAdapter("select distinct localidad from alojamiento", MysqlConnString)
+            Dim da As New MySqlDataAdapter("select distinct tipo from alojamiento", conexion.MysqlConnString)
+            Dim da2 As New MySqlDataAdapter("select distinct localidad from alojamiento", conexion.MysqlConnString)
             Dim DT As New DataTable
             Dim DT2 As New DataTable
             da.Fill(DT)
             da2.Fill(DT2)
-            Dim numero As Integer = DT.Rows.Count
             For p = 0 To DT.Rows.Count - 1
                 ComboBox1.Items.Add(DT.Rows(p).Item(0))
             Next
@@ -37,12 +33,12 @@ Public Class GestorAloj
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Try
-            MysqlConexion.Open()
+            conexion.MysqlConexion.Open()
             llamodatos()
             ComboBox1.Text = "Sin Filtro"
             ComboBox2.Text = "Sin Filtro"
             TextBox1.Text = ""
-            MysqlConexion.Close()
+            conexion.MysqlConexion.Close()
         Catch ex As Exception
             MsgBox("La conexión no fue exitosa")
         End Try
@@ -50,7 +46,7 @@ Public Class GestorAloj
 
     Protected Sub llamodatos()
         Try
-            Dim da As New MySqlDataAdapter("select * from alojamiento", MysqlConnString)
+            Dim da As New MySqlDataAdapter("select * from alojamiento", conexion.MysqlConnString)
             Dim DT As New DataTable
             da.Fill(DT)
             DataGridView1.DataSource = DT
@@ -61,7 +57,8 @@ Public Class GestorAloj
 
     Protected Sub filtrarLocalidad()
         Try
-            Dim da As New MySqlDataAdapter("select * from alojamiento where localidad='" & ComboBox2.Text & "' ", MysqlConnString)
+            Dim da As New MySqlDataAdapter("select * from alojamiento where localidad='" & ComboBox2.Text & "' ", conexion.MysqlConnString)
+            MsgBox("select * from alojamiento where localidad='" & ComboBox2.Text & "' ")
             Dim DT As New DataTable
             da.Fill(DT)
             DataGridView1.DataSource = DT
@@ -72,7 +69,8 @@ Public Class GestorAloj
 
     Protected Sub filtrarTipoAlojamiento()
         Try
-            Dim da As New MySqlDataAdapter("select * from alojamiento where tipo='" & ComboBox1.Text & "' ", MysqlConnString)
+            Dim da As New MySqlDataAdapter("select * from alojamiento where tipo='" & ComboBox1.Text & "' ", conexion.MysqlConnString)
+            MsgBox("select * from alojamiento where tipo='" & ComboBox1.Text & "' ")
             Dim DT As New DataTable
             da.Fill(DT)
             DataGridView1.DataSource = DT
@@ -83,7 +81,7 @@ Public Class GestorAloj
 
     Protected Sub filtrarCapacidad()
         Try
-            Dim da As New MySqlDataAdapter("select * from alojamiento where capacidad >='" & TextBox1.Text & "' ", MysqlConnString)
+            Dim da As New MySqlDataAdapter("select * from alojamiento where capacidad >='" & TextBox1.Text & "' ", conexion.MysqlConnString)
             Dim DT As New DataTable
             da.Fill(DT)
             DataGridView1.DataSource = DT
@@ -94,7 +92,7 @@ Public Class GestorAloj
 
     Protected Sub filtrarLocalidadYTipo()
         Try
-            Dim da As New MySqlDataAdapter("select * from alojamiento where localidad='" & ComboBox2.Text & "' AND tipo='" & ComboBox1.Text & "' ", MysqlConnString)
+            Dim da As New MySqlDataAdapter("select * from alojamiento where localidad='" & ComboBox2.Text & "' AND tipo='" & ComboBox1.Text & "' ", conexion.MysqlConnString)
             Dim DT As New DataTable
             da.Fill(DT)
             DataGridView1.DataSource = DT
@@ -105,7 +103,7 @@ Public Class GestorAloj
 
     Protected Sub filtrarLocalidadYCapacidad()
         Try
-            Dim da As New MySqlDataAdapter("select * from alojamiento where localidad='" & ComboBox2.Text & "' AND capacidad='" & TextBox1.Text & "' ", MysqlConnString)
+            Dim da As New MySqlDataAdapter("select * from alojamiento where localidad='" & ComboBox2.Text & "' AND capacidad='" & TextBox1.Text & "' ", conexion.MysqlConnString)
             Dim DT As New DataTable
             da.Fill(DT)
             DataGridView1.DataSource = DT
@@ -116,7 +114,7 @@ Public Class GestorAloj
 
     Protected Sub filtrarTipoYCapacidad()
         Try
-            Dim da As New MySqlDataAdapter("select * from alojamiento where tipo='" & ComboBox1.Text & "' AND capacidad='" & TextBox1.Text & "' ", MysqlConnString)
+            Dim da As New MySqlDataAdapter("select * from alojamiento where tipo='" & ComboBox1.Text & "' AND capacidad='" & TextBox1.Text & "' ", conexion.MysqlConnString)
             Dim DT As New DataTable
             da.Fill(DT)
             DataGridView1.DataSource = DT
@@ -127,7 +125,7 @@ Public Class GestorAloj
 
     Protected Sub filtrarLocalidadYCapacidadYTipo()
         Try
-            Dim da As New MySqlDataAdapter("select * from alojamiento where localidad='" & ComboBox2.Text & "'  AND tipo='" & ComboBox1.Text & "' AND capacidad='" & TextBox1.Text & "' ", MysqlConnString)
+            Dim da As New MySqlDataAdapter("select * from alojamiento where localidad='" & ComboBox2.Text & "'  AND tipo='" & ComboBox1.Text & "' AND capacidad='" & TextBox1.Text & "' ", conexion.MysqlConnString)
             Dim DT As New DataTable
             da.Fill(DT)
             DataGridView1.DataSource = DT
@@ -137,10 +135,10 @@ Public Class GestorAloj
     End Sub
 
     Private Sub Button7_Click(sender As Object, e As EventArgs) Handles Button7.Click
-        If (ComboBox1.Text = "Sin filtro") Then
+        If (ComboBox2.Text = "Sin filtro" Or ComboBox2.Text = " ") Then
             CheckBox1.CheckState = CheckState.Unchecked
         End If
-        If (ComboBox2.Text = "Sin filtro") Then
+        If (ComboBox1.Text = "Sin filtro" Or ComboBox1.Text = " ") Then
             CheckBox2.CheckState = CheckState.Unchecked
         End If
         If (TextBox1.Text = "") Then
@@ -151,12 +149,15 @@ Public Class GestorAloj
             filtrarLocalidad()
             If CheckBox2.Checked Then
                 If CheckBox3.Checked Then
+                    MsgBox("1 , 2 Y 3 CHECK")
                     filtrarLocalidadYCapacidadYTipo()
                 Else
+                    MsgBox("1 Y 2 CHECK")
                     filtrarLocalidadYTipo()
                 End If
             End If
             If CheckBox3.Checked Then
+                MsgBox("1 Y 3 CHECK")
                 filtrarLocalidadYCapacidad()
             End If
         End If
@@ -164,16 +165,19 @@ Public Class GestorAloj
             filtrarTipoAlojamiento()
             If CheckBox3.Checked Then
                 filtrarTipoYCapacidad()
+                MsgBox("3 Y 2 CHECK")
+            Else
+                MsgBox("2 CHECK")
             End If
         End If
         If CheckBox3.Checked And Not (CheckBox1.Checked) And Not (CheckBox2.Checked) Then
+            MsgBox("3 CHECK")
             filtrarCapacidad()
         End If
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs)
         Try
-            localidad = ComboBox2.Text
             filtrarLocalidad()
         Catch ex As Exception
             MsgBox("No va por: " & ex.Message, MsgBoxStyle.Critical,)
@@ -182,7 +186,6 @@ Public Class GestorAloj
 
     Private Sub Button3_Click(sender As Object, e As EventArgs)
         Try
-            localidad = ComboBox1.Text
             filtrarTipoAlojamiento()
         Catch ex As Exception
             MsgBox("No va por: " & ex.Message, MsgBoxStyle.Critical,)
@@ -197,7 +200,7 @@ Public Class GestorAloj
 
     Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
         Try
-            Dim da As New MySqlDataAdapter("delete from alojamiento where idAloj='" & valorBorrar & "' ", MysqlConnString)
+            Dim da As New MySqlDataAdapter("delete from alojamiento where idAloj='" & valorBorrar & "' ", conexion.MysqlConnString)
             Dim DT As New DataTable
             da.Fill(DT)
             DataGridView1.DataSource = DT
@@ -209,24 +212,28 @@ Public Class GestorAloj
     End Sub
 
     Private Sub DataGridView1_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellClick
-        valorBorrar = DataGridView1.Rows(e.RowIndex).Cells("idAloj").Value.ToString
-        Label21.Text = DataGridView1.Rows(e.RowIndex).Cells("nombre").Value.ToString
-        Label20.Text = DataGridView1.Rows(e.RowIndex).Cells("descripcion").Value.ToString
-        Label19.Text = DataGridView1.Rows(e.RowIndex).Cells("tipo").Value.ToString
-        Label18.Text = DataGridView1.Rows(e.RowIndex).Cells("direccion").Value.ToString
-        Label15.Text = DataGridView1.Rows(e.RowIndex).Cells("localidad").Value.ToString
-        Label14.Text = DataGridView1.Rows(e.RowIndex).Cells("capacidad").Value.ToString
-        Label16.Text = DataGridView1.Rows(e.RowIndex).Cells("email").Value.ToString
-        Label17.Text = DataGridView1.Rows(e.RowIndex).Cells("web").Value.ToString
+        Try
+            valorBorrar = DataGridView1.Rows(e.RowIndex).Cells("idAloj").Value.ToString
+            Label21.Text = DataGridView1.Rows(e.RowIndex).Cells("nombre").Value.ToString
+            Label20.Text = DataGridView1.Rows(e.RowIndex).Cells("descripcion").Value.ToString
+            Label19.Text = DataGridView1.Rows(e.RowIndex).Cells("tipo").Value.ToString
+            Label18.Text = DataGridView1.Rows(e.RowIndex).Cells("direccion").Value.ToString
+            Label15.Text = DataGridView1.Rows(e.RowIndex).Cells("localidad").Value.ToString
+            Label14.Text = DataGridView1.Rows(e.RowIndex).Cells("capacidad").Value.ToString
+            Label16.Text = DataGridView1.Rows(e.RowIndex).Cells("email").Value.ToString
+            Label17.Text = DataGridView1.Rows(e.RowIndex).Cells("web").Value.ToString
 
-        Label21.Visible = True
-        Label20.Visible = True
-        Label19.Visible = True
-        Label18.Visible = True
-        Label15.Visible = True
-        Label14.Visible = True
-        Label16.Visible = True
-        Label17.Visible = True
+            Label21.Visible = True
+            Label20.Visible = True
+            Label19.Visible = True
+            Label18.Visible = True
+            Label15.Visible = True
+            Label14.Visible = True
+            Label16.Visible = True
+            Label17.Visible = True
+        Catch ex As Exception
+
+        End Try
     End Sub
 
     Protected Sub limpiarCampos()
@@ -248,4 +255,22 @@ Public Class GestorAloj
         CheckBox2.CheckState = CheckState.Unchecked
     End Sub
 
+    Private Sub Button2_Click_1(sender As Object, e As EventArgs) Handles Button2.Click
+        generarInforme()
+    End Sub
+
+    Protected Sub generarInforme()
+        Try
+            Dim da As New MySqlDataAdapter("select * from alojamiento", conexion.MysqlConnString)
+            Dim DTXML As New DataSet
+            da.Fill(DTXML)
+            DTXML.WriteXml("informeAlojamientos.xml")
+            Dim rutaCompleta As String
+            rutaCompleta = Path.GetFullPath("informeAlojamientos.xml")
+            MsgBox(rutaCompleta)
+            MsgBox("El informe de alojamientos se ha generado satisfactoriamente")
+        Catch ex As Exception
+            MsgBox(ex)
+        End Try
+    End Sub
 End Class

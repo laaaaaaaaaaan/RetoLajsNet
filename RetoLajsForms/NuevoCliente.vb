@@ -3,8 +3,7 @@ Imports System.Text
 Imports MySql.Data.MySqlClient
 
 Public Class NuevoCliente
-    Dim MysqlConnString As String = "server=192.168.101.35; user id= lajs ; password=lajs ; database=alojamientos"
-    Public MysqlConexion As MySqlConnection = New MySqlConnection(MysqlConnString)
+    Dim conexion As New conexion
     Dim idMax As Integer
 
     Private Sub NuevoCliente_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -14,13 +13,13 @@ Public Class NuevoCliente
     End Sub
 
     Protected Sub sacarIdMax()
-        MysqlConexion.Open()
-        Dim cmd As MySqlCommand = New MySqlCommand("select MAX(idUsr) from usuario", MysqlConexion)
+        conexion.MysqlConexion.Open()
+        Dim cmd As MySqlCommand = New MySqlCommand("select MAX(idUsr) from usuario", conexion.MysqlConexion)
         Dim reader1 As MySqlDataReader = cmd.ExecuteReader()
         While reader1.Read()
             idMax = reader1("MAX(idUsr)")
         End While
-        MysqlConexion.Close()
+        conexion.MysqlConexion.Close()
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
@@ -33,8 +32,8 @@ Public Class NuevoCliente
         Dim permiso As Boolean = False
         Dim seguir As Boolean = True
         Try
-            MysqlConexion.Open()
-            Dim cmd As MySqlCommand = New MySqlCommand("select * from usuario", MysqlConexion)
+            conexion.MysqlConexion.Open()
+            Dim cmd As MySqlCommand = New MySqlCommand("select * from usuario", conexion.MysqlConexion)
             Dim reader As MySqlDataReader = cmd.ExecuteReader()
             While reader.Read()
                 cont = 0
@@ -74,26 +73,21 @@ Public Class NuevoCliente
                         TextBox4.BackColor = Color.Red
                         Label9.Visible = True
                     End If
-                    If RadioButton1.Checked Then
-                        cont = cont + 1
-                    Else
-                        RadioButton1.BackColor = Color.Red
-                        Label9.Visible = True
-                    End If
-                    If (cont = 6) Then
+                    If (cont = 5) Then
                         Try
                             reader.Close()
                             Label9.Visible = False
                             idMax = idMax + 1
                             Dim asd As String = "INSERT INTO `usuario`(`idUsr`, `admin`, `apellidos`, `dni`, `fechaNac`, `nombre`, `password`, `username`) VALUES ('" & idMax & "','" & False & "','" & TextBox2.Text & "','" & TextBox6.Text & "','" & DateTimePicker1.Text & "','" & TextBox1.Text & "','" & GetHash(TextBox4.Text) & "','" & TextBox3.Text & "')"
-                            Dim we As MySqlCommand = New MySqlCommand(asd, MysqlConexion)
+                            Dim we As MySqlCommand = New MySqlCommand(asd, conexion.MysqlConexion)
                             we.ExecuteNonQuery()
                             MsgBox("Usuario insertado exitosamente")
                             seguir = False
-                            MysqlConexion.Close()
+                            conexion.MysqlConexion.Close()
                         Catch ex As Exception
                             MsgBox(ex.ToString)
                         End Try
+                        MsgBox("¡Usuario administrador creado con éxito!")
                     Else
                         MsgBox("Error al insertar usuario en la base de datos")
                     End If
@@ -102,8 +96,11 @@ Public Class NuevoCliente
         Catch ex As MySqlException
             Console.WriteLine("Error: " & ex.ToString())
         Finally
-            MysqlConexion.Close()
+            conexion.MysqlConexion.Close()
             sacarIdMax()
+            limpiarCampos()
+            Me.Hide()
+            GestorUsuarios.Show()
         End Try
     End Sub
 
@@ -164,5 +161,16 @@ Public Class NuevoCliente
             TextBox5.PasswordChar = "*"
             TextBox4.Focus()
         End If
+    End Sub
+
+    Protected Sub limpiarCampos()
+        TextBox1.Text = ""
+        TextBox2.Text = ""
+        TextBox3.Text = ""
+        TextBox4.Text = ""
+        TextBox5.Text = ""
+        TextBox6.Text = ""
+
+        DateTimePicker1.ResetText()
     End Sub
 End Class

@@ -1,41 +1,87 @@
-﻿Imports MySql.Data.MySqlClient
+﻿Imports System.IO
+Imports System.Security.Cryptography
+Imports System.Text
+Imports MySql.Data.MySqlClient
 
 Public Class GestorUsuarios
-
-    Dim MysqlConnString As String = "server=192.168.101.35; user id= lajs ; password=lajs ; database=alojamientos;Convert Zero Datetime=True"
-    Public MysqlConexion As MySqlConnection = New MySqlConnection(MysqlConnString)
-    Dim buscar As String
+    Dim conexion As New conexion
     Dim valorBorrar As String
 
     Private Sub GestorUsuarios_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        TextBox6.PasswordChar = "*"
         llamodatos()
+        RellenarComboBox()
     End Sub
 
     Protected Sub llamodatos()
         Try
-            Dim da As New MySqlDataAdapter("select * from usuario", MysqlConnString)
+            Dim da As New MySqlDataAdapter("select * from usuario", conexion.MysqlConnString)
             Dim DT As New DataTable
             da.Fill(DT)
             DataGridView1.DataSource = DT
         Catch ex As Exception
             MsgBox("No se logro realizar la consulta por: " & ex.Message, MsgBoxStyle.Critical,)
+        End Try
+    End Sub
+
+    Public Sub RellenarComboBox()
+        Try
+            conexion.MysqlConexion.Open()
+            Dim da As New MySqlDataAdapter("select distinct dni from usuario", conexion.MysqlConnString)
+            Dim da1 As New MySqlDataAdapter("select distinct username from usuario", conexion.MysqlConnString)
+            Dim DT As New DataTable
+            Dim DT1 As New DataTable
+            da.Fill(DT)
+            da1.Fill(DT1)
+
+            For p = 0 To DT.Rows.Count - 1
+                ComboBox1.Items.Add(DT.Rows(p).Item(0))
+            Next
+            ComboBox1.Items.Add("Sin filtro")
+
+            For p = 0 To DT1.Rows.Count - 1
+                ComboBox2.Items.Add(DT1.Rows(p).Item(0))
+            Next
+            ComboBox2.Items.Add("Sin filtro")
+            conexion.MysqlConexion.Close()
+        Catch ex As Exception
+            MsgBox("No se lograron cargar los datos por: " & ex.Message, MsgBoxStyle.Critical,)
         End Try
     End Sub
 
     Protected Sub filtrarDNI()
-        Try
-            Dim da As New MySqlDataAdapter("select * from usuario where dni='" & TextBox3.Text & "' ", MysqlConnString)
-            Dim DT As New DataTable
-            da.Fill(DT)
-            DataGridView1.DataSource = DT
-        Catch ex As Exception
-            MsgBox("No se logro realizar la consulta por: " & ex.Message, MsgBoxStyle.Critical,)
-        End Try
+        If ComboBox1.Text = "Sin filtro" Then
+            llamodatos()
+        Else
+            Try
+                Dim da As New MySqlDataAdapter("select * from usuario where dni='" & ComboBox1.Text & "' ", conexion.MysqlConnString)
+                Dim DT As New DataTable
+                da.Fill(DT)
+                DataGridView1.DataSource = DT
+            Catch ex As Exception
+                MsgBox("No se logro realizar la consulta por: " & ex.Message, MsgBoxStyle.Critical,)
+            End Try
+        End If
+    End Sub
+
+    Protected Sub filtrarUsuario()
+        If ComboBox2.Text = "Sin filtro" Then
+            llamodatos()
+        Else
+            Try
+                Dim da As New MySqlDataAdapter("select * from usuario where username='" & ComboBox2.Text & "' ", conexion.MysqlConnString)
+                Dim DT As New DataTable
+                da.Fill(DT)
+                DataGridView1.DataSource = DT
+            Catch ex As Exception
+                MsgBox("No se logro realizar la consulta por: " & ex.Message, MsgBoxStyle.Critical,)
+            End Try
+        End If
     End Sub
 
     Protected Sub filtrarNombre()
         Try
-            Dim da As New MySqlDataAdapter("select * from usuario where nombre='" & buscar & "' ", MysqlConnString)
+            Dim da As New MySqlDataAdapter("select * from usuario where username='" & TextBox1.Text & "' ", conexion.MysqlConnString)
             Dim DT As New DataTable
             da.Fill(DT)
             DataGridView1.DataSource = DT
@@ -46,7 +92,7 @@ Public Class GestorUsuarios
 
     Protected Sub filtrarApellido()
         Try
-            Dim da As New MySqlDataAdapter("select * from usuario where apellidos='" & TextBox2.Text & "' ", MysqlConnString)
+            Dim da As New MySqlDataAdapter("select * from usuario where apellidos='" & TextBox2.Text & "' ", conexion.MysqlConnString)
             Dim DT As New DataTable
             da.Fill(DT)
             DataGridView1.DataSource = DT
@@ -57,7 +103,7 @@ Public Class GestorUsuarios
 
     Protected Sub filtrarFecha()
         Try
-            Dim da As New MySqlDataAdapter("select * from usuario where fechanac='" & buscar & "' ", MysqlConnString)
+            Dim da As New MySqlDataAdapter("select * from usuario where fechanac='" & TextBox4.Text & "' ", conexion.MysqlConnString)
             Dim DT As New DataTable
             da.Fill(DT)
             DataGridView1.DataSource = DT
@@ -68,7 +114,7 @@ Public Class GestorUsuarios
 
     Protected Sub filtrarNombreYApellido()
         Try
-            Dim da As New MySqlDataAdapter("select * from usuario where nombre='" & TextBox1.Text & "' AND apellidos='" & TextBox2.Text & "'", MysqlConnString)
+            Dim da As New MySqlDataAdapter("select * from usuario where nombre='" & TextBox1.Text & "' AND apellidos='" & TextBox2.Text & "'", conexion.MysqlConnString)
             Dim DT As New DataTable
             da.Fill(DT)
             DataGridView1.DataSource = DT
@@ -79,7 +125,7 @@ Public Class GestorUsuarios
 
     Protected Sub filtrarNombreYFecha()
         Try
-            Dim da As New MySqlDataAdapter("select * from usuario where nombre='" & TextBox1.Text & "' AND fechanac='" & TextBox4.Text & "'", MysqlConnString)
+            Dim da As New MySqlDataAdapter("select * from usuario where nombre='" & TextBox1.Text & "' AND fechanac='" & TextBox4.Text & "'", conexion.MysqlConnString)
             Dim DT As New DataTable
             da.Fill(DT)
             DataGridView1.DataSource = DT
@@ -90,7 +136,7 @@ Public Class GestorUsuarios
 
     Protected Sub filtrarApellidoYFecha()
         Try
-            Dim da As New MySqlDataAdapter("select * from usuario where fechanac='" & TextBox4.Text & "'  AND apellidos='" & TextBox2.Text & "'", MysqlConnString)
+            Dim da As New MySqlDataAdapter("select * from usuario where fechanac='" & TextBox4.Text & "'  AND apellidos='" & TextBox2.Text & "'", conexion.MysqlConnString)
             Dim DT As New DataTable
             da.Fill(DT)
             DataGridView1.DataSource = DT
@@ -101,7 +147,7 @@ Public Class GestorUsuarios
 
     Protected Sub filtrarNombreYApellidoYFecha()
         Try
-            Dim da As New MySqlDataAdapter("select * from usuario where nombre='" & TextBox1.Text & "' AND fechanac='" & TextBox4.Text & "'  AND apellidos='" & TextBox2.Text & "'", MysqlConnString)
+            Dim da As New MySqlDataAdapter("select * from usuario where nombre='" & TextBox1.Text & "' AND fechanac='" & TextBox4.Text & "'  AND apellidos='" & TextBox2.Text & "'", conexion.MysqlConnString)
             Dim DT As New DataTable
             da.Fill(DT)
             DataGridView1.DataSource = DT
@@ -112,7 +158,7 @@ Public Class GestorUsuarios
 
     Protected Sub modificarNombre()
         Try
-            Dim da As New MySqlDataAdapter("UPDATE usuario SET nombre='" & TextBox1.Text & "' WHERE idUsr='" & valorBorrar & "'", MysqlConnString)
+            Dim da As New MySqlDataAdapter("UPDATE usuario SET nombre='" & TextBox1.Text & "' WHERE idUsr='" & valorBorrar & "'", conexion.MysqlConnString)
             Dim DT As New DataTable
             da.Fill(DT)
             DataGridView1.DataSource = DT
@@ -123,7 +169,7 @@ Public Class GestorUsuarios
 
     Protected Sub modificarApellido()
         Try
-            Dim da As New MySqlDataAdapter("UPDATE usuario SET apellidos='" & TextBox2.Text & "' WHERE idUsr='" & valorBorrar & "'", MysqlConnString)
+            Dim da As New MySqlDataAdapter("UPDATE usuario SET apellidos='" & TextBox2.Text & "' WHERE idUsr='" & valorBorrar & "'", conexion.MysqlConnString)
             Dim DT As New DataTable
             da.Fill(DT)
             DataGridView1.DataSource = DT
@@ -134,7 +180,7 @@ Public Class GestorUsuarios
 
     Protected Sub modificarFecha()
         Try
-            Dim da As New MySqlDataAdapter("UPDATE usuario SET fechanac='" & TextBox4.Text & "' WHERE idUsr='" & valorBorrar & "'", MysqlConnString)
+            Dim da As New MySqlDataAdapter("UPDATE usuario SET fechanac='" & TextBox4.Text & "' WHERE idUsr='" & valorBorrar & "'", conexion.MysqlConnString)
             Dim DT As New DataTable
             da.Fill(DT)
             DataGridView1.DataSource = DT
@@ -145,7 +191,7 @@ Public Class GestorUsuarios
 
     Protected Sub modificarNombreYApellido()
         Try
-            Dim da As New MySqlDataAdapter("UPDATE usuario SET nombre='" & TextBox1.Text & "', apellidos='" & TextBox2.Text & "' WHERE idUsr='" & valorBorrar & "'", MysqlConnString)
+            Dim da As New MySqlDataAdapter("UPDATE usuario SET nombre='" & TextBox1.Text & "', apellidos='" & TextBox2.Text & "' WHERE idUsr='" & valorBorrar & "'", conexion.MysqlConnString)
             Dim DT As New DataTable
             da.Fill(DT)
             DataGridView1.DataSource = DT
@@ -156,7 +202,7 @@ Public Class GestorUsuarios
 
     Protected Sub modificarNombreYFecha()
         Try
-            Dim da As New MySqlDataAdapter("UPDATE usuario SET nombre='" & TextBox1.Text & "', fechanac='" & TextBox4.Text & "' WHERE idUsr='" & valorBorrar & "'", MysqlConnString)
+            Dim da As New MySqlDataAdapter("UPDATE usuario SET nombre='" & TextBox1.Text & "', fechanac='" & TextBox4.Text & "' WHERE idUsr='" & valorBorrar & "'", conexion.MysqlConnString)
             Dim DT As New DataTable
             da.Fill(DT)
             DataGridView1.DataSource = DT
@@ -167,7 +213,7 @@ Public Class GestorUsuarios
 
     Protected Sub modificarApellidoYFecha()
         Try
-            Dim da As New MySqlDataAdapter("UPDATE usuario SET fechanac='" & TextBox4.Text & "', apellidos='" & TextBox2.Text & "' WHERE idUsr='" & valorBorrar & "'", MysqlConnString)
+            Dim da As New MySqlDataAdapter("UPDATE usuario SET fechanac='" & TextBox4.Text & "', apellidos='" & TextBox2.Text & "' WHERE idUsr='" & valorBorrar & "'", conexion.MysqlConnString)
             Dim DT As New DataTable
             da.Fill(DT)
             DataGridView1.DataSource = DT
@@ -178,7 +224,29 @@ Public Class GestorUsuarios
 
     Protected Sub modificarNombreYApellidoYFecha()
         Try
-            Dim da As New MySqlDataAdapter("UPDATE usuario SET nombre='" & TextBox1.Text & "', apellidos='" & TextBox2.Text & "', fechanac='" & TextBox4.Text & "' WHERE idUsr='" & valorBorrar & "'", MysqlConnString)
+            Dim da As New MySqlDataAdapter("UPDATE usuario SET nombre='" & TextBox1.Text & "', apellidos='" & TextBox2.Text & "', fechanac='" & TextBox4.Text & "' WHERE idUsr='" & valorBorrar & "'", conexion.MysqlConnString)
+            Dim DT As New DataTable
+            da.Fill(DT)
+            DataGridView1.DataSource = DT
+        Catch ex As Exception
+            MsgBox("No se logro realizar la consulta por: " & ex.Message, MsgBoxStyle.Critical,)
+        End Try
+    End Sub
+
+    Protected Sub modificarContra()
+        Try
+            Dim da As New MySqlDataAdapter("UPDATE usuario SET password='" & GetHash(TextBox6.Text) & "' WHERE idUsr='" & valorBorrar & "'", conexion.MysqlConnString)
+            Dim DT As New DataTable
+            da.Fill(DT)
+            DataGridView1.DataSource = DT
+        Catch ex As Exception
+            MsgBox("No se logro realizar la consulta por: " & ex.Message, MsgBoxStyle.Critical,)
+        End Try
+    End Sub
+
+    Protected Sub resetearContra()
+        Try
+            Dim da As New MySqlDataAdapter("UPDATE usuario SET password='" & GetHash(123) & "' WHERE idUsr='" & valorBorrar & "'", conexion.MysqlConnString)
             Dim DT As New DataTable
             da.Fill(DT)
             DataGridView1.DataSource = DT
@@ -189,7 +257,7 @@ Public Class GestorUsuarios
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Try
-            Dim da As New MySqlDataAdapter("delete from usuario where idUsr='" & valorBorrar & "' ", MysqlConnString)
+            Dim da As New MySqlDataAdapter("delete from usuario where idUsr='" & valorBorrar & "' ", conexion.MysqlConnString)
             Dim DT As New DataTable
             da.Fill(DT)
             DataGridView1.DataSource = DT
@@ -204,9 +272,19 @@ Public Class GestorUsuarios
     End Sub
 
     Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
-        buscar = TextBox2.Text
-        modificarApellido()
+        filtrarUsuario()
+    End Sub
+
+    Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
+        modificarContra()
         llamodatos()
+        MsgBox("Su contraseña se ha modificado con éxito")
+    End Sub
+
+    Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
+        resetearContra()
+        llamodatos()
+        MsgBox("Su contraseña se ha reseteado con éxito")
     End Sub
 
     Private Sub Button8_Click(sender As Object, e As EventArgs) Handles Button8.Click
@@ -290,28 +368,20 @@ Public Class GestorUsuarios
         If CheckBox3.Checked And Not (CheckBox1.Checked) And Not (CheckBox2.Checked) Then
             modificarFecha()
         End If
+        llamodatos()
+        MsgBox("Los campos seleccionados se han modificado con éxito")
     End Sub
 
     Private Sub DataGridView1_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellClick
-        valorBorrar = DataGridView1.Rows(e.RowIndex).Cells("idUsr").Value.ToString
-        Label4.Text = "Nombre: " & DataGridView1.Rows(e.RowIndex).Cells("nombre").Value.ToString
-        Label5.Text = "Apellido: " & DataGridView1.Rows(e.RowIndex).Cells("apellidos").Value.ToString
-        Label6.Text = "Fecha de nacimiento: " & DataGridView1.Rows(e.RowIndex).Cells("fechanac").Value.ToString
-        Label7.Text = "ID: " & DataGridView1.Rows(e.RowIndex).Cells("idUsr").Value.ToString
-    End Sub
+        Try
+            valorBorrar = DataGridView1.Rows(e.RowIndex).Cells("idUsr").Value.ToString
+            Label4.Text = "Nombre: " & DataGridView1.Rows(e.RowIndex).Cells("nombre").Value.ToString
+            Label5.Text = "Apellido: " & DataGridView1.Rows(e.RowIndex).Cells("apellidos").Value.ToString
+            Label6.Text = "Fecha de nacimiento: " & DataGridView1.Rows(e.RowIndex).Cells("fechanac").Value.ToString
+            Label7.Text = "ID: " & DataGridView1.Rows(e.RowIndex).Cells("idUsr").Value.ToString
+        Catch ex As Exception
 
-    Protected Sub limpiarCampos()
-        Label4.Text = ""
-        Label5.Text = ""
-        Label6.Text = ""
-        Label7.Text = ""
-        TextBox1.Text = ""
-        TextBox2.Text = ""
-        TextBox3.Text = ""
-        TextBox4.Text = ""
-        CheckBox1.CheckState = CheckState.Unchecked
-        CheckBox2.CheckState = CheckState.Unchecked
-        CheckBox2.CheckState = CheckState.Unchecked
+        End Try
     End Sub
 
     Private Sub Button11_Click(sender As Object, e As EventArgs) Handles Button11.Click
@@ -320,4 +390,62 @@ Public Class GestorUsuarios
         limpiarCampos()
     End Sub
 
+    Private Sub Button7_Click(sender As Object, e As EventArgs) Handles Button7.Click
+        generarInforme()
+    End Sub
+
+    Shared Function GetHash(theInput As String) As String
+        Using hasher As MD5 = MD5.Create()
+
+            Dim dbytes As Byte() = hasher.ComputeHash(Encoding.UTF8.GetBytes(theInput))
+
+            Dim sBuilder As New StringBuilder()
+
+            For n As Integer = 0 To dbytes.Length - 1
+                sBuilder.Append(dbytes(n).ToString("X2"))
+            Next n
+
+            Return sBuilder.ToString()
+        End Using
+    End Function
+
+    Protected Sub generarInforme()
+        Try
+            Dim da As New MySqlDataAdapter("select * from usuario", conexion.MysqlConnString)
+            Dim DTXML As New DataSet
+            da.Fill(DTXML)
+            DTXML.WriteXml("informeUsuario.xml")
+            Dim rutaCompleta As String
+            rutaCompleta = Path.GetFullPath("informeUsuario.xml")
+            MsgBox(rutaCompleta)
+            MsgBox("El informe de usuarios se ha generado satisfactoriamente")
+        Catch ex As Exception
+            MsgBox(ex)
+        End Try
+    End Sub
+
+    Protected Sub limpiarCampos()
+        Label4.Text = "Nombre:"
+        Label5.Text = "Apellido:"
+        Label6.Text = "Fecha de nacimiento"
+        Label7.Text = "Id"
+        TextBox1.Text = ""
+        TextBox2.Text = ""
+        TextBox4.Text = ""
+        TextBox6.Text = ""
+        ComboBox1.Text = "Sin filtro"
+        ComboBox2.Text = "Sin filtro"
+        CheckBox1.CheckState = CheckState.Unchecked
+        CheckBox2.CheckState = CheckState.Unchecked
+        CheckBox2.CheckState = CheckState.Unchecked
+    End Sub
+
+    Private Sub Button12_Click(sender As Object, e As EventArgs) Handles Button12.Click
+        If TextBox6.PasswordChar = "*" Then
+            TextBox6.PasswordChar = ""
+        Else
+            TextBox6.PasswordChar = "*"
+            TextBox6.Focus()
+        End If
+    End Sub
 End Class
