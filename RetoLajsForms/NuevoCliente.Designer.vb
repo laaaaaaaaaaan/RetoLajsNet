@@ -95,7 +95,7 @@ Partial Class NuevoCliente
         Me.Label6.AutoSize = True
         Me.Label6.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(47, 375)
+        Me.Label6.Location = New System.Drawing.Point(50, 352)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(137, 13)
         Me.Label6.TabIndex = 7
@@ -170,11 +170,11 @@ Partial Class NuevoCliente
         '
         Me.Label9.AutoSize = True
         Me.Label9.ForeColor = System.Drawing.Color.Red
-        Me.Label9.Location = New System.Drawing.Point(136, 420)
+        Me.Label9.Location = New System.Drawing.Point(69, 409)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(238, 13)
+        Me.Label9.Size = New System.Drawing.Size(356, 13)
         Me.Label9.TabIndex = 18
-        Me.Label9.Text = "Faltan datos por rellenar o los datos son erróneos"
+        Me.Label9.Text = "Faltan datos por rellenar o son erróneos, compruebe de nuevo los campos"
         Me.Label9.Visible = False
         '
         'TextBox6
@@ -204,10 +204,13 @@ Partial Class NuevoCliente
         '
         'DateTimePicker1
         '
+        Me.DateTimePicker1.CustomFormat = "yyyy-MM-dd"
         Me.DateTimePicker1.Location = New System.Drawing.Point(236, 295)
+        Me.DateTimePicker1.MaxDate = New Date(2002, 12, 18, 0, 0, 0, 0)
         Me.DateTimePicker1.Name = "DateTimePicker1"
         Me.DateTimePicker1.Size = New System.Drawing.Size(200, 20)
         Me.DateTimePicker1.TabIndex = 24
+        Me.DateTimePicker1.Value = New Date(2000, 1, 1, 0, 0, 0, 0)
         '
         'Label12
         '
@@ -225,7 +228,7 @@ Partial Class NuevoCliente
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.ClientSize = New System.Drawing.Size(504, 544)
+        Me.ClientSize = New System.Drawing.Size(504, 534)
         Me.Controls.Add(Me.Label12)
         Me.Controls.Add(Me.DateTimePicker1)
         Me.Controls.Add(Me.Label10)

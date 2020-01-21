@@ -80,8 +80,8 @@ Public Class GestorReservas
             idUsu = DataGridView1.Rows(e.RowIndex).Cells("idUsr").Value.ToString
             idAloj = DataGridView1.Rows(e.RowIndex).Cells("idAloj").Value.ToString
             rellenaLabelDatos()
-            Label14.Text = DataGridView1.Rows(e.RowIndex).Cells("fechaEntrada").Value.ToString
-            Label15.Text = DataGridView1.Rows(e.RowIndex).Cells("fechaSalida").Value.ToString
+            Label14.Text = DataGridView1.Rows(e.RowIndex).Cells("fechaEntrada").Value
+            Label15.Text = DataGridView1.Rows(e.RowIndex).Cells("fechaSalida").Value
             Label14.Visible = True
             Label15.Visible = True
         Catch ex As Exception
@@ -93,6 +93,12 @@ Public Class GestorReservas
         limpiarCampos()
         Me.Hide()
         Gestor.Show()
+    End Sub
+
+    Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
+        Login.Show()
+        Me.Hide()
+        limpiarCampos()
     End Sub
 
     Private Sub Button7_Click(sender As Object, e As EventArgs) Handles Button7.Click
@@ -107,7 +113,7 @@ Public Class GestorReservas
             DTXML.WriteXml("informeReservas.xml")
             Dim rutaCompleta As String
             rutaCompleta = Path.GetFullPath("informeReservas.xml")
-            MsgBox(rutaCompleta)
+            'MsgBox(rutaCompleta)
             MsgBox("El informe de reservas se ha generado satisfactoriamente")
         Catch ex As Exception
             MsgBox(ex)
@@ -151,7 +157,6 @@ Public Class GestorReservas
     Protected Sub filtrarTipo()
         conexion.MysqlConexion.Open()
         Try
-            'Dim da As New MySqlDataAdapter("SELECT * FROM reserva,alojamiento WHERE reserva.idAloj=alojamiento.idAloj and alojamiento.tipo='" & ComboBox2.Text & "'", conexion.MysqlConnString)
             Dim da As New MySqlDataAdapter("SELECT reserva.idRes, reserva.fechaEntrada, reserva.fechaSalida, reserva.idAloj, reserva.idUsr FROM reserva,alojamiento WHERE reserva.idAloj=alojamiento.idAloj and alojamiento.tipo='" & ComboBox2.Text & "'", conexion.MysqlConnString)
             Dim DT As New DataTable
             da.Fill(DT)

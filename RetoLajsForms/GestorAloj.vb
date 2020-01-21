@@ -230,6 +230,12 @@ Public Class GestorAloj
         limpiarCampos()
     End Sub
 
+    Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
+        Login.Show()
+        Me.Hide()
+        limpiarCampos()
+    End Sub
+
     Private Sub Button7_Click(sender As Object, e As EventArgs) Handles Button7.Click
         If (ComboBox2.Text = "Sin filtro" Or ComboBox2.Text = " ") Then
             CheckBox1.CheckState = CheckState.Unchecked
@@ -250,7 +256,7 @@ Public Class GestorAloj
                     filtrarLocalidadYTipo()
                 End If
             End If
-            If CheckBox3.Checked Then
+            If CheckBox3.Checked And Not (CheckBox2.Checked) Then
                 filtrarLocalidadYCapacidad()
             End If
         End If
@@ -285,7 +291,7 @@ Public Class GestorAloj
                     modificarLocalidadYTipo()
                 End If
             End If
-            If CheckBox3.Checked Then
+            If CheckBox3.Checked And Not (CheckBox2.Checked) Then
                 modificarLocalidadYCapacidad()
             End If
         End If
@@ -348,7 +354,7 @@ Public Class GestorAloj
             DTXML.WriteXml("informeAlojamientos.xml")
             Dim rutaCompleta As String
             rutaCompleta = Path.GetFullPath("informeAlojamientos.xml")
-            MsgBox(rutaCompleta)
+            'MsgBox(rutaCompleta)
             MsgBox("El informe de alojamientos se ha generado satisfactoriamente")
         Catch ex As Exception
             MsgBox(ex)

@@ -10,6 +10,8 @@ Public Class NuevoCliente
         TextBox4.PasswordChar = "*"
         TextBox5.PasswordChar = "*"
         sacarIdMax()
+        DateTimePicker1.MinDate = New DateTime(1900, 1, 20)
+        DateTimePicker1.MaxDate = New DateTime(2002, 12, 31)
     End Sub
 
     Protected Sub sacarIdMax()
@@ -30,7 +32,6 @@ Public Class NuevoCliente
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         Dim cont As Integer = 0
-        Dim permiso As Boolean = False
         Dim seguir As Boolean = True
         Try
             conexion.MysqlConexion.Open()
@@ -58,7 +59,7 @@ Public Class NuevoCliente
                         cont = cont + 1
                     End If
                     If reader.GetString(3) = TextBox6.Text Or TextBox6.Text = "" Or TextBox6.Text <> Calcular(Mid(TextBox6.Text, 1, 8)) Then
-                        TextBox1.BackColor = Color.Red
+                        TextBox6.BackColor = Color.Red
                         Label9.Visible = True
                     Else
                         cont = cont + 1
@@ -79,7 +80,7 @@ Public Class NuevoCliente
                             reader.Close()
                             Label9.Visible = False
                             idMax = idMax + 1
-                            Dim asd As String = "INSERT INTO `usuario`(`idUsr`, `admin`, `apellidos`, `dni`, `fechaNac`, `nombre`, `password`, `username`) VALUES ('" & idMax & "','" & False & "','" & TextBox2.Text & "','" & TextBox6.Text & "','" & DateTimePicker1.Text & "','" & TextBox1.Text & "','" & GetHash(TextBox4.Text) & "','" & TextBox3.Text & "')"
+                            Dim asd As String = "INSERT INTO `usuario`(`idUsr`, `admin`, `apellidos`, `dni`, `fechaNac`, `nombre`, `password`, `username`) VALUES ('" & idMax & "','" & False & "','" & TextBox2.Text & "','" & TextBox6.Text & "','" & Format(DateTimePicker1.Value, "yyyy-MM-dd") & "','" & TextBox1.Text & "','" & GetHash(TextBox4.Text) & "','" & TextBox3.Text & "')"
                             Dim we As MySqlCommand = New MySqlCommand(asd, conexion.MysqlConexion)
                             we.ExecuteNonQuery()
                             seguir = False
@@ -176,4 +177,5 @@ Public Class NuevoCliente
     Private Sub NuevoCliente_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
         Login.Close()
     End Sub
+
 End Class

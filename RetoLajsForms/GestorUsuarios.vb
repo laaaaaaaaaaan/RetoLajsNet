@@ -238,14 +238,19 @@ Public Class GestorUsuarios
     End Sub
 
     Protected Sub modificarContra()
-        Try
-            Dim da As New MySqlDataAdapter("UPDATE usuario SET password='" & GetHash(TextBox6.Text) & "' WHERE idUsr='" & valorBorrar & "'", conexion.MysqlConnString)
-            Dim DT As New DataTable
-            da.Fill(DT)
-            DataGridView1.DataSource = DT
-        Catch ex As Exception
-            MsgBox("No se logro realizar la consulta por: " & ex.Message, MsgBoxStyle.Critical,)
-        End Try
+        If (TextBox6.Text = "") Then
+            MsgBox("No puede dejar la contraseña vacia")
+        Else
+            Try
+                Dim da As New MySqlDataAdapter("UPDATE usuario SET password='" & GetHash(TextBox6.Text) & "' WHERE idUsr='" & valorBorrar & "'", conexion.MysqlConnString)
+                Dim DT As New DataTable
+                da.Fill(DT)
+                DataGridView1.DataSource = DT
+                MsgBox("Su contraseña se ha modificado con éxito")
+            Catch ex As Exception
+                MsgBox("No se logro realizar la consulta por: " & ex.Message, MsgBoxStyle.Critical,)
+            End Try
+        End If
     End Sub
 
     Protected Sub modificarNombreUsuario()
@@ -316,7 +321,6 @@ Public Class GestorUsuarios
     Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
         modificarContra()
         llamodatos()
-        MsgBox("Su contraseña se ha modificado con éxito")
     End Sub
 
     Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
@@ -385,8 +389,6 @@ Public Class GestorUsuarios
             filtrarApellido()
             If CheckBox3.Checked Then
                 filtrarApellidoYFecha()
-            ElseIf Not (CheckBox1.Checked) Then
-                filtrarApellido()
             End If
         End If
         If CheckBox3.Checked And Not (CheckBox1.Checked) And Not (CheckBox2.Checked) Then
@@ -422,8 +424,6 @@ Public Class GestorUsuarios
             modificarApellido()
             If CheckBox3.Checked Then
                 modificarApellidoYFecha()
-            ElseIf Not (CheckBox1.Checked) Then
-                modificarApellido()
             End If
         End If
         If CheckBox3.Checked And Not (CheckBox1.Checked) And Not (CheckBox2.Checked) Then
@@ -451,6 +451,12 @@ Public Class GestorUsuarios
         limpiarCampos()
     End Sub
 
+    Private Sub Button17_Click(sender As Object, e As EventArgs) Handles Button17.Click
+        Login.Show()
+        Me.Hide()
+        limpiarCampos()
+    End Sub
+
     Shared Function GetHash(theInput As String) As String
         Using hasher As MD5 = MD5.Create()
 
@@ -474,7 +480,7 @@ Public Class GestorUsuarios
             DTXML.WriteXml("informeUsuario.xml")
             Dim rutaCompleta As String
             rutaCompleta = Path.GetFullPath("informeUsuario.xml")
-            MsgBox(rutaCompleta)
+            'MsgBox(rutaCompleta)
             MsgBox("El informe de usuarios se ha generado satisfactoriamente")
         Catch ex As Exception
             MsgBox(ex)
@@ -484,8 +490,8 @@ Public Class GestorUsuarios
     Protected Sub limpiarCampos()
         Label4.Text = "Nombre:"
         Label5.Text = "Apellido:"
-        Label6.Text = "Fecha de nacimiento"
-        Label7.Text = "Id"
+        Label6.Text = "Fecha de nacimiento:"
+        Label7.Text = "ID:"
         TextBox1.Text = ""
         TextBox2.Text = ""
         TextBox4.Text = ""

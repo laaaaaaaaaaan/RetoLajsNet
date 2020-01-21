@@ -41,6 +41,7 @@ Public Class Login
                         TextBox1.Clear()
                         TextBox2.Clear()
                         Label3.Visible() = False
+                        Exit While
                     Else
                         Label3.Visible() = True
                     End If
@@ -72,4 +73,8 @@ Public Class Login
         End Using
     End Function
 
+    Private Sub Button1_Click_1(sender As Object, e As EventArgs)
+        Me.Hide()
+        Gestor.Show()
+    End Sub
 End Class

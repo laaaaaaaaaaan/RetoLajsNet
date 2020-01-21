@@ -49,6 +49,8 @@ Partial Class GestorReservas
         Me.Button5 = New System.Windows.Forms.Button()
         Me.Button7 = New System.Windows.Forms.Button()
         Me.Button16 = New System.Windows.Forms.Button()
+        Me.Label17 = New System.Windows.Forms.Label()
+        Me.Button6 = New System.Windows.Forms.Button()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -56,7 +58,7 @@ Partial Class GestorReservas
         '
         Me.Button1.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.Location = New System.Drawing.Point(453, 461)
+        Me.Button1.Location = New System.Drawing.Point(456, 473)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(122, 37)
         Me.Button1.TabIndex = 5
@@ -66,7 +68,7 @@ Partial Class GestorReservas
         'DataGridView1
         '
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(71, 188)
+        Me.DataGridView1.Location = New System.Drawing.Point(74, 200)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.ReadOnly = True
         Me.DataGridView1.Size = New System.Drawing.Size(548, 250)
@@ -85,7 +87,7 @@ Partial Class GestorReservas
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(74, 528)
+        Me.Label2.Location = New System.Drawing.Point(77, 540)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(53, 15)
         Me.Label2.TabIndex = 8
@@ -95,7 +97,7 @@ Partial Class GestorReservas
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(74, 565)
+        Me.Label3.Location = New System.Drawing.Point(77, 577)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(34, 15)
         Me.Label3.TabIndex = 9
@@ -105,18 +107,18 @@ Partial Class GestorReservas
         '
         Me.Button2.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Button2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button2.Location = New System.Drawing.Point(429, 134)
+        Me.Button2.Location = New System.Drawing.Point(432, 146)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(190, 39)
         Me.Button2.TabIndex = 10
-        Me.Button2.Text = "Eliminar reserva seleccionado"
+        Me.Button2.Text = "Eliminar reserva seleccionada"
         Me.Button2.UseVisualStyleBackColor = True
         '
         'Label4
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(67, 48)
+        Me.Label4.Location = New System.Drawing.Point(70, 60)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(153, 24)
         Me.Label4.TabIndex = 11
@@ -126,7 +128,7 @@ Partial Class GestorReservas
         '
         Me.Label11.AutoSize = True
         Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label11.Location = New System.Drawing.Point(396, 82)
+        Me.Label11.Location = New System.Drawing.Point(399, 94)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(96, 24)
         Me.Label11.TabIndex = 24
@@ -136,7 +138,7 @@ Partial Class GestorReservas
         '
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.Location = New System.Drawing.Point(396, 48)
+        Me.Label8.Location = New System.Drawing.Point(399, 60)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(53, 24)
         Me.Label8.TabIndex = 23
@@ -146,7 +148,7 @@ Partial Class GestorReservas
         '
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(67, 82)
+        Me.Label6.Location = New System.Drawing.Point(70, 94)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(114, 24)
         Me.Label6.TabIndex = 22
@@ -156,26 +158,26 @@ Partial Class GestorReservas
         '
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(67, 117)
+        Me.Label7.Location = New System.Drawing.Point(70, 129)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(118, 24)
+        Me.Label7.Size = New System.Drawing.Size(212, 24)
         Me.Label7.TabIndex = 25
-        Me.Label7.Text = "Fecha Inicio:"
+        Me.Label7.Text = "Fecha inicio de reserva:"
         '
         'Label9
         '
         Me.Label9.AutoSize = True
         Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.Location = New System.Drawing.Point(67, 152)
+        Me.Label9.Location = New System.Drawing.Point(70, 164)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(93, 24)
+        Me.Label9.Size = New System.Drawing.Size(187, 24)
         Me.Label9.TabIndex = 26
-        Me.Label9.Text = "Fecha fin:"
+        Me.Label9.Text = "Fecha fin de reserva:"
         '
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(226, 56)
+        Me.Label5.Location = New System.Drawing.Point(222, 68)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(39, 13)
         Me.Label5.TabIndex = 27
@@ -185,7 +187,7 @@ Partial Class GestorReservas
         'Label10
         '
         Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(447, 56)
+        Me.Label10.Location = New System.Drawing.Point(450, 68)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(45, 13)
         Me.Label10.TabIndex = 28
@@ -195,7 +197,7 @@ Partial Class GestorReservas
         'Label12
         '
         Me.Label12.AutoSize = True
-        Me.Label12.Location = New System.Drawing.Point(175, 90)
+        Me.Label12.Location = New System.Drawing.Point(178, 102)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(45, 13)
         Me.Label12.TabIndex = 29
@@ -205,7 +207,7 @@ Partial Class GestorReservas
         'Label13
         '
         Me.Label13.AutoSize = True
-        Me.Label13.Location = New System.Drawing.Point(498, 90)
+        Me.Label13.Location = New System.Drawing.Point(495, 102)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(45, 13)
         Me.Label13.TabIndex = 30
@@ -215,7 +217,7 @@ Partial Class GestorReservas
         'Label14
         '
         Me.Label14.AutoSize = True
-        Me.Label14.Location = New System.Drawing.Point(187, 125)
+        Me.Label14.Location = New System.Drawing.Point(288, 137)
         Me.Label14.Name = "Label14"
         Me.Label14.Size = New System.Drawing.Size(45, 13)
         Me.Label14.TabIndex = 31
@@ -225,7 +227,7 @@ Partial Class GestorReservas
         'Label15
         '
         Me.Label15.AutoSize = True
-        Me.Label15.Location = New System.Drawing.Point(166, 160)
+        Me.Label15.Location = New System.Drawing.Point(288, 172)
         Me.Label15.Name = "Label15"
         Me.Label15.Size = New System.Drawing.Size(45, 13)
         Me.Label15.TabIndex = 32
@@ -236,7 +238,7 @@ Partial Class GestorReservas
         '
         Me.ComboBox1.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(137, 525)
+        Me.ComboBox1.Location = New System.Drawing.Point(140, 537)
         Me.ComboBox1.Name = "ComboBox1"
         Me.ComboBox1.Size = New System.Drawing.Size(121, 21)
         Me.ComboBox1.TabIndex = 33
@@ -246,7 +248,7 @@ Partial Class GestorReservas
         '
         Me.ComboBox2.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.ComboBox2.FormattingEnabled = True
-        Me.ComboBox2.Location = New System.Drawing.Point(137, 565)
+        Me.ComboBox2.Location = New System.Drawing.Point(140, 577)
         Me.ComboBox2.Name = "ComboBox2"
         Me.ComboBox2.Size = New System.Drawing.Size(121, 21)
         Me.ComboBox2.TabIndex = 34
@@ -255,7 +257,7 @@ Partial Class GestorReservas
         'Button3
         '
         Me.Button3.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Button3.Location = New System.Drawing.Point(544, 566)
+        Me.Button3.Location = New System.Drawing.Point(547, 578)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(75, 23)
         Me.Button3.TabIndex = 35
@@ -266,7 +268,7 @@ Partial Class GestorReservas
         '
         Me.Label16.AutoSize = True
         Me.Label16.Font = New System.Drawing.Font("Microsoft Sans Serif", 17.0!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label16.Location = New System.Drawing.Point(72, 463)
+        Me.Label16.Location = New System.Drawing.Point(75, 475)
         Me.Label16.Name = "Label16"
         Me.Label16.Size = New System.Drawing.Size(329, 29)
         Me.Label16.TabIndex = 36
@@ -276,7 +278,7 @@ Partial Class GestorReservas
         '
         Me.Button4.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Button4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button4.Location = New System.Drawing.Point(273, 520)
+        Me.Button4.Location = New System.Drawing.Point(276, 532)
         Me.Button4.Name = "Button4"
         Me.Button4.Size = New System.Drawing.Size(128, 23)
         Me.Button4.TabIndex = 37
@@ -287,7 +289,7 @@ Partial Class GestorReservas
         '
         Me.Button5.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Button5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button5.Location = New System.Drawing.Point(273, 565)
+        Me.Button5.Location = New System.Drawing.Point(276, 577)
         Me.Button5.Name = "Button5"
         Me.Button5.Size = New System.Drawing.Size(128, 23)
         Me.Button5.TabIndex = 38
@@ -298,7 +300,7 @@ Partial Class GestorReservas
         '
         Me.Button7.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Button7.Image = CType(resources.GetObject("Button7.Image"), System.Drawing.Image)
-        Me.Button7.Location = New System.Drawing.Point(407, 459)
+        Me.Button7.Location = New System.Drawing.Point(410, 471)
         Me.Button7.Name = "Button7"
         Me.Button7.Size = New System.Drawing.Size(40, 42)
         Me.Button7.TabIndex = 40
@@ -307,11 +309,30 @@ Partial Class GestorReservas
         'Button16
         '
         Me.Button16.Image = Global.RetoLajsForms.My.Resources.Resources.refrescar
-        Me.Button16.Location = New System.Drawing.Point(578, 461)
+        Me.Button16.Location = New System.Drawing.Point(581, 473)
         Me.Button16.Name = "Button16"
         Me.Button16.Size = New System.Drawing.Size(41, 37)
         Me.Button16.TabIndex = 56
         Me.Button16.UseVisualStyleBackColor = True
+        '
+        'Label17
+        '
+        Me.Label17.Image = Global.RetoLajsForms.My.Resources.Resources.persona
+        Me.Label17.Location = New System.Drawing.Point(453, 8)
+        Me.Label17.Name = "Label17"
+        Me.Label17.Size = New System.Drawing.Size(39, 44)
+        Me.Label17.TabIndex = 58
+        '
+        'Button6
+        '
+        Me.Button6.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button6.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button6.Location = New System.Drawing.Point(498, 11)
+        Me.Button6.Name = "Button6"
+        Me.Button6.Size = New System.Drawing.Size(121, 41)
+        Me.Button6.TabIndex = 57
+        Me.Button6.Text = "Cerrar sesión"
+        Me.Button6.UseVisualStyleBackColor = True
         '
         'GestorReservas
         '
@@ -320,6 +341,8 @@ Partial Class GestorReservas
         Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(684, 621)
+        Me.Controls.Add(Me.Label17)
+        Me.Controls.Add(Me.Button6)
         Me.Controls.Add(Me.Button16)
         Me.Controls.Add(Me.Button7)
         Me.Controls.Add(Me.Button5)
@@ -383,4 +406,6 @@ Partial Class GestorReservas
     Friend WithEvents Button5 As Button
     Friend WithEvents Button7 As Button
     Friend WithEvents Button16 As Button
+    Friend WithEvents Label17 As Label
+    Friend WithEvents Button6 As Button
 End Class
