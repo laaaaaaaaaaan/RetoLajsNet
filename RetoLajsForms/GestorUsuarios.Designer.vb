@@ -51,9 +51,15 @@ Partial Class GestorUsuarios
         Me.TextBox6 = New System.Windows.Forms.TextBox()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.ComboBox1 = New System.Windows.Forms.ComboBox()
+        Me.ComboBox2 = New System.Windows.Forms.ComboBox()
+        Me.Button13 = New System.Windows.Forms.Button()
+        Me.TextBox3 = New System.Windows.Forms.TextBox()
+        Me.Button14 = New System.Windows.Forms.Button()
+        Me.Button15 = New System.Windows.Forms.Button()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.Button16 = New System.Windows.Forms.Button()
         Me.Button12 = New System.Windows.Forms.Button()
         Me.Button7 = New System.Windows.Forms.Button()
-        Me.ComboBox2 = New System.Windows.Forms.ComboBox()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -72,7 +78,8 @@ Partial Class GestorUsuarios
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.Location = New System.Drawing.Point(92, 122)
         Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(705, 260)
+        Me.DataGridView1.ReadOnly = True
+        Me.DataGridView1.Size = New System.Drawing.Size(705, 221)
         Me.DataGridView1.TabIndex = 1
         '
         'Button1
@@ -88,14 +95,14 @@ Partial Class GestorUsuarios
         '
         'TextBox1
         '
-        Me.TextBox1.Location = New System.Drawing.Point(92, 458)
+        Me.TextBox1.Location = New System.Drawing.Point(92, 426)
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.Size = New System.Drawing.Size(144, 20)
         Me.TextBox1.TabIndex = 4
         '
         'TextBox2
         '
-        Me.TextBox2.Location = New System.Drawing.Point(92, 518)
+        Me.TextBox2.Location = New System.Drawing.Point(92, 486)
         Me.TextBox2.Name = "TextBox2"
         Me.TextBox2.Size = New System.Drawing.Size(144, 20)
         Me.TextBox2.TabIndex = 5
@@ -144,7 +151,7 @@ Partial Class GestorUsuarios
         '
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 17.0!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.Location = New System.Drawing.Point(87, 394)
+        Me.Label8.Location = New System.Drawing.Point(87, 362)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(329, 29)
         Me.Label8.TabIndex = 13
@@ -152,7 +159,7 @@ Partial Class GestorUsuarios
         '
         'TextBox4
         '
-        Me.TextBox4.Location = New System.Drawing.Point(92, 581)
+        Me.TextBox4.Location = New System.Drawing.Point(92, 549)
         Me.TextBox4.Name = "TextBox4"
         Me.TextBox4.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
         Me.TextBox4.Size = New System.Drawing.Size(144, 20)
@@ -174,9 +181,9 @@ Partial Class GestorUsuarios
         '
         Me.Button9.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Button9.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button9.Location = New System.Drawing.Point(482, 391)
+        Me.Button9.Location = New System.Drawing.Point(482, 359)
         Me.Button9.Name = "Button9"
-        Me.Button9.Size = New System.Drawing.Size(225, 40)
+        Me.Button9.Size = New System.Drawing.Size(268, 40)
         Me.Button9.TabIndex = 22
         Me.Button9.Text = "Eliminar filtros"
         Me.Button9.UseVisualStyleBackColor = True
@@ -184,7 +191,7 @@ Partial Class GestorUsuarios
         'Button10
         '
         Me.Button10.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Button10.Location = New System.Drawing.Point(267, 435)
+        Me.Button10.Location = New System.Drawing.Point(267, 403)
         Me.Button10.Name = "Button10"
         Me.Button10.Size = New System.Drawing.Size(121, 77)
         Me.Button10.TabIndex = 23
@@ -195,7 +202,7 @@ Partial Class GestorUsuarios
         '
         Me.CheckBox1.AutoSize = True
         Me.CheckBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CheckBox1.Location = New System.Drawing.Point(92, 435)
+        Me.CheckBox1.Location = New System.Drawing.Point(92, 403)
         Me.CheckBox1.Name = "CheckBox1"
         Me.CheckBox1.Size = New System.Drawing.Size(74, 19)
         Me.CheckBox1.TabIndex = 24
@@ -206,7 +213,7 @@ Partial Class GestorUsuarios
         '
         Me.CheckBox2.AutoSize = True
         Me.CheckBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CheckBox2.Location = New System.Drawing.Point(92, 495)
+        Me.CheckBox2.Location = New System.Drawing.Point(92, 463)
         Me.CheckBox2.Name = "CheckBox2"
         Me.CheckBox2.Size = New System.Drawing.Size(73, 19)
         Me.CheckBox2.TabIndex = 25
@@ -217,7 +224,7 @@ Partial Class GestorUsuarios
         '
         Me.CheckBox3.AutoSize = True
         Me.CheckBox3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CheckBox3.Location = New System.Drawing.Point(92, 556)
+        Me.CheckBox3.Location = New System.Drawing.Point(92, 524)
         Me.CheckBox3.Name = "CheckBox3"
         Me.CheckBox3.Size = New System.Drawing.Size(144, 19)
         Me.CheckBox3.TabIndex = 26
@@ -227,7 +234,7 @@ Partial Class GestorUsuarios
         'Button11
         '
         Me.Button11.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Button11.Location = New System.Drawing.Point(722, 614)
+        Me.Button11.Location = New System.Drawing.Point(722, 612)
         Me.Button11.Name = "Button11"
         Me.Button11.Size = New System.Drawing.Size(75, 23)
         Me.Button11.TabIndex = 27
@@ -237,7 +244,7 @@ Partial Class GestorUsuarios
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(468, 435)
+        Me.Label2.Location = New System.Drawing.Point(468, 403)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(29, 13)
         Me.Label2.TabIndex = 29
@@ -246,7 +253,7 @@ Partial Class GestorUsuarios
         'Button2
         '
         Me.Button2.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Button2.Location = New System.Drawing.Point(617, 446)
+        Me.Button2.Location = New System.Drawing.Point(617, 414)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(180, 25)
         Me.Button2.TabIndex = 30
@@ -256,7 +263,7 @@ Partial Class GestorUsuarios
         'Button3
         '
         Me.Button3.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Button3.Location = New System.Drawing.Point(267, 523)
+        Me.Button3.Location = New System.Drawing.Point(267, 491)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(121, 78)
         Me.Button3.TabIndex = 31
@@ -266,7 +273,7 @@ Partial Class GestorUsuarios
         'Button4
         '
         Me.Button4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button4.Location = New System.Drawing.Point(617, 504)
+        Me.Button4.Location = New System.Drawing.Point(617, 472)
         Me.Button4.Name = "Button4"
         Me.Button4.Size = New System.Drawing.Size(180, 25)
         Me.Button4.TabIndex = 41
@@ -277,7 +284,7 @@ Partial Class GestorUsuarios
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(468, 484)
+        Me.Label3.Location = New System.Drawing.Point(468, 452)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(116, 15)
         Me.Label3.TabIndex = 42
@@ -285,7 +292,7 @@ Partial Class GestorUsuarios
         '
         'Button5
         '
-        Me.Button5.Location = New System.Drawing.Point(655, 559)
+        Me.Button5.Location = New System.Drawing.Point(655, 545)
         Me.Button5.Name = "Button5"
         Me.Button5.Size = New System.Drawing.Size(142, 25)
         Me.Button5.TabIndex = 43
@@ -294,7 +301,7 @@ Partial Class GestorUsuarios
         '
         'Button6
         '
-        Me.Button6.Location = New System.Drawing.Point(617, 588)
+        Me.Button6.Location = New System.Drawing.Point(617, 574)
         Me.Button6.Name = "Button6"
         Me.Button6.Size = New System.Drawing.Size(180, 23)
         Me.Button6.TabIndex = 44
@@ -303,7 +310,7 @@ Partial Class GestorUsuarios
         '
         'TextBox6
         '
-        Me.TextBox6.Location = New System.Drawing.Point(471, 562)
+        Me.TextBox6.Location = New System.Drawing.Point(471, 548)
         Me.TextBox6.Name = "TextBox6"
         Me.TextBox6.Size = New System.Drawing.Size(137, 20)
         Me.TextBox6.TabIndex = 45
@@ -312,7 +319,7 @@ Partial Class GestorUsuarios
         '
         Me.Label9.AutoSize = True
         Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.Location = New System.Drawing.Point(468, 544)
+        Me.Label9.Location = New System.Drawing.Point(468, 530)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(73, 15)
         Me.Label9.TabIndex = 46
@@ -321,16 +328,79 @@ Partial Class GestorUsuarios
         'ComboBox1
         '
         Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(471, 451)
+        Me.ComboBox1.Location = New System.Drawing.Point(471, 419)
         Me.ComboBox1.Name = "ComboBox1"
         Me.ComboBox1.Size = New System.Drawing.Size(137, 21)
         Me.ComboBox1.TabIndex = 47
         Me.ComboBox1.Text = "Sin filtro"
         '
+        'ComboBox2
+        '
+        Me.ComboBox2.FormattingEnabled = True
+        Me.ComboBox2.Location = New System.Drawing.Point(471, 476)
+        Me.ComboBox2.Name = "ComboBox2"
+        Me.ComboBox2.Size = New System.Drawing.Size(137, 21)
+        Me.ComboBox2.TabIndex = 49
+        Me.ComboBox2.Text = "Sin filtro"
+        '
+        'Button13
+        '
+        Me.Button13.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button13.Location = New System.Drawing.Point(617, 502)
+        Me.Button13.Name = "Button13"
+        Me.Button13.Size = New System.Drawing.Size(180, 25)
+        Me.Button13.TabIndex = 50
+        Me.Button13.Text = "Modificar nombre de usuario"
+        Me.Button13.UseVisualStyleBackColor = True
+        '
+        'TextBox3
+        '
+        Me.TextBox3.Location = New System.Drawing.Point(471, 507)
+        Me.TextBox3.Name = "TextBox3"
+        Me.TextBox3.Size = New System.Drawing.Size(137, 20)
+        Me.TextBox3.TabIndex = 51
+        '
+        'Button14
+        '
+        Me.Button14.Location = New System.Drawing.Point(90, 612)
+        Me.Button14.Name = "Button14"
+        Me.Button14.Size = New System.Drawing.Size(146, 23)
+        Me.Button14.TabIndex = 52
+        Me.Button14.Text = "Dar permisos"
+        Me.Button14.UseVisualStyleBackColor = True
+        '
+        'Button15
+        '
+        Me.Button15.Location = New System.Drawing.Point(267, 612)
+        Me.Button15.Name = "Button15"
+        Me.Button15.Size = New System.Drawing.Size(121, 23)
+        Me.Button15.TabIndex = 53
+        Me.Button15.Text = "Quitar permisos"
+        Me.Button15.UseVisualStyleBackColor = True
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label10.Location = New System.Drawing.Point(87, 582)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(158, 15)
+        Me.Label10.TabIndex = 54
+        Me.Label10.Text = "Permisos de administrador:"
+        '
+        'Button16
+        '
+        Me.Button16.Image = Global.RetoLajsForms.My.Resources.Resources.refrescar
+        Me.Button16.Location = New System.Drawing.Point(756, 360)
+        Me.Button16.Name = "Button16"
+        Me.Button16.Size = New System.Drawing.Size(41, 37)
+        Me.Button16.TabIndex = 55
+        Me.Button16.UseVisualStyleBackColor = True
+        '
         'Button12
         '
         Me.Button12.Image = Global.RetoLajsForms.My.Resources.Resources.ojo
-        Me.Button12.Location = New System.Drawing.Point(617, 559)
+        Me.Button12.Location = New System.Drawing.Point(617, 545)
         Me.Button12.Name = "Button12"
         Me.Button12.Size = New System.Drawing.Size(32, 23)
         Me.Button12.TabIndex = 48
@@ -339,20 +409,11 @@ Partial Class GestorUsuarios
         'Button7
         '
         Me.Button7.Image = CType(resources.GetObject("Button7.Image"), System.Drawing.Image)
-        Me.Button7.Location = New System.Drawing.Point(422, 387)
+        Me.Button7.Location = New System.Drawing.Point(422, 355)
         Me.Button7.Name = "Button7"
         Me.Button7.Size = New System.Drawing.Size(40, 42)
         Me.Button7.TabIndex = 39
         Me.Button7.UseVisualStyleBackColor = True
-        '
-        'ComboBox2
-        '
-        Me.ComboBox2.FormattingEnabled = True
-        Me.ComboBox2.Location = New System.Drawing.Point(471, 508)
-        Me.ComboBox2.Name = "ComboBox2"
-        Me.ComboBox2.Size = New System.Drawing.Size(137, 21)
-        Me.ComboBox2.TabIndex = 49
-        Me.ComboBox2.Text = "Sin filtro"
         '
         'GestorUsuarios
         '
@@ -361,6 +422,12 @@ Partial Class GestorUsuarios
         Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(884, 661)
+        Me.Controls.Add(Me.Button16)
+        Me.Controls.Add(Me.Label10)
+        Me.Controls.Add(Me.Button15)
+        Me.Controls.Add(Me.Button14)
+        Me.Controls.Add(Me.TextBox3)
+        Me.Controls.Add(Me.Button13)
         Me.Controls.Add(Me.ComboBox2)
         Me.Controls.Add(Me.Button12)
         Me.Controls.Add(Me.ComboBox1)
@@ -434,4 +501,10 @@ Partial Class GestorUsuarios
     Friend WithEvents ComboBox1 As ComboBox
     Friend WithEvents Button12 As Button
     Friend WithEvents ComboBox2 As ComboBox
+    Friend WithEvents Button13 As Button
+    Friend WithEvents TextBox3 As TextBox
+    Friend WithEvents Button14 As Button
+    Friend WithEvents Button15 As Button
+    Friend WithEvents Label10 As Label
+    Friend WithEvents Button16 As Button
 End Class

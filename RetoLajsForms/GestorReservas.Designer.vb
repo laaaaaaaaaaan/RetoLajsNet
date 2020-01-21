@@ -48,6 +48,7 @@ Partial Class GestorReservas
         Me.Button4 = New System.Windows.Forms.Button()
         Me.Button5 = New System.Windows.Forms.Button()
         Me.Button7 = New System.Windows.Forms.Button()
+        Me.Button16 = New System.Windows.Forms.Button()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -55,9 +56,9 @@ Partial Class GestorReservas
         '
         Me.Button1.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.Location = New System.Drawing.Point(461, 461)
+        Me.Button1.Location = New System.Drawing.Point(453, 461)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(160, 40)
+        Me.Button1.Size = New System.Drawing.Size(122, 37)
         Me.Button1.TabIndex = 5
         Me.Button1.Text = "Eliminar filtros"
         Me.Button1.UseVisualStyleBackColor = True
@@ -67,6 +68,7 @@ Partial Class GestorReservas
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.Location = New System.Drawing.Point(71, 188)
         Me.DataGridView1.Name = "DataGridView1"
+        Me.DataGridView1.ReadOnly = True
         Me.DataGridView1.Size = New System.Drawing.Size(548, 250)
         Me.DataGridView1.TabIndex = 4
         '
@@ -296,11 +298,20 @@ Partial Class GestorReservas
         '
         Me.Button7.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Button7.Image = CType(resources.GetObject("Button7.Image"), System.Drawing.Image)
-        Me.Button7.Location = New System.Drawing.Point(415, 459)
+        Me.Button7.Location = New System.Drawing.Point(407, 459)
         Me.Button7.Name = "Button7"
         Me.Button7.Size = New System.Drawing.Size(40, 42)
         Me.Button7.TabIndex = 40
         Me.Button7.UseVisualStyleBackColor = True
+        '
+        'Button16
+        '
+        Me.Button16.Image = Global.RetoLajsForms.My.Resources.Resources.refrescar
+        Me.Button16.Location = New System.Drawing.Point(578, 461)
+        Me.Button16.Name = "Button16"
+        Me.Button16.Size = New System.Drawing.Size(41, 37)
+        Me.Button16.TabIndex = 56
+        Me.Button16.UseVisualStyleBackColor = True
         '
         'GestorReservas
         '
@@ -309,6 +320,7 @@ Partial Class GestorReservas
         Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(684, 621)
+        Me.Controls.Add(Me.Button16)
         Me.Controls.Add(Me.Button7)
         Me.Controls.Add(Me.Button5)
         Me.Controls.Add(Me.Button4)
@@ -370,4 +382,5 @@ Partial Class GestorReservas
     Friend WithEvents Button4 As Button
     Friend WithEvents Button5 As Button
     Friend WithEvents Button7 As Button
+    Friend WithEvents Button16 As Button
 End Class

@@ -166,6 +166,10 @@ Public Class GestorReservas
         llamodatos()
     End Sub
 
+    Private Sub Button16_Click(sender As Object, e As EventArgs) Handles Button16.Click
+        llamodatos()
+    End Sub
+
     Protected Sub limpiarCampos()
         Label5.Text = ""
         Label10.Text = ""
@@ -187,4 +191,5 @@ Public Class GestorReservas
     Private Sub GestorReservas_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
         Login.Close()
     End Sub
+
 End Class

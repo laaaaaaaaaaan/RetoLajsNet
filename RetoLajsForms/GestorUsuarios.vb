@@ -49,6 +49,8 @@ Public Class GestorUsuarios
         End Try
     End Sub
 
+    'Filtrar'
+
     Protected Sub filtrarDNI()
         If ComboBox1.Text = "Sin filtro" Then
             llamodatos()
@@ -81,7 +83,7 @@ Public Class GestorUsuarios
 
     Protected Sub filtrarNombre()
         Try
-            Dim da As New MySqlDataAdapter("select * from usuario where username='" & TextBox1.Text & "' ", conexion.MysqlConnString)
+            Dim da As New MySqlDataAdapter("select * from usuario where nombre='" & TextBox1.Text & "' ", conexion.MysqlConnString)
             Dim DT As New DataTable
             da.Fill(DT)
             DataGridView1.DataSource = DT
@@ -155,6 +157,8 @@ Public Class GestorUsuarios
             MsgBox("No se logro realizar la consulta por: " & ex.Message, MsgBoxStyle.Critical,)
         End Try
     End Sub
+
+    'Modificar'
 
     Protected Sub modificarNombre()
         Try
@@ -244,6 +248,39 @@ Public Class GestorUsuarios
         End Try
     End Sub
 
+    Protected Sub modificarNombreUsuario()
+        Try
+            Dim da As New MySqlDataAdapter("UPDATE usuario SET username='" & TextBox3.Text & "' WHERE idUsr='" & valorBorrar & "'", conexion.MysqlConnString)
+            Dim DT As New DataTable
+            da.Fill(DT)
+            DataGridView1.DataSource = DT
+        Catch ex As Exception
+            MsgBox("No se logro realizar la consulta por: " & ex.Message, MsgBoxStyle.Critical,)
+        End Try
+    End Sub
+
+    Protected Sub darPermisos()
+        Try
+            Dim da As New MySqlDataAdapter("UPDATE usuario SET admin='1' WHERE idUsr='" & valorBorrar & "'", conexion.MysqlConnString)
+            Dim DT As New DataTable
+            da.Fill(DT)
+            DataGridView1.DataSource = DT
+        Catch ex As Exception
+            MsgBox("No se logro realizar la consulta por: " & ex.Message, MsgBoxStyle.Critical,)
+        End Try
+    End Sub
+
+    Protected Sub quitarPermisos()
+        Try
+            Dim da As New MySqlDataAdapter("UPDATE usuario SET admin= 0 WHERE idUsr='" & valorBorrar & "'", conexion.MysqlConnString)
+            Dim DT As New DataTable
+            da.Fill(DT)
+            DataGridView1.DataSource = DT
+        Catch ex As Exception
+            MsgBox("No se logro realizar la consulta por: " & ex.Message, MsgBoxStyle.Critical,)
+        End Try
+    End Sub
+
     Protected Sub resetearContra()
         Try
             Dim da As New MySqlDataAdapter("UPDATE usuario SET password='" & GetHash(123) & "' WHERE idUsr='" & valorBorrar & "'", conexion.MysqlConnString)
@@ -293,7 +330,30 @@ Public Class GestorUsuarios
         Me.Hide()
     End Sub
 
+    Private Sub Button7_Click(sender As Object, e As EventArgs) Handles Button7.Click
+        generarInforme()
+    End Sub
+
     Private Sub Button9_Click(sender As Object, e As EventArgs) Handles Button9.Click
+        llamodatos()
+    End Sub
+
+    Private Sub Button16_Click(sender As Object, e As EventArgs) Handles Button16.Click
+        llamodatos()
+    End Sub
+
+    Private Sub Button13_Click(sender As Object, e As EventArgs) Handles Button13.Click
+        modificarNombreUsuario()
+        llamodatos()
+    End Sub
+
+    Private Sub Button14_Click(sender As Object, e As EventArgs) Handles Button14.Click
+        darPermisos()
+        llamodatos()
+    End Sub
+
+    Private Sub Button15_Click(sender As Object, e As EventArgs) Handles Button15.Click
+        quitarPermisos()
         llamodatos()
     End Sub
 
@@ -391,10 +451,6 @@ Public Class GestorUsuarios
         limpiarCampos()
     End Sub
 
-    Private Sub Button7_Click(sender As Object, e As EventArgs) Handles Button7.Click
-        generarInforme()
-    End Sub
-
     Shared Function GetHash(theInput As String) As String
         Using hasher As MD5 = MD5.Create()
 
@@ -433,6 +489,7 @@ Public Class GestorUsuarios
         TextBox1.Text = ""
         TextBox2.Text = ""
         TextBox4.Text = ""
+        TextBox3.Text = ""
         TextBox6.Text = ""
         ComboBox1.Text = "Sin filtro"
         ComboBox2.Text = "Sin filtro"
@@ -453,4 +510,5 @@ Public Class GestorUsuarios
     Private Sub GestorUsuarios_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
         Login.Close()
     End Sub
+
 End Class

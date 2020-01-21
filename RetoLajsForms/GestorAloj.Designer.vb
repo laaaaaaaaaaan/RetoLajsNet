@@ -52,8 +52,9 @@ Partial Class GestorAloj
         Me.CheckBox2 = New System.Windows.Forms.CheckBox()
         Me.CheckBox3 = New System.Windows.Forms.CheckBox()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.Button2 = New System.Windows.Forms.Button()
         Me.Button3 = New System.Windows.Forms.Button()
+        Me.Button2 = New System.Windows.Forms.Button()
+        Me.Button16 = New System.Windows.Forms.Button()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -70,9 +71,9 @@ Partial Class GestorAloj
         '
         Me.Button1.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.Location = New System.Drawing.Point(464, 486)
+        Me.Button1.Location = New System.Drawing.Point(464, 490)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(172, 43)
+        Me.Button1.Size = New System.Drawing.Size(272, 36)
         Me.Button1.TabIndex = 4
         Me.Button1.Text = "Eliminar filtros"
         Me.Button1.UseVisualStyleBackColor = True
@@ -82,6 +83,7 @@ Partial Class GestorAloj
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.Location = New System.Drawing.Point(78, 204)
         Me.DataGridView1.Name = "DataGridView1"
+        Me.DataGridView1.ReadOnly = True
         Me.DataGridView1.Size = New System.Drawing.Size(705, 269)
         Me.DataGridView1.TabIndex = 3
         '
@@ -351,15 +353,6 @@ Partial Class GestorAloj
         Me.Label2.TabIndex = 37
         Me.Label2.Text = "FILTROS/MODIFICACIONES"
         '
-        'Button2
-        '
-        Me.Button2.Image = CType(resources.GetObject("Button2.Image"), System.Drawing.Image)
-        Me.Button2.Location = New System.Drawing.Point(407, 487)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(40, 42)
-        Me.Button2.TabIndex = 38
-        Me.Button2.UseVisualStyleBackColor = True
-        '
         'Button3
         '
         Me.Button3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -370,6 +363,24 @@ Partial Class GestorAloj
         Me.Button3.Text = "Modificar los campos seleccionados"
         Me.Button3.UseVisualStyleBackColor = True
         '
+        'Button2
+        '
+        Me.Button2.Image = CType(resources.GetObject("Button2.Image"), System.Drawing.Image)
+        Me.Button2.Location = New System.Drawing.Point(407, 487)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(40, 42)
+        Me.Button2.TabIndex = 38
+        Me.Button2.UseVisualStyleBackColor = True
+        '
+        'Button16
+        '
+        Me.Button16.Image = Global.RetoLajsForms.My.Resources.Resources.refrescar
+        Me.Button16.Location = New System.Drawing.Point(742, 490)
+        Me.Button16.Name = "Button16"
+        Me.Button16.Size = New System.Drawing.Size(41, 37)
+        Me.Button16.TabIndex = 56
+        Me.Button16.UseVisualStyleBackColor = True
+        '
         'GestorAloj
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -377,6 +388,7 @@ Partial Class GestorAloj
         Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(849, 641)
+        Me.Controls.Add(Me.Button16)
         Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Label2)
@@ -450,4 +462,5 @@ Partial Class GestorAloj
     Friend WithEvents Label2 As Label
     Friend WithEvents Button2 As Button
     Friend WithEvents Button3 As Button
+    Friend WithEvents Button16 As Button
 End Class

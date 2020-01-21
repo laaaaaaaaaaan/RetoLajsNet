@@ -82,13 +82,11 @@ Public Class NuevoCliente
                             Dim asd As String = "INSERT INTO `usuario`(`idUsr`, `admin`, `apellidos`, `dni`, `fechaNac`, `nombre`, `password`, `username`) VALUES ('" & idMax & "','" & False & "','" & TextBox2.Text & "','" & TextBox6.Text & "','" & DateTimePicker1.Text & "','" & TextBox1.Text & "','" & GetHash(TextBox4.Text) & "','" & TextBox3.Text & "')"
                             Dim we As MySqlCommand = New MySqlCommand(asd, conexion.MysqlConexion)
                             we.ExecuteNonQuery()
-                            MsgBox("Usuario insertado exitosamente")
                             seguir = False
-                            conexion.MysqlConexion.Close()
+                            MsgBox("¡Usuario administrador creado con éxito!")
                         Catch ex As Exception
                             MsgBox(ex.ToString)
                         End Try
-                        MsgBox("¡Usuario administrador creado con éxito!")
                     Else
                         MsgBox("Error al insertar usuario en la base de datos")
                     End If

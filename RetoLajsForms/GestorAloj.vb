@@ -10,6 +10,17 @@ Public Class GestorAloj
         llamodatos()
     End Sub
 
+    Protected Sub llamodatos()
+        Try
+            Dim da As New MySqlDataAdapter("select * from alojamiento", conexion.MysqlConnString)
+            Dim DT As New DataTable
+            da.Fill(DT)
+            DataGridView1.DataSource = DT
+        Catch ex As Exception
+            MsgBox("No se logro realizar la consulta por: " & ex.Message, MsgBoxStyle.Critical,)
+        End Try
+    End Sub
+
     Public Sub RellenarComboBox()
         Try
             Dim da As New MySqlDataAdapter("select distinct tipo from alojamiento", conexion.MysqlConnString)
@@ -31,34 +42,11 @@ Public Class GestorAloj
         End Try
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        Try
-            conexion.MysqlConexion.Open()
-            llamodatos()
-            ComboBox1.Text = "Sin Filtro"
-            ComboBox2.Text = "Sin Filtro"
-            TextBox1.Text = ""
-            conexion.MysqlConexion.Close()
-        Catch ex As Exception
-            MsgBox("La conexión no fue exitosa")
-        End Try
-    End Sub
-
-    Protected Sub llamodatos()
-        Try
-            Dim da As New MySqlDataAdapter("select * from alojamiento", conexion.MysqlConnString)
-            Dim DT As New DataTable
-            da.Fill(DT)
-            DataGridView1.DataSource = DT
-        Catch ex As Exception
-            MsgBox("No se logro realizar la consulta por: " & ex.Message, MsgBoxStyle.Critical,)
-        End Try
-    End Sub
+    'Filtrar'
 
     Protected Sub filtrarLocalidad()
         Try
             Dim da As New MySqlDataAdapter("select * from alojamiento where localidad='" & ComboBox2.Text & "' ", conexion.MysqlConnString)
-            MsgBox("select * from alojamiento where localidad='" & ComboBox2.Text & "' ")
             Dim DT As New DataTable
             da.Fill(DT)
             DataGridView1.DataSource = DT
@@ -70,7 +58,6 @@ Public Class GestorAloj
     Protected Sub filtrarTipoAlojamiento()
         Try
             Dim da As New MySqlDataAdapter("select * from alojamiento where tipo='" & ComboBox1.Text & "' ", conexion.MysqlConnString)
-            MsgBox("select * from alojamiento where tipo='" & ComboBox1.Text & "' ")
             Dim DT As New DataTable
             da.Fill(DT)
             DataGridView1.DataSource = DT
@@ -134,7 +121,7 @@ Public Class GestorAloj
         End Try
     End Sub
 
-    'zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz'
+    'Modificar'
 
     Protected Sub modificarLocalidad()
         Try
@@ -214,7 +201,24 @@ Public Class GestorAloj
         End Try
     End Sub
 
-    'zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz'
+    'Botones'
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        Try
+            conexion.MysqlConexion.Open()
+            llamodatos()
+            ComboBox1.Text = "Sin Filtro"
+            ComboBox2.Text = "Sin Filtro"
+            TextBox1.Text = ""
+            conexion.MysqlConexion.Close()
+        Catch ex As Exception
+            MsgBox("La conexión no fue exitosa")
+        End Try
+    End Sub
+
+    Private Sub Button16_Click(sender As Object, e As EventArgs) Handles Button16.Click
+        llamodatos()
+    End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         generarInforme()
@@ -373,6 +377,5 @@ Public Class GestorAloj
     Private Sub GestorAloj_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
         Login.Close()
     End Sub
-
 
 End Class
