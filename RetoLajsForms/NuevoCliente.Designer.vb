@@ -104,9 +104,9 @@ Partial Class NuevoCliente
         'Button1
         '
         Me.Button1.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Button1.Location = New System.Drawing.Point(48, 462)
+        Me.Button1.Location = New System.Drawing.Point(48, 442)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(134, 37)
+        Me.Button1.Size = New System.Drawing.Size(135, 40)
         Me.Button1.TabIndex = 8
         Me.Button1.Text = "Cancelar"
         Me.Button1.UseVisualStyleBackColor = True
@@ -114,9 +114,9 @@ Partial Class NuevoCliente
         'Button2
         '
         Me.Button2.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Button2.Location = New System.Drawing.Point(303, 462)
+        Me.Button2.Location = New System.Drawing.Point(301, 442)
         Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(133, 37)
+        Me.Button2.Size = New System.Drawing.Size(135, 40)
         Me.Button2.TabIndex = 9
         Me.Button2.Text = "Crear"
         Me.Button2.UseVisualStyleBackColor = True
@@ -159,10 +159,10 @@ Partial Class NuevoCliente
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label7.Location = New System.Drawing.Point(50, 20)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(115, 17)
+        Me.Label7.Size = New System.Drawing.Size(120, 18)
         Me.Label7.TabIndex = 15
         Me.Label7.Text = "Nuevo Usuario"
         '
@@ -170,7 +170,7 @@ Partial Class NuevoCliente
         '
         Me.Label9.AutoSize = True
         Me.Label9.ForeColor = System.Drawing.Color.Red
-        Me.Label9.Location = New System.Drawing.Point(69, 409)
+        Me.Label9.Location = New System.Drawing.Point(69, 395)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(356, 13)
         Me.Label9.TabIndex = 18
@@ -206,7 +206,8 @@ Partial Class NuevoCliente
         '
         Me.DateTimePicker1.CustomFormat = "yyyy-MM-dd"
         Me.DateTimePicker1.Location = New System.Drawing.Point(236, 295)
-        Me.DateTimePicker1.MaxDate = New Date(2002, 12, 18, 0, 0, 0, 0)
+        Me.DateTimePicker1.MaxDate = New Date(2002, 12, 31, 0, 0, 0, 0)
+        Me.DateTimePicker1.MinDate = New Date(1900, 1, 1, 0, 0, 0, 0)
         Me.DateTimePicker1.Name = "DateTimePicker1"
         Me.DateTimePicker1.Size = New System.Drawing.Size(200, 20)
         Me.DateTimePicker1.TabIndex = 24
@@ -228,7 +229,7 @@ Partial Class NuevoCliente
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.ClientSize = New System.Drawing.Size(504, 534)
+        Me.ClientSize = New System.Drawing.Size(504, 501)
         Me.Controls.Add(Me.Label12)
         Me.Controls.Add(Me.DateTimePicker1)
         Me.Controls.Add(Me.Label10)

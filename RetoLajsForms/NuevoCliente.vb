@@ -10,8 +10,6 @@ Public Class NuevoCliente
         TextBox4.PasswordChar = "*"
         TextBox5.PasswordChar = "*"
         sacarIdMax()
-        DateTimePicker1.MinDate = New DateTime(1900, 1, 20)
-        DateTimePicker1.MaxDate = New DateTime(2002, 12, 31)
     End Sub
 
     Protected Sub sacarIdMax()

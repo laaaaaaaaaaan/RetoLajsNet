@@ -52,7 +52,7 @@ Partial Class Login
         Me.Loging.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Loging.Location = New System.Drawing.Point(51, 189)
         Me.Loging.Name = "Loging"
-        Me.Loging.Size = New System.Drawing.Size(257, 27)
+        Me.Loging.Size = New System.Drawing.Size(260, 30)
         Me.Loging.TabIndex = 5
         Me.Loging.Text = "Login"
         Me.Loging.UseVisualStyleBackColor = True
@@ -80,10 +80,11 @@ Partial Class Login
         'Label3
         '
         Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.Red
         Me.Label3.Location = New System.Drawing.Point(96, 155)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(156, 13)
+        Me.Label3.Size = New System.Drawing.Size(178, 15)
         Me.Label3.TabIndex = 8
         Me.Label3.Text = "Datos erróneos pruebe otra vez"
         Me.Label3.Visible = False
@@ -105,7 +106,7 @@ Partial Class Login
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(369, 264)
+        Me.ClientSize = New System.Drawing.Size(369, 261)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)

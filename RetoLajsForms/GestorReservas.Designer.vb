@@ -68,10 +68,10 @@ Partial Class GestorReservas
         'DataGridView1
         '
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(74, 200)
+        Me.DataGridView1.Location = New System.Drawing.Point(71, 200)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.ReadOnly = True
-        Me.DataGridView1.Size = New System.Drawing.Size(548, 250)
+        Me.DataGridView1.Size = New System.Drawing.Size(550, 250)
         Me.DataGridView1.TabIndex = 4
         '
         'Label1
@@ -257,9 +257,9 @@ Partial Class GestorReservas
         'Button3
         '
         Me.Button3.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Button3.Location = New System.Drawing.Point(547, 578)
+        Me.Button3.Location = New System.Drawing.Point(537, 577)
         Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(75, 23)
+        Me.Button3.Size = New System.Drawing.Size(85, 25)
         Me.Button3.TabIndex = 35
         Me.Button3.Text = "Atras"
         Me.Button3.UseVisualStyleBackColor = True
@@ -327,9 +327,9 @@ Partial Class GestorReservas
         '
         Me.Button6.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Button6.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button6.Location = New System.Drawing.Point(498, 11)
+        Me.Button6.Location = New System.Drawing.Point(500, 11)
         Me.Button6.Name = "Button6"
-        Me.Button6.Size = New System.Drawing.Size(121, 41)
+        Me.Button6.Size = New System.Drawing.Size(120, 40)
         Me.Button6.TabIndex = 57
         Me.Button6.Text = "Cerrar sesión"
         Me.Button6.UseVisualStyleBackColor = True

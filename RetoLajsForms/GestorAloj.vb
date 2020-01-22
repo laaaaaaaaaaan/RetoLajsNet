@@ -44,6 +44,17 @@ Public Class GestorAloj
 
     'Filtrar'
 
+    Protected Sub filtrarNombre()
+        Try
+            Dim da As New MySqlDataAdapter("select * from alojamiento where nombre='" & TextBox2.Text & "' ", conexion.MysqlConnString)
+            Dim DT As New DataTable
+            da.Fill(DT)
+            DataGridView1.DataSource = DT
+        Catch ex As Exception
+            MsgBox("No se logro realizar la consulta por: " & ex.Message, MsgBoxStyle.Critical,)
+        End Try
+    End Sub
+
     Protected Sub filtrarLocalidad()
         Try
             Dim da As New MySqlDataAdapter("select * from alojamiento where localidad='" & ComboBox2.Text & "' ", conexion.MysqlConnString)
@@ -112,7 +123,7 @@ Public Class GestorAloj
 
     Protected Sub filtrarLocalidadYCapacidadYTipo()
         Try
-            Dim da As New MySqlDataAdapter("select * from alojamiento where localidad='" & ComboBox2.Text & "'  AND tipo='" & ComboBox1.Text & "' AND capacidad >='" & TextBox1.Text & "' ", conexion.MysqlConnString)
+            Dim da As New MySqlDataAdapter("select * from alojamiento where localidad='" & ComboBox2.Text & "' AND tipo='" & ComboBox1.Text & "' AND capacidad >='" & TextBox1.Text & "' ", conexion.MysqlConnString)
             Dim DT As New DataTable
             da.Fill(DT)
             DataGridView1.DataSource = DT
@@ -122,6 +133,16 @@ Public Class GestorAloj
     End Sub
 
     'Modificar'
+    Protected Sub modificarNombre()
+        Try
+            Dim da As New MySqlDataAdapter("UPDATE alojamiento SET nombre='" & TextBox2.Text & "' WHERE idAloj='" & valorBorrar & "'", conexion.MysqlConnString)
+            Dim DT As New DataTable
+            da.Fill(DT)
+            DataGridView1.DataSource = DT
+        Catch ex As Exception
+            MsgBox("No se logro realizar la consulta por: " & ex.Message, MsgBoxStyle.Critical,)
+        End Try
+    End Sub
 
     Protected Sub modificarLocalidad()
         Try
@@ -210,6 +231,7 @@ Public Class GestorAloj
             ComboBox1.Text = "Sin Filtro"
             ComboBox2.Text = "Sin Filtro"
             TextBox1.Text = ""
+            limpiarCampos()
             conexion.MysqlConexion.Close()
         Catch ex As Exception
             MsgBox("La conexión no fue exitosa")
@@ -278,7 +300,7 @@ Public Class GestorAloj
         If (ComboBox1.Text = "Sin filtro" Or ComboBox1.Text = " ") Then
             CheckBox2.CheckState = CheckState.Unchecked
         End If
-        If (TextBox1.Text = "") Then
+        If (TextBox1.Text = "" Or Not IsNumeric(TextBox1)) Then
             CheckBox3.CheckState = CheckState.Unchecked
         End If
 
@@ -308,6 +330,10 @@ Public Class GestorAloj
         llamodatos()
     End Sub
 
+    Private Sub Button8_Click(sender As Object, e As EventArgs) Handles Button8.Click
+        filtrarNombre()
+    End Sub
+
     Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
         Try
             Dim da As New MySqlDataAdapter("delete from alojamiento where idAloj='" & valorBorrar & "' ", conexion.MysqlConnString)
@@ -319,6 +345,12 @@ Public Class GestorAloj
         Catch ex As Exception
             MsgBox("No se logro realizar la consulta por: " & ex.Message, MsgBoxStyle.Critical,)
         End Try
+    End Sub
+
+
+    Private Sub Button9_Click(sender As Object, e As EventArgs) Handles Button9.Click
+        modificarNombre()
+        llamodatos()
     End Sub
 
     Private Sub DataGridView1_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellClick
@@ -363,6 +395,7 @@ Public Class GestorAloj
 
     Protected Sub limpiarCampos()
         TextBox1.Text = ""
+        TextBox2.Text = ""
         ComboBox1.Text = "Sin filtro"
         ComboBox2.Text = "Sin filtro"
 
@@ -377,7 +410,7 @@ Public Class GestorAloj
 
         CheckBox1.CheckState = CheckState.Unchecked
         CheckBox2.CheckState = CheckState.Unchecked
-        CheckBox2.CheckState = CheckState.Unchecked
+        CheckBox3.CheckState = CheckState.Unchecked
     End Sub
 
     Private Sub GestorAloj_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing

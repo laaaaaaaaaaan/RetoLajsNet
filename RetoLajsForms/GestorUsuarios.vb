@@ -105,7 +105,7 @@ Public Class GestorUsuarios
 
     Protected Sub filtrarFecha()
         Try
-            Dim da As New MySqlDataAdapter("select * from usuario where fechanac='" & TextBox4.Text & "' ", conexion.MysqlConnString)
+            Dim da As New MySqlDataAdapter("select * from usuario where fechanac='" & Format(DateTimePicker1.Value, "yyyy-MM-dd") & "' ", conexion.MysqlConnString)
             Dim DT As New DataTable
             da.Fill(DT)
             DataGridView1.DataSource = DT
@@ -127,7 +127,7 @@ Public Class GestorUsuarios
 
     Protected Sub filtrarNombreYFecha()
         Try
-            Dim da As New MySqlDataAdapter("select * from usuario where nombre='" & TextBox1.Text & "' AND fechanac='" & TextBox4.Text & "'", conexion.MysqlConnString)
+            Dim da As New MySqlDataAdapter("select * from usuario where nombre='" & TextBox1.Text & "' AND fechanac='" & Format(DateTimePicker1.Value, "yyyy-MM-dd") & "'", conexion.MysqlConnString)
             Dim DT As New DataTable
             da.Fill(DT)
             DataGridView1.DataSource = DT
@@ -138,7 +138,7 @@ Public Class GestorUsuarios
 
     Protected Sub filtrarApellidoYFecha()
         Try
-            Dim da As New MySqlDataAdapter("select * from usuario where fechanac='" & TextBox4.Text & "'  AND apellidos='" & TextBox2.Text & "'", conexion.MysqlConnString)
+            Dim da As New MySqlDataAdapter("select * from usuario where fechanac='" & Format(DateTimePicker1.Value, "yyyy-MM-dd") & "'  AND apellidos='" & TextBox2.Text & "'", conexion.MysqlConnString)
             Dim DT As New DataTable
             da.Fill(DT)
             DataGridView1.DataSource = DT
@@ -149,7 +149,7 @@ Public Class GestorUsuarios
 
     Protected Sub filtrarNombreYApellidoYFecha()
         Try
-            Dim da As New MySqlDataAdapter("select * from usuario where nombre='" & TextBox1.Text & "' AND fechanac='" & TextBox4.Text & "'  AND apellidos='" & TextBox2.Text & "'", conexion.MysqlConnString)
+            Dim da As New MySqlDataAdapter("select * from usuario where nombre='" & TextBox1.Text & "' AND fechanac='" & Format(DateTimePicker1.Value, "yyyy-MM-dd") & "'  AND apellidos='" & TextBox2.Text & "'", conexion.MysqlConnString)
             Dim DT As New DataTable
             da.Fill(DT)
             DataGridView1.DataSource = DT
@@ -184,7 +184,7 @@ Public Class GestorUsuarios
 
     Protected Sub modificarFecha()
         Try
-            Dim da As New MySqlDataAdapter("UPDATE usuario SET fechanac='" & TextBox4.Text & "' WHERE idUsr='" & valorBorrar & "'", conexion.MysqlConnString)
+            Dim da As New MySqlDataAdapter("UPDATE usuario SET fechanac='" & Format(DateTimePicker1.Value, "yyyy-MM-dd") & "' WHERE idUsr='" & valorBorrar & "'", conexion.MysqlConnString)
             Dim DT As New DataTable
             da.Fill(DT)
             DataGridView1.DataSource = DT
@@ -206,7 +206,7 @@ Public Class GestorUsuarios
 
     Protected Sub modificarNombreYFecha()
         Try
-            Dim da As New MySqlDataAdapter("UPDATE usuario SET nombre='" & TextBox1.Text & "', fechanac='" & TextBox4.Text & "' WHERE idUsr='" & valorBorrar & "'", conexion.MysqlConnString)
+            Dim da As New MySqlDataAdapter("UPDATE usuario SET nombre='" & TextBox1.Text & "', fechanac='" & Format(DateTimePicker1.Value, "yyyy-MM-dd") & "' WHERE idUsr='" & valorBorrar & "'", conexion.MysqlConnString)
             Dim DT As New DataTable
             da.Fill(DT)
             DataGridView1.DataSource = DT
@@ -217,7 +217,7 @@ Public Class GestorUsuarios
 
     Protected Sub modificarApellidoYFecha()
         Try
-            Dim da As New MySqlDataAdapter("UPDATE usuario SET fechanac='" & TextBox4.Text & "', apellidos='" & TextBox2.Text & "' WHERE idUsr='" & valorBorrar & "'", conexion.MysqlConnString)
+            Dim da As New MySqlDataAdapter("UPDATE usuario SET fechanac='" & Format(DateTimePicker1.Value, "yyyy-MM-dd") & "', apellidos='" & TextBox2.Text & "' WHERE idUsr='" & valorBorrar & "'", conexion.MysqlConnString)
             Dim DT As New DataTable
             da.Fill(DT)
             DataGridView1.DataSource = DT
@@ -228,7 +228,7 @@ Public Class GestorUsuarios
 
     Protected Sub modificarNombreYApellidoYFecha()
         Try
-            Dim da As New MySqlDataAdapter("UPDATE usuario SET nombre='" & TextBox1.Text & "', apellidos='" & TextBox2.Text & "', fechanac='" & TextBox4.Text & "' WHERE idUsr='" & valorBorrar & "'", conexion.MysqlConnString)
+            Dim da As New MySqlDataAdapter("UPDATE usuario SET nombre='" & TextBox1.Text & "', apellidos='" & TextBox2.Text & "', fechanac='" & Format(DateTimePicker1.Value, "yyyy-MM-dd") & "' WHERE idUsr='" & valorBorrar & "'", conexion.MysqlConnString)
             Dim DT As New DataTable
             da.Fill(DT)
             DataGridView1.DataSource = DT
@@ -340,6 +340,7 @@ Public Class GestorUsuarios
 
     Private Sub Button9_Click(sender As Object, e As EventArgs) Handles Button9.Click
         llamodatos()
+        limpiarCampos()
     End Sub
 
     Private Sub Button16_Click(sender As Object, e As EventArgs) Handles Button16.Click
@@ -347,7 +348,9 @@ Public Class GestorUsuarios
     End Sub
 
     Private Sub Button13_Click(sender As Object, e As EventArgs) Handles Button13.Click
-        modificarNombreUsuario()
+        If (Not IsNumeric(TextBox3.Text)) Then
+            modificarNombreUsuario()
+        End If
         llamodatos()
     End Sub
 
@@ -367,9 +370,6 @@ Public Class GestorUsuarios
         End If
         If (TextBox2.Text = "") Then
             CheckBox2.CheckState = CheckState.Unchecked
-        End If
-        If (TextBox4.Text = "" Or TextBox4.Text = "yyyy/mm/dd") Then
-            CheckBox3.CheckState = CheckState.Unchecked
         End If
 
         If CheckBox1.Checked Then
@@ -397,14 +397,11 @@ Public Class GestorUsuarios
     End Sub
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
-        If (TextBox1.Text = "") Then
+        If (TextBox1.Text = "" Or IsNumeric(TextBox1.Text)) Then
             CheckBox1.CheckState = CheckState.Unchecked
         End If
-        If (TextBox2.Text = "") Then
+        If (TextBox2.Text = "" Or IsNumeric(TextBox2.Text)) Then
             CheckBox2.CheckState = CheckState.Unchecked
-        End If
-        If (TextBox4.Text = "" Or TextBox4.Text = "yyyy/mm/dd") Then
-            CheckBox3.CheckState = CheckState.Unchecked
         End If
 
         If CheckBox1.Checked Then
@@ -430,7 +427,6 @@ Public Class GestorUsuarios
             modificarFecha()
         End If
         llamodatos()
-        MsgBox("Los campos seleccionados se han modificado con éxito")
     End Sub
 
     Private Sub DataGridView1_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellClick
@@ -438,8 +434,9 @@ Public Class GestorUsuarios
             valorBorrar = DataGridView1.Rows(e.RowIndex).Cells("idUsr").Value.ToString
             Label4.Text = "Nombre: " & DataGridView1.Rows(e.RowIndex).Cells("nombre").Value.ToString
             Label5.Text = "Apellido: " & DataGridView1.Rows(e.RowIndex).Cells("apellidos").Value.ToString
-            Label6.Text = "Fecha de nacimiento: " & DataGridView1.Rows(e.RowIndex).Cells("fechanac").Value.ToString
+            Label6.Text = "Fecha de nacimiento: " & Format(DataGridView1.Rows(e.RowIndex).Cells("fechanac").Value, "yyyy-MM-dd")
             Label7.Text = "ID: " & DataGridView1.Rows(e.RowIndex).Cells("idUsr").Value.ToString
+            Label12.Text = "Usuario: " & DataGridView1.Rows(e.RowIndex).Cells("username").Value.ToString
         Catch ex As Exception
 
         End Try
@@ -492,16 +489,17 @@ Public Class GestorUsuarios
         Label5.Text = "Apellido:"
         Label6.Text = "Fecha de nacimiento:"
         Label7.Text = "ID:"
+        Label12.Text = "Usuario:"
         TextBox1.Text = ""
         TextBox2.Text = ""
-        TextBox4.Text = ""
         TextBox3.Text = ""
         TextBox6.Text = ""
         ComboBox1.Text = "Sin filtro"
         ComboBox2.Text = "Sin filtro"
+        DateTimePicker1.ResetText()
         CheckBox1.CheckState = CheckState.Unchecked
         CheckBox2.CheckState = CheckState.Unchecked
-        CheckBox2.CheckState = CheckState.Unchecked
+        CheckBox3.CheckState = CheckState.Unchecked
     End Sub
 
     Private Sub Button12_Click(sender As Object, e As EventArgs) Handles Button12.Click
