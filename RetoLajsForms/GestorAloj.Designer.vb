@@ -87,10 +87,10 @@ Partial Class GestorAloj
         'DataGridView1
         '
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(69, 204)
+        Me.DataGridView1.Location = New System.Drawing.Point(69, 225)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.ReadOnly = True
-        Me.DataGridView1.Size = New System.Drawing.Size(715, 270)
+        Me.DataGridView1.Size = New System.Drawing.Size(715, 249)
         Me.DataGridView1.TabIndex = 3
         '
         'ComboBox1
@@ -126,7 +126,7 @@ Partial Class GestorAloj
         '
         Me.Button5.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Button5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button5.Location = New System.Drawing.Point(583, 152)
+        Me.Button5.Location = New System.Drawing.Point(584, 179)
         Me.Button5.Name = "Button5"
         Me.Button5.Size = New System.Drawing.Size(200, 40)
         Me.Button5.TabIndex = 13
@@ -167,7 +167,7 @@ Partial Class GestorAloj
         '
         Me.Label9.AutoSize = True
         Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.Location = New System.Drawing.Point(356, 64)
+        Me.Label9.Location = New System.Drawing.Point(424, 64)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(95, 24)
         Me.Label9.TabIndex = 18
@@ -216,10 +216,11 @@ Partial Class GestorAloj
         'Label14
         '
         Me.Label14.AutoSize = True
-        Me.Label14.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label14.Location = New System.Drawing.Point(569, 106)
+        Me.Label14.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label14.ForeColor = System.Drawing.Color.Navy
+        Me.Label14.Location = New System.Drawing.Point(569, 101)
         Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(58, 13)
+        Me.Label14.Size = New System.Drawing.Size(85, 20)
         Me.Label14.TabIndex = 30
         Me.Label14.Text = "Capacidad"
         Me.Label14.Visible = False
@@ -227,10 +228,11 @@ Partial Class GestorAloj
         'Label15
         '
         Me.Label15.AutoSize = True
-        Me.Label15.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label15.Location = New System.Drawing.Point(335, 106)
+        Me.Label15.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label15.ForeColor = System.Drawing.Color.Navy
+        Me.Label15.Location = New System.Drawing.Point(326, 101)
         Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(53, 13)
+        Me.Label15.Size = New System.Drawing.Size(77, 20)
         Me.Label15.TabIndex = 29
         Me.Label15.Text = "Localidad"
         Me.Label15.Visible = False
@@ -238,10 +240,11 @@ Partial Class GestorAloj
         'Label16
         '
         Me.Label16.AutoSize = True
-        Me.Label16.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label16.Location = New System.Drawing.Point(126, 139)
+        Me.Label16.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label16.ForeColor = System.Drawing.Color.Navy
+        Me.Label16.Location = New System.Drawing.Point(126, 134)
         Me.Label16.Name = "Label16"
-        Me.Label16.Size = New System.Drawing.Size(31, 13)
+        Me.Label16.Size = New System.Drawing.Size(46, 20)
         Me.Label16.TabIndex = 28
         Me.Label16.Text = "email"
         Me.Label16.Visible = False
@@ -249,10 +252,11 @@ Partial Class GestorAloj
         'Label17
         '
         Me.Label17.AutoSize = True
-        Me.Label17.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label17.Location = New System.Drawing.Point(416, 139)
+        Me.Label17.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label17.ForeColor = System.Drawing.Color.Navy
+        Me.Label17.Location = New System.Drawing.Point(416, 134)
         Me.Label17.Name = "Label17"
-        Me.Label17.Size = New System.Drawing.Size(30, 13)
+        Me.Label17.Size = New System.Drawing.Size(42, 20)
         Me.Label17.TabIndex = 27
         Me.Label17.Text = "Web"
         Me.Label17.Visible = False
@@ -260,10 +264,11 @@ Partial Class GestorAloj
         'Label18
         '
         Me.Label18.AutoSize = True
-        Me.Label18.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label18.Location = New System.Drawing.Point(452, 72)
+        Me.Label18.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label18.ForeColor = System.Drawing.Color.Navy
+        Me.Label18.Location = New System.Drawing.Point(516, 67)
         Me.Label18.Name = "Label18"
-        Me.Label18.Size = New System.Drawing.Size(52, 13)
+        Me.Label18.Size = New System.Drawing.Size(75, 20)
         Me.Label18.TabIndex = 26
         Me.Label18.Text = "Dirección"
         Me.Label18.Visible = False
@@ -271,21 +276,23 @@ Partial Class GestorAloj
         'Label19
         '
         Me.Label19.AutoSize = True
-        Me.Label19.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label19.Location = New System.Drawing.Point(119, 106)
+        Me.Label19.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label19.ForeColor = System.Drawing.Color.Navy
+        Me.Label19.Location = New System.Drawing.Point(119, 101)
         Me.Label19.Name = "Label19"
-        Me.Label19.Size = New System.Drawing.Size(28, 13)
+        Me.Label19.Size = New System.Drawing.Size(39, 20)
         Me.Label19.TabIndex = 25
         Me.Label19.Text = "Tipo"
         Me.Label19.Visible = False
         '
         'Label20
         '
-        Me.Label20.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label20.Location = New System.Drawing.Point(181, 169)
+        Me.Label20.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label20.ForeColor = System.Drawing.Color.Navy
+        Me.Label20.Location = New System.Drawing.Point(178, 164)
         Me.Label20.MaximumSize = New System.Drawing.Size(400, 99999)
         Me.Label20.Name = "Label20"
-        Me.Label20.Size = New System.Drawing.Size(387, 34)
+        Me.Label20.Size = New System.Drawing.Size(400, 53)
         Me.Label20.TabIndex = 24
         Me.Label20.Text = "Descripción"
         Me.Label20.Visible = False
@@ -293,10 +300,11 @@ Partial Class GestorAloj
         'Label21
         '
         Me.Label21.AutoSize = True
-        Me.Label21.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label21.Location = New System.Drawing.Point(150, 72)
+        Me.Label21.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label21.ForeColor = System.Drawing.Color.Navy
+        Me.Label21.Location = New System.Drawing.Point(150, 67)
         Me.Label21.Name = "Label21"
-        Me.Label21.Size = New System.Drawing.Size(44, 13)
+        Me.Label21.Size = New System.Drawing.Size(65, 20)
         Me.Label21.TabIndex = 23
         Me.Label21.Text = "Nombre"
         Me.Label21.Visible = False

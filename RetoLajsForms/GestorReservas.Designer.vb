@@ -128,7 +128,7 @@ Partial Class GestorReservas
         '
         Me.Label11.AutoSize = True
         Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label11.Location = New System.Drawing.Point(399, 94)
+        Me.Label11.Location = New System.Drawing.Point(378, 94)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(96, 24)
         Me.Label11.TabIndex = 24
@@ -177,9 +177,11 @@ Partial Class GestorReservas
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(222, 68)
+        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.ForeColor = System.Drawing.Color.Navy
+        Me.Label5.Location = New System.Drawing.Point(216, 60)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(39, 13)
+        Me.Label5.Size = New System.Drawing.Size(66, 24)
         Me.Label5.TabIndex = 27
         Me.Label5.Text = "Label5"
         Me.Label5.Visible = False
@@ -187,9 +189,11 @@ Partial Class GestorReservas
         'Label10
         '
         Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(450, 68)
+        Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label10.ForeColor = System.Drawing.Color.Navy
+        Me.Label10.Location = New System.Drawing.Point(444, 60)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(45, 13)
+        Me.Label10.Size = New System.Drawing.Size(76, 24)
         Me.Label10.TabIndex = 28
         Me.Label10.Text = "Label10"
         Me.Label10.Visible = False
@@ -197,9 +201,11 @@ Partial Class GestorReservas
         'Label12
         '
         Me.Label12.AutoSize = True
-        Me.Label12.Location = New System.Drawing.Point(178, 102)
+        Me.Label12.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label12.ForeColor = System.Drawing.Color.Navy
+        Me.Label12.Location = New System.Drawing.Point(181, 94)
         Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(45, 13)
+        Me.Label12.Size = New System.Drawing.Size(76, 24)
         Me.Label12.TabIndex = 29
         Me.Label12.Text = "Label12"
         Me.Label12.Visible = False
@@ -207,9 +213,11 @@ Partial Class GestorReservas
         'Label13
         '
         Me.Label13.AutoSize = True
-        Me.Label13.Location = New System.Drawing.Point(495, 102)
+        Me.Label13.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label13.ForeColor = System.Drawing.Color.Navy
+        Me.Label13.Location = New System.Drawing.Point(468, 94)
         Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(45, 13)
+        Me.Label13.Size = New System.Drawing.Size(76, 24)
         Me.Label13.TabIndex = 30
         Me.Label13.Text = "Label13"
         Me.Label13.Visible = False
@@ -217,9 +225,11 @@ Partial Class GestorReservas
         'Label14
         '
         Me.Label14.AutoSize = True
-        Me.Label14.Location = New System.Drawing.Point(288, 137)
+        Me.Label14.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label14.ForeColor = System.Drawing.Color.Navy
+        Me.Label14.Location = New System.Drawing.Point(282, 129)
         Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(45, 13)
+        Me.Label14.Size = New System.Drawing.Size(76, 24)
         Me.Label14.TabIndex = 31
         Me.Label14.Text = "Label14"
         Me.Label14.Visible = False
@@ -227,9 +237,11 @@ Partial Class GestorReservas
         'Label15
         '
         Me.Label15.AutoSize = True
-        Me.Label15.Location = New System.Drawing.Point(288, 172)
+        Me.Label15.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label15.ForeColor = System.Drawing.Color.Navy
+        Me.Label15.Location = New System.Drawing.Point(282, 164)
         Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(45, 13)
+        Me.Label15.Size = New System.Drawing.Size(76, 24)
         Me.Label15.TabIndex = 32
         Me.Label15.Text = "Label15"
         Me.Label15.Visible = False

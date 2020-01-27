@@ -147,14 +147,14 @@ Partial Class NuevoCliente
         Me.TextBox4.Location = New System.Drawing.Point(238, 211)
         Me.TextBox4.Name = "TextBox4"
         Me.TextBox4.Size = New System.Drawing.Size(198, 20)
-        Me.TextBox4.TabIndex = 13
+        Me.TextBox4.TabIndex = 14
         '
         'TextBox5
         '
         Me.TextBox5.Location = New System.Drawing.Point(238, 253)
         Me.TextBox5.Name = "TextBox5"
         Me.TextBox5.Size = New System.Drawing.Size(198, 20)
-        Me.TextBox5.TabIndex = 14
+        Me.TextBox5.TabIndex = 15
         '
         'Label7
         '
@@ -182,7 +182,7 @@ Partial Class NuevoCliente
         Me.TextBox6.Location = New System.Drawing.Point(238, 170)
         Me.TextBox6.Name = "TextBox6"
         Me.TextBox6.Size = New System.Drawing.Size(198, 20)
-        Me.TextBox6.TabIndex = 21
+        Me.TextBox6.TabIndex = 13
         '
         'Label11
         '
@@ -210,7 +210,7 @@ Partial Class NuevoCliente
         Me.DateTimePicker1.MinDate = New Date(1900, 1, 1, 0, 0, 0, 0)
         Me.DateTimePicker1.Name = "DateTimePicker1"
         Me.DateTimePicker1.Size = New System.Drawing.Size(200, 20)
-        Me.DateTimePicker1.TabIndex = 24
+        Me.DateTimePicker1.TabIndex = 16
         Me.DateTimePicker1.Value = New Date(2000, 1, 1, 0, 0, 0, 0)
         '
         'Label12

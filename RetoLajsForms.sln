@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.29306.81
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "RetoLajsForms", "RetoLajsForms\RetoLajsForms.vbproj", "{BFD6CBFD-530A-463A-9924-37A2A763C977}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup1", "Setup1\Setup1.vdproj", "{F11E9F67-AFC2-4146-9290-07E3C03EB960}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,8 @@ Global
 		{BFD6CBFD-530A-463A-9924-37A2A763C977}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BFD6CBFD-530A-463A-9924-37A2A763C977}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BFD6CBFD-530A-463A-9924-37A2A763C977}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F11E9F67-AFC2-4146-9290-07E3C03EB960}.Debug|Any CPU.ActiveCfg = Debug
+		{F11E9F67-AFC2-4146-9290-07E3C03EB960}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -12,7 +12,7 @@ Public Class GestorAloj
 
     Protected Sub llamodatos()
         Try
-            Dim da As New MySqlDataAdapter("select * from alojamiento", conexion.MysqlConnString)
+            Dim da As New MySqlDataAdapter("select * from alojamiento order by idAloj ASC", conexion.MysqlConnString)
             Dim DT As New DataTable
             da.Fill(DT)
             DataGridView1.DataSource = DT
@@ -135,10 +135,14 @@ Public Class GestorAloj
     'Modificar'
     Protected Sub modificarNombre()
         Try
-            Dim da As New MySqlDataAdapter("UPDATE alojamiento SET nombre='" & TextBox2.Text & "' WHERE idAloj='" & valorBorrar & "'", conexion.MysqlConnString)
-            Dim DT As New DataTable
-            da.Fill(DT)
-            DataGridView1.DataSource = DT
+            If (TextBox2.Text = "") Then
+                MsgBox("Debe rellenar primero el campo")
+            Else
+                Dim da As New MySqlDataAdapter("UPDATE alojamiento SET nombre='" & TextBox2.Text & "' WHERE idAloj='" & valorBorrar & "'", conexion.MysqlConnString)
+                Dim DT As New DataTable
+                da.Fill(DT)
+                DataGridView1.DataSource = DT
+            End If
         Catch ex As Exception
             MsgBox("No se logro realizar la consulta por: " & ex.Message, MsgBoxStyle.Critical,)
         End Try

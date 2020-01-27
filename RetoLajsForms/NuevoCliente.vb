@@ -30,11 +30,79 @@ Public Class NuevoCliente
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         Dim cont As Integer = 0
+        Dim cont2 As Integer = 0
+        Dim cont3 As Integer = 0
         Dim seguir As Boolean = True
+
         Try
             conexion.MysqlConexion.Open()
             Dim cmd As MySqlCommand = New MySqlCommand("select * from usuario", conexion.MysqlConexion)
             Dim reader As MySqlDataReader = cmd.ExecuteReader()
+
+            While reader.Read()
+                cont = cont + 1
+            End While
+            reader.Close()
+
+            'comprobar DNI
+            cont2 = comprobarDNI(cmd, reader, cont2)
+
+            'comprueba nombre de usuario
+            cont3 = comprobarNombreUsu(cmd, reader, cont3)
+
+            'comprueba el resto de campos
+            comprobarCampos(cmd, reader, cont, cont2, cont3, seguir)
+
+        Catch ex As MySqlException
+            Console.WriteLine("Error: " & ex.ToString())
+        Finally
+            conexion.MysqlConexion.Close()
+            sacarIdMax()
+        End Try
+    End Sub
+
+    Protected Function comprobarDNI(cmd As MySqlCommand, reader As MySqlDataReader, cont2 As Integer) As Integer
+        reader = cmd.ExecuteReader()
+        While reader.Read()
+            If TextBox6.Text = "" Or TextBox6.Text <> Calcular(Mid(TextBox6.Text, 1, 8)) Then
+                TextBox6.BackColor = Color.Red
+                Label9.Visible = True
+                Exit While
+            ElseIf reader.GetString(3) = TextBox6.Text Then
+                MsgBox("El DNI que esta utilizando ya esta registrado, compruebe su DNI")
+                TextBox6.BackColor = Color.Red
+                Label9.Visible = True
+                Exit While
+            Else
+                cont2 = cont2 + 1
+                TextBox6.BackColor = Color.White
+            End If
+        End While
+        reader.Close()
+        Return cont2
+    End Function
+
+    Protected Function comprobarNombreUsu(cmd As MySqlCommand, reader As MySqlDataReader, cont3 As Integer) As Integer
+        reader = cmd.ExecuteReader()
+        While reader.Read()
+            If TextBox3.Text = "" Then
+                TextBox1.BackColor = Color.Red
+                Label9.Visible = True
+            ElseIf reader.GetString(7) = TextBox3.Text Then
+                MsgBox("El Nombre de usuario que esta utilizando ya esta registrado, utilice otro")
+                Label9.Visible = True
+                Exit While
+            Else
+                cont3 = cont3 + 1
+            End If
+        End While
+        reader.Close()
+        Return cont3
+    End Function
+
+    Protected Sub comprobarCampos(cmd As MySqlCommand, reader As MySqlDataReader, cont As Integer, cont2 As Integer, cont3 As Integer, seguir As Boolean)
+        If (cont = cont2 And cont = cont3) Then
+            reader = cmd.ExecuteReader()
             While reader.Read()
                 cont = 0
                 If (seguir = True) Then
@@ -50,18 +118,6 @@ Public Class NuevoCliente
                     Else
                         cont = cont + 1
                     End If
-                    If reader.GetString(7) = TextBox3.Text Or TextBox3.Text = "" Then
-                        TextBox1.BackColor = Color.Red
-                        Label9.Visible = True
-                    Else
-                        cont = cont + 1
-                    End If
-                    If reader.GetString(3) = TextBox6.Text Or TextBox6.Text = "" Or TextBox6.Text <> Calcular(Mid(TextBox6.Text, 1, 8)) Then
-                        TextBox6.BackColor = Color.Red
-                        Label9.Visible = True
-                    Else
-                        cont = cont + 1
-                    End If
                     If TextBox4.Text <> "" Then
                         If TextBox4.Text = TextBox5.Text Then
                             cont = cont + 1
@@ -73,7 +129,7 @@ Public Class NuevoCliente
                         TextBox4.BackColor = Color.Red
                         Label9.Visible = True
                     End If
-                    If (cont = 5) Then
+                    If (cont = 3) Then
                         Try
                             reader.Close()
                             Label9.Visible = False
@@ -83,24 +139,66 @@ Public Class NuevoCliente
                             we.ExecuteNonQuery()
                             seguir = False
                             MsgBox("¡Usuario administrador creado con éxito!")
+                            limpiarCampos()
+                            Me.Hide()
+                            GestorUsuarios.Show()
+                            Exit While
                         Catch ex As Exception
                             MsgBox(ex.ToString)
                         End Try
                     Else
                         MsgBox("Error al insertar usuario en la base de datos")
+                        Exit While
                     End If
                 End If
             End While
-        Catch ex As MySqlException
-            Console.WriteLine("Error: " & ex.ToString())
-        Finally
-            conexion.MysqlConexion.Close()
-            sacarIdMax()
-            limpiarCampos()
-            Me.Hide()
-            GestorUsuarios.Show()
-        End Try
+            reader.Close()
+        Else
+
+        End If
     End Sub
+
+
+
+    Private Sub TextBox1_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles TextBox1.KeyPress
+        If Not Char.IsLetter(e.KeyChar) _
+                     AndAlso Not Char.IsControl(e.KeyChar) _
+                     AndAlso Not Char.IsWhiteSpace(e.KeyChar) Then
+            e.Handled = True
+        End If
+    End Sub
+
+    Private Sub TextBox2_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles TextBox2.KeyPress
+        If Not Char.IsLetter(e.KeyChar) _
+                     AndAlso Not Char.IsControl(e.KeyChar) _
+                     AndAlso Not Char.IsWhiteSpace(e.KeyChar) Then
+            e.Handled = True
+        End If
+    End Sub
+
+    Private Sub Label12_Click(sender As Object, e As EventArgs) Handles Label12.Click
+        If TextBox4.PasswordChar = "*" And TextBox5.PasswordChar = "*" Then
+            TextBox4.PasswordChar = ""
+            TextBox5.PasswordChar = ""
+        Else
+            TextBox4.PasswordChar = "*"
+            TextBox5.PasswordChar = "*"
+            TextBox4.Focus()
+        End If
+    End Sub
+
+    Function Calcular(Num As String)
+        Dim Tabla()
+        Dim Result As Integer
+        If Len(Num) < 7 Or Len(Num) > 8 Then
+            MsgBox("ERROR : el DNI debe de tener 7 o 8 números")
+            Exit Function
+        End If
+        Result = ((Int(Num / 23)) * 23)
+        Result = -Result + Num
+        Tabla = {"T", "R", "W", "A", "G", "M", "Y", "F", "P", "D", "X", "B", "N", "J", "Z", "S", "Q", "V", "H", "L", "C", "K", "E"}
+        Calcular = Num & Tabla(Result)
+    End Function
 
     Shared Function GetHash(theInput As String) As String
         Using hasher As MD5 = MD5.Create()    ' create hash object
@@ -120,46 +218,6 @@ Public Class NuevoCliente
             Return sBuilder.ToString()
         End Using
     End Function
-
-    Private Sub TextBox1_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles TextBox1.KeyPress
-        If Not Char.IsLetter(e.KeyChar) _
-                     AndAlso Not Char.IsControl(e.KeyChar) _
-                     AndAlso Not Char.IsWhiteSpace(e.KeyChar) Then
-            e.Handled = True
-        End If
-    End Sub
-
-    Private Sub TextBox2_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles TextBox1.KeyPress
-        If Not Char.IsLetter(e.KeyChar) _
-                     AndAlso Not Char.IsControl(e.KeyChar) _
-                     AndAlso Not Char.IsWhiteSpace(e.KeyChar) Then
-            e.Handled = True
-        End If
-    End Sub
-
-    Function Calcular(Num As String)
-        Dim Tabla()
-        Dim Result As Integer
-        If Len(Num) < 7 Or Len(Num) > 8 Then
-            MsgBox("ERROR : el DNI debe de tener 7 o 8 números")
-            Exit Function
-        End If
-        Result = ((Int(Num / 23)) * 23)
-        Result = -Result + Num
-        Tabla = {"T", "R", "W", "A", "G", "M", "Y", "F", "P", "D", "X", "B", "N", "J", "Z", "S", "Q", "V", "H", "L", "C", "K", "E"}
-        Calcular = Num & Tabla(Result)
-    End Function
-
-    Private Sub Label12_Click(sender As Object, e As EventArgs) Handles Label12.Click
-        If TextBox4.PasswordChar = "*" And TextBox5.PasswordChar = "*" Then
-            TextBox4.PasswordChar = ""
-            TextBox5.PasswordChar = ""
-        Else
-            TextBox4.PasswordChar = "*"
-            TextBox5.PasswordChar = "*"
-            TextBox4.Focus()
-        End If
-    End Sub
 
     Protected Sub limpiarCampos()
         TextBox1.Text = ""

@@ -94,11 +94,11 @@ Partial Class Login
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 17.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.Color.DeepSkyBlue
-        Me.Label4.Location = New System.Drawing.Point(108, 19)
+        Me.Label4.Location = New System.Drawing.Point(106, 18)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(160, 29)
+        Me.Label4.Size = New System.Drawing.Size(168, 29)
         Me.Label4.TabIndex = 9
-        Me.Label4.Text = "Inicio sesión"
+        Me.Label4.Text = "Iniciar sesión"
         '
         'Login
         '

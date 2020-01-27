@@ -6,6 +6,7 @@ Imports MySql.Data.MySqlClient
 Public Class GestorUsuarios
     Dim conexion As New conexion
     Dim valorBorrar As String
+    Dim idUsu As String
 
     Private Sub GestorUsuarios_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         TextBox6.PasswordChar = "*"
@@ -15,10 +16,21 @@ Public Class GestorUsuarios
 
     Protected Sub llamodatos()
         Try
-            Dim da As New MySqlDataAdapter("select * from usuario", conexion.MysqlConnString)
+            Dim da As New MySqlDataAdapter("select * from usuario order by idUsr ASC", conexion.MysqlConnString)
             Dim DT As New DataTable
             da.Fill(DT)
             DataGridView1.DataSource = DT
+        Catch ex As Exception
+            MsgBox("No se logro realizar la consulta por: " & ex.Message, MsgBoxStyle.Critical,)
+        End Try
+    End Sub
+
+    Protected Sub llamodatos2()
+        Try
+            Dim da As New MySqlDataAdapter("select * from reserva where idUsr='" & idUsu & "' order by idUsr ASC", conexion.MysqlConnString)
+            Dim DT As New DataTable
+            da.Fill(DT)
+            DataGridView2.DataSource = DT
         Catch ex As Exception
             MsgBox("No se logro realizar la consulta por: " & ex.Message, MsgBoxStyle.Critical,)
         End Try
@@ -246,7 +258,9 @@ Public Class GestorUsuarios
                 Dim DT As New DataTable
                 da.Fill(DT)
                 DataGridView1.DataSource = DT
+
                 MsgBox("Su contraseña se ha modificado con éxito")
+                TextBox6.Text = ""
             Catch ex As Exception
                 MsgBox("No se logro realizar la consulta por: " & ex.Message, MsgBoxStyle.Critical,)
             End Try
@@ -319,7 +333,11 @@ Public Class GestorUsuarios
     End Sub
 
     Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
-        modificarContra()
+        If (TextBox6.Text = "") Then
+            MsgBox("Debe rellenar primero el campo")
+        Else
+            modificarContra()
+        End If
         llamodatos()
     End Sub
 
@@ -349,7 +367,11 @@ Public Class GestorUsuarios
 
     Private Sub Button13_Click(sender As Object, e As EventArgs) Handles Button13.Click
         If (Not IsNumeric(TextBox3.Text)) Then
-            modificarNombreUsuario()
+            If (TextBox3.Text = "") Then
+                MsgBox("Debe rellenar primero el campo")
+            Else
+                modificarNombreUsuario()
+            End If
         End If
         llamodatos()
     End Sub
@@ -431,12 +453,14 @@ Public Class GestorUsuarios
 
     Private Sub DataGridView1_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellClick
         Try
+            idUsu = DataGridView1.Rows(e.RowIndex).Cells("idUsr").Value.ToString
             valorBorrar = DataGridView1.Rows(e.RowIndex).Cells("idUsr").Value.ToString
-            Label4.Text = "Nombre: " & DataGridView1.Rows(e.RowIndex).Cells("nombre").Value.ToString
-            Label5.Text = "Apellido: " & DataGridView1.Rows(e.RowIndex).Cells("apellidos").Value.ToString
-            Label6.Text = "Fecha de nacimiento: " & Format(DataGridView1.Rows(e.RowIndex).Cells("fechanac").Value, "yyyy-MM-dd")
-            Label7.Text = "ID: " & DataGridView1.Rows(e.RowIndex).Cells("idUsr").Value.ToString
-            Label12.Text = "Usuario: " & DataGridView1.Rows(e.RowIndex).Cells("username").Value.ToString
+            Label13.Text = DataGridView1.Rows(e.RowIndex).Cells("username").Value.ToString
+            Label14.Text = DataGridView1.Rows(e.RowIndex).Cells("idUsr").Value.ToString
+            Label15.Text = DataGridView1.Rows(e.RowIndex).Cells("nombre").Value.ToString
+            Label16.Text = DataGridView1.Rows(e.RowIndex).Cells("apellidos").Value.ToString
+            Label17.Text = Format(DataGridView1.Rows(e.RowIndex).Cells("fechanac").Value, "yyyy-MM-dd")
+            llamodatos2()
         Catch ex As Exception
 
         End Try
@@ -490,6 +514,7 @@ Public Class GestorUsuarios
         Label6.Text = "Fecha de nacimiento:"
         Label7.Text = "ID:"
         Label12.Text = "Usuario:"
+
         TextBox1.Text = ""
         TextBox2.Text = ""
         TextBox3.Text = ""
@@ -497,6 +522,7 @@ Public Class GestorUsuarios
         ComboBox1.Text = "Sin filtro"
         ComboBox2.Text = "Sin filtro"
         DateTimePicker1.ResetText()
+
         CheckBox1.CheckState = CheckState.Unchecked
         CheckBox2.CheckState = CheckState.Unchecked
         CheckBox3.CheckState = CheckState.Unchecked

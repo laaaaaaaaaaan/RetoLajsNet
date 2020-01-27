@@ -14,7 +14,7 @@ Public Class GestorReservas
 
     Protected Sub llamodatos()
         Try
-            Dim da As New MySqlDataAdapter("select * from reserva", conexion.MysqlConnString)
+            Dim da As New MySqlDataAdapter("select * from reserva order by idRes ASC", conexion.MysqlConnString)
             Dim DT As New DataTable
             da.Fill(DT)
             DataGridView1.DataSource = DT
