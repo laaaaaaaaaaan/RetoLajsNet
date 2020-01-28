@@ -460,6 +460,12 @@ Public Class GestorUsuarios
             Label15.Text = DataGridView1.Rows(e.RowIndex).Cells("nombre").Value.ToString
             Label16.Text = DataGridView1.Rows(e.RowIndex).Cells("apellidos").Value.ToString
             Label17.Text = Format(DataGridView1.Rows(e.RowIndex).Cells("fechanac").Value, "yyyy-MM-dd")
+
+            Label13.Visible = True
+            Label14.Visible = True
+            Label15.Visible = True
+            Label16.Visible = True
+            Label17.Visible = True
             llamodatos2()
         Catch ex As Exception
 
@@ -522,6 +528,12 @@ Public Class GestorUsuarios
         ComboBox1.Text = "Sin filtro"
         ComboBox2.Text = "Sin filtro"
         DateTimePicker1.ResetText()
+
+        Label13.Visible = False
+        Label14.Visible = False
+        Label15.Visible = False
+        Label16.Visible = False
+        Label17.Visible = False
 
         CheckBox1.CheckState = CheckState.Unchecked
         CheckBox2.CheckState = CheckState.Unchecked

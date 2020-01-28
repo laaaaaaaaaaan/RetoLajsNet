@@ -53,6 +53,7 @@ Public Class NuevoCliente
             'comprueba el resto de campos
             comprobarCampos(cmd, reader, cont, cont2, cont3, seguir)
 
+
         Catch ex As MySqlException
             Console.WriteLine("Error: " & ex.ToString())
         Finally
@@ -62,23 +63,27 @@ Public Class NuevoCliente
     End Sub
 
     Protected Function comprobarDNI(cmd As MySqlCommand, reader As MySqlDataReader, cont2 As Integer) As Integer
-        reader = cmd.ExecuteReader()
-        While reader.Read()
-            If TextBox6.Text = "" Or TextBox6.Text <> Calcular(Mid(TextBox6.Text, 1, 8)) Then
-                TextBox6.BackColor = Color.Red
-                Label9.Visible = True
-                Exit While
-            ElseIf reader.GetString(3) = TextBox6.Text Then
-                MsgBox("El DNI que esta utilizando ya esta registrado, compruebe su DNI")
-                TextBox6.BackColor = Color.Red
-                Label9.Visible = True
-                Exit While
-            Else
-                cont2 = cont2 + 1
-                TextBox6.BackColor = Color.White
-            End If
-        End While
-        reader.Close()
+        Try
+            reader = cmd.ExecuteReader()
+            While reader.Read()
+                If TextBox6.Text = "" Or TextBox6.Text <> Calcular(Mid(TextBox6.Text, 1, 8)) Then
+                    TextBox6.BackColor = Color.Red
+                    Label9.Visible = True
+                    Exit While
+                ElseIf reader.GetString(3) = TextBox6.Text Then
+                    MsgBox("El DNI que esta utilizando ya esta registrado, compruebe su DNI")
+                    TextBox6.BackColor = Color.Red
+                    Label9.Visible = True
+                    Exit While
+                Else
+                    cont2 = cont2 + 1
+                    TextBox6.BackColor = Color.White
+                End If
+            End While
+            reader.Close()
+        Catch ex As Exception
+
+        End Try
         Return cont2
     End Function
 
@@ -86,10 +91,11 @@ Public Class NuevoCliente
         reader = cmd.ExecuteReader()
         While reader.Read()
             If TextBox3.Text = "" Then
-                TextBox1.BackColor = Color.Red
+                TextBox3.BackColor = Color.Red
                 Label9.Visible = True
             ElseIf reader.GetString(7) = TextBox3.Text Then
                 MsgBox("El Nombre de usuario que esta utilizando ya esta registrado, utilice otro")
+                TextBox3.BackColor = Color.Red
                 Label9.Visible = True
                 Exit While
             Else
@@ -101,26 +107,26 @@ Public Class NuevoCliente
     End Function
 
     Protected Sub comprobarCampos(cmd As MySqlCommand, reader As MySqlDataReader, cont As Integer, cont2 As Integer, cont3 As Integer, seguir As Boolean)
-        If (cont = cont2 And cont = cont3) Then
-            reader = cmd.ExecuteReader()
+        'If (cont = cont2 And cont = cont3) Then
+        reader = cmd.ExecuteReader()
             While reader.Read()
-                cont = 0
+                Dim contador As Integer = 0
                 If (seguir = True) Then
                     If TextBox1.Text = "" Then
                         TextBox1.BackColor = Color.Red
                         Label9.Visible = True
                     Else
-                        cont = cont + 1
+                        contador = contador + 1
                     End If
-                    If TextBox1.Text = "" Then
-                        TextBox1.BackColor = Color.Red
+                    If TextBox3.Text = "" Then
+                        TextBox3.BackColor = Color.Red
                         Label9.Visible = True
                     Else
-                        cont = cont + 1
+                        contador = contador + 1
                     End If
                     If TextBox4.Text <> "" Then
                         If TextBox4.Text = TextBox5.Text Then
-                            cont = cont + 1
+                            contador = contador + 1
                         Else
                             TextBox4.BackColor = Color.Red
                             TextBox5.BackColor = Color.Red
@@ -129,33 +135,36 @@ Public Class NuevoCliente
                         TextBox4.BackColor = Color.Red
                         Label9.Visible = True
                     End If
-                    If (cont = 3) Then
-                        Try
-                            reader.Close()
-                            Label9.Visible = False
-                            idMax = idMax + 1
-                            Dim asd As String = "INSERT INTO `usuario`(`idUsr`, `admin`, `apellidos`, `dni`, `fechaNac`, `nombre`, `password`, `username`) VALUES ('" & idMax & "','" & False & "','" & TextBox2.Text & "','" & TextBox6.Text & "','" & Format(DateTimePicker1.Value, "yyyy-MM-dd") & "','" & TextBox1.Text & "','" & GetHash(TextBox4.Text) & "','" & TextBox3.Text & "')"
-                            Dim we As MySqlCommand = New MySqlCommand(asd, conexion.MysqlConexion)
-                            we.ExecuteNonQuery()
-                            seguir = False
-                            MsgBox("¡Usuario administrador creado con éxito!")
-                            limpiarCampos()
-                            Me.Hide()
-                            GestorUsuarios.Show()
-                            Exit While
-                        Catch ex As Exception
-                            MsgBox(ex.ToString)
-                        End Try
+                    If (contador = 3) Then
+                        If (cont = cont2 And cont = cont3) Then
+                            Try
+                                reader.Close()
+                                Label9.Visible = False
+                                idMax = idMax + 1
+                                Dim asd As String = "INSERT INTO `usuario`(`idUsr`, `admin`, `apellidos`, `dni`, `fechaNac`, `nombre`, `password`, `username`) VALUES ('" & idMax & "','" & False & "','" & TextBox2.Text & "','" & TextBox6.Text & "','" & Format(DateTimePicker1.Value, "yyyy-MM-dd") & "','" & TextBox1.Text & "','" & GetHash(TextBox4.Text) & "','" & TextBox3.Text & "')"
+                                Dim we As MySqlCommand = New MySqlCommand(asd, conexion.MysqlConexion)
+                                we.ExecuteNonQuery()
+                                seguir = False
+                                MsgBox("¡Usuario administrador creado con éxito!")
+                                limpiarCampos()
+                                Me.Hide()
+                                GestorUsuarios.Show()
+                                Exit While
+                            Catch ex As Exception
+                                MsgBox(ex.ToString)
+                            End Try
+                        End If
                     Else
                         MsgBox("Error al insertar usuario en la base de datos")
                         Exit While
                     End If
                 End If
-            End While
-            reader.Close()
-        Else
+        End While
 
-        End If
+        reader.Close()
+        'Else
+
+        'End If
     End Sub
 
 
@@ -226,6 +235,15 @@ Public Class NuevoCliente
         TextBox4.Text = ""
         TextBox5.Text = ""
         TextBox6.Text = ""
+
+        TextBox1.BackColor = Color.White
+        TextBox2.BackColor = Color.White
+        TextBox3.BackColor = Color.White
+        TextBox4.BackColor = Color.White
+        TextBox5.BackColor = Color.White
+        TextBox6.BackColor = Color.White
+
+        Label9.Visible = False
 
         DateTimePicker1.ResetText()
     End Sub

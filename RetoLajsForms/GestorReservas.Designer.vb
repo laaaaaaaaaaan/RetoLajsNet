@@ -51,14 +51,32 @@ Partial Class GestorReservas
         Me.Button16 = New System.Windows.Forms.Button()
         Me.Label17 = New System.Windows.Forms.Label()
         Me.Button6 = New System.Windows.Forms.Button()
+        Me.Label18 = New System.Windows.Forms.Label()
+        Me.ComboBox4 = New System.Windows.Forms.ComboBox()
+        Me.Label19 = New System.Windows.Forms.Label()
+        Me.Label20 = New System.Windows.Forms.Label()
+        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
+        Me.Label21 = New System.Windows.Forms.Label()
+        Me.NumericUpDown1 = New System.Windows.Forms.NumericUpDown()
+        Me.ComboBox3 = New System.Windows.Forms.ComboBox()
+        Me.Label22 = New System.Windows.Forms.Label()
+        Me.Button9 = New System.Windows.Forms.Button()
+        Me.Button8 = New System.Windows.Forms.Button()
+        Me.NumericUpDown2 = New System.Windows.Forms.NumericUpDown()
+        Me.Label23 = New System.Windows.Forms.Label()
+        Me.DateTimePicker2 = New System.Windows.Forms.DateTimePicker()
+        Me.Label24 = New System.Windows.Forms.Label()
+        Me.Button10 = New System.Windows.Forms.Button()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.NumericUpDown2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Button1
         '
         Me.Button1.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.Location = New System.Drawing.Point(456, 473)
+        Me.Button1.Location = New System.Drawing.Point(450, 410)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(122, 37)
         Me.Button1.TabIndex = 5
@@ -71,7 +89,7 @@ Partial Class GestorReservas
         Me.DataGridView1.Location = New System.Drawing.Point(71, 200)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.ReadOnly = True
-        Me.DataGridView1.Size = New System.Drawing.Size(550, 250)
+        Me.DataGridView1.Size = New System.Drawing.Size(550, 200)
         Me.DataGridView1.TabIndex = 4
         '
         'Label1
@@ -87,7 +105,7 @@ Partial Class GestorReservas
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(77, 540)
+        Me.Label2.Location = New System.Drawing.Point(71, 463)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(53, 15)
         Me.Label2.TabIndex = 8
@@ -97,7 +115,7 @@ Partial Class GestorReservas
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(77, 577)
+        Me.Label3.Location = New System.Drawing.Point(70, 512)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(34, 15)
         Me.Label3.TabIndex = 9
@@ -250,7 +268,7 @@ Partial Class GestorReservas
         '
         Me.ComboBox1.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(140, 537)
+        Me.ComboBox1.Location = New System.Drawing.Point(164, 460)
         Me.ComboBox1.Name = "ComboBox1"
         Me.ComboBox1.Size = New System.Drawing.Size(121, 21)
         Me.ComboBox1.TabIndex = 33
@@ -260,7 +278,7 @@ Partial Class GestorReservas
         '
         Me.ComboBox2.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.ComboBox2.FormattingEnabled = True
-        Me.ComboBox2.Location = New System.Drawing.Point(140, 577)
+        Me.ComboBox2.Location = New System.Drawing.Point(163, 512)
         Me.ComboBox2.Name = "ComboBox2"
         Me.ComboBox2.Size = New System.Drawing.Size(121, 21)
         Me.ComboBox2.TabIndex = 34
@@ -269,9 +287,10 @@ Partial Class GestorReservas
         'Button3
         '
         Me.Button3.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Button3.Location = New System.Drawing.Point(537, 577)
+        Me.Button3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button3.Location = New System.Drawing.Point(511, 727)
         Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(85, 25)
+        Me.Button3.Size = New System.Drawing.Size(105, 25)
         Me.Button3.TabIndex = 35
         Me.Button3.Text = "Atras"
         Me.Button3.UseVisualStyleBackColor = True
@@ -280,7 +299,7 @@ Partial Class GestorReservas
         '
         Me.Label16.AutoSize = True
         Me.Label16.Font = New System.Drawing.Font("Microsoft Sans Serif", 17.0!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label16.Location = New System.Drawing.Point(75, 475)
+        Me.Label16.Location = New System.Drawing.Point(69, 412)
         Me.Label16.Name = "Label16"
         Me.Label16.Size = New System.Drawing.Size(329, 29)
         Me.Label16.TabIndex = 36
@@ -290,9 +309,9 @@ Partial Class GestorReservas
         '
         Me.Button4.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Button4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button4.Location = New System.Drawing.Point(276, 532)
+        Me.Button4.Location = New System.Drawing.Point(382, 455)
         Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(128, 23)
+        Me.Button4.Size = New System.Drawing.Size(147, 23)
         Me.Button4.TabIndex = 37
         Me.Button4.Text = "Filtrar por usuario"
         Me.Button4.UseVisualStyleBackColor = True
@@ -301,9 +320,9 @@ Partial Class GestorReservas
         '
         Me.Button5.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Button5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button5.Location = New System.Drawing.Point(276, 577)
+        Me.Button5.Location = New System.Drawing.Point(381, 512)
         Me.Button5.Name = "Button5"
-        Me.Button5.Size = New System.Drawing.Size(128, 23)
+        Me.Button5.Size = New System.Drawing.Size(147, 23)
         Me.Button5.TabIndex = 38
         Me.Button5.Text = "Filtrar por tipo"
         Me.Button5.UseVisualStyleBackColor = True
@@ -312,7 +331,7 @@ Partial Class GestorReservas
         '
         Me.Button7.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Button7.Image = CType(resources.GetObject("Button7.Image"), System.Drawing.Image)
-        Me.Button7.Location = New System.Drawing.Point(410, 471)
+        Me.Button7.Location = New System.Drawing.Point(404, 408)
         Me.Button7.Name = "Button7"
         Me.Button7.Size = New System.Drawing.Size(40, 42)
         Me.Button7.TabIndex = 40
@@ -321,7 +340,7 @@ Partial Class GestorReservas
         'Button16
         '
         Me.Button16.Image = Global.RetoLajsForms.My.Resources.Resources.refrescar
-        Me.Button16.Location = New System.Drawing.Point(581, 473)
+        Me.Button16.Location = New System.Drawing.Point(575, 410)
         Me.Button16.Name = "Button16"
         Me.Button16.Size = New System.Drawing.Size(41, 37)
         Me.Button16.TabIndex = 56
@@ -346,13 +365,179 @@ Partial Class GestorReservas
         Me.Button6.Text = "Cerrar sesión"
         Me.Button6.UseVisualStyleBackColor = True
         '
+        'Label18
+        '
+        Me.Label18.AutoSize = True
+        Me.Label18.Font = New System.Drawing.Font("Microsoft Sans Serif", 17.0!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label18.Location = New System.Drawing.Point(66, 611)
+        Me.Label18.Name = "Label18"
+        Me.Label18.Size = New System.Drawing.Size(213, 29)
+        Me.Label18.TabIndex = 59
+        Me.Label18.Text = "CREAR RESERVA"
+        '
+        'ComboBox4
+        '
+        Me.ComboBox4.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.ComboBox4.FormattingEnabled = True
+        Me.ComboBox4.Location = New System.Drawing.Point(163, 650)
+        Me.ComboBox4.Name = "ComboBox4"
+        Me.ComboBox4.Size = New System.Drawing.Size(126, 21)
+        Me.ComboBox4.TabIndex = 62
+        Me.ComboBox4.Text = "Sin filtro"
+        '
+        'Label19
+        '
+        Me.Label19.AutoSize = True
+        Me.Label19.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label19.Location = New System.Drawing.Point(71, 544)
+        Me.Label19.Name = "Label19"
+        Me.Label19.Size = New System.Drawing.Size(89, 15)
+        Me.Label19.TabIndex = 61
+        Me.Label19.Text = "Fecha entrada:"
+        '
+        'Label20
+        '
+        Me.Label20.AutoSize = True
+        Me.Label20.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label20.Location = New System.Drawing.Point(68, 651)
+        Me.Label20.Name = "Label20"
+        Me.Label20.Size = New System.Drawing.Size(53, 15)
+        Me.Label20.TabIndex = 60
+        Me.Label20.Text = "Usuario:"
+        '
+        'DateTimePicker1
+        '
+        Me.DateTimePicker1.Location = New System.Drawing.Point(163, 544)
+        Me.DateTimePicker1.MinDate = New Date(2010, 1, 1, 0, 0, 0, 0)
+        Me.DateTimePicker1.Name = "DateTimePicker1"
+        Me.DateTimePicker1.Size = New System.Drawing.Size(201, 20)
+        Me.DateTimePicker1.TabIndex = 63
+        '
+        'Label21
+        '
+        Me.Label21.AutoSize = True
+        Me.Label21.Location = New System.Drawing.Point(71, 575)
+        Me.Label21.Name = "Label21"
+        Me.Label21.Size = New System.Drawing.Size(56, 13)
+        Me.Label21.TabIndex = 64
+        Me.Label21.Text = "Duración: "
+        '
+        'NumericUpDown1
+        '
+        Me.NumericUpDown1.Location = New System.Drawing.Point(162, 570)
+        Me.NumericUpDown1.Maximum = New Decimal(New Integer() {400, 0, 0, 0})
+        Me.NumericUpDown1.Name = "NumericUpDown1"
+        Me.NumericUpDown1.Size = New System.Drawing.Size(120, 20)
+        Me.NumericUpDown1.TabIndex = 66
+        '
+        'ComboBox3
+        '
+        Me.ComboBox3.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.ComboBox3.FormattingEnabled = True
+        Me.ComboBox3.Location = New System.Drawing.Point(432, 650)
+        Me.ComboBox3.Name = "ComboBox3"
+        Me.ComboBox3.Size = New System.Drawing.Size(184, 21)
+        Me.ComboBox3.TabIndex = 68
+        Me.ComboBox3.Text = "Sin filtro"
+        '
+        'Label22
+        '
+        Me.Label22.AutoSize = True
+        Me.Label22.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label22.Location = New System.Drawing.Point(358, 651)
+        Me.Label22.Name = "Label22"
+        Me.Label22.Size = New System.Drawing.Size(75, 15)
+        Me.Label22.TabIndex = 67
+        Me.Label22.Text = "Alojamiento:"
+        '
+        'Button9
+        '
+        Me.Button9.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button9.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button9.Location = New System.Drawing.Point(382, 484)
+        Me.Button9.Name = "Button9"
+        Me.Button9.Size = New System.Drawing.Size(147, 23)
+        Me.Button9.TabIndex = 69
+        Me.Button9.Text = "Modificar usuario"
+        Me.Button9.UseVisualStyleBackColor = True
+        '
+        'Button8
+        '
+        Me.Button8.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button8.Location = New System.Drawing.Point(382, 541)
+        Me.Button8.Name = "Button8"
+        Me.Button8.Size = New System.Drawing.Size(147, 49)
+        Me.Button8.TabIndex = 70
+        Me.Button8.Text = "Filtrar por fechas"
+        Me.Button8.UseVisualStyleBackColor = True
+        '
+        'NumericUpDown2
+        '
+        Me.NumericUpDown2.Location = New System.Drawing.Point(163, 705)
+        Me.NumericUpDown2.Maximum = New Decimal(New Integer() {400, 0, 0, 0})
+        Me.NumericUpDown2.Name = "NumericUpDown2"
+        Me.NumericUpDown2.Size = New System.Drawing.Size(120, 20)
+        Me.NumericUpDown2.TabIndex = 74
+        '
+        'Label23
+        '
+        Me.Label23.AutoSize = True
+        Me.Label23.Location = New System.Drawing.Point(68, 710)
+        Me.Label23.Name = "Label23"
+        Me.Label23.Size = New System.Drawing.Size(56, 13)
+        Me.Label23.TabIndex = 73
+        Me.Label23.Text = "Duración: "
+        '
+        'DateTimePicker2
+        '
+        Me.DateTimePicker2.Location = New System.Drawing.Point(164, 679)
+        Me.DateTimePicker2.Name = "DateTimePicker2"
+        Me.DateTimePicker2.Size = New System.Drawing.Size(201, 20)
+        Me.DateTimePicker2.TabIndex = 72
+        '
+        'Label24
+        '
+        Me.Label24.AutoSize = True
+        Me.Label24.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label24.Location = New System.Drawing.Point(68, 679)
+        Me.Label24.Name = "Label24"
+        Me.Label24.Size = New System.Drawing.Size(89, 15)
+        Me.Label24.TabIndex = 71
+        Me.Label24.Text = "Fecha entrada:"
+        '
+        'Button10
+        '
+        Me.Button10.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button10.Location = New System.Drawing.Point(71, 731)
+        Me.Button10.Name = "Button10"
+        Me.Button10.Size = New System.Drawing.Size(141, 29)
+        Me.Button10.TabIndex = 75
+        Me.Button10.Text = "Crear reserva"
+        Me.Button10.UseVisualStyleBackColor = True
+        '
         'GestorReservas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(684, 621)
+        Me.ClientSize = New System.Drawing.Size(684, 768)
+        Me.Controls.Add(Me.Button10)
+        Me.Controls.Add(Me.NumericUpDown2)
+        Me.Controls.Add(Me.Label23)
+        Me.Controls.Add(Me.DateTimePicker2)
+        Me.Controls.Add(Me.Label24)
+        Me.Controls.Add(Me.Button8)
+        Me.Controls.Add(Me.Button9)
+        Me.Controls.Add(Me.ComboBox3)
+        Me.Controls.Add(Me.Label22)
+        Me.Controls.Add(Me.NumericUpDown1)
+        Me.Controls.Add(Me.Label21)
+        Me.Controls.Add(Me.DateTimePicker1)
+        Me.Controls.Add(Me.ComboBox4)
+        Me.Controls.Add(Me.Label19)
+        Me.Controls.Add(Me.Label20)
+        Me.Controls.Add(Me.Label18)
         Me.Controls.Add(Me.Label17)
         Me.Controls.Add(Me.Button6)
         Me.Controls.Add(Me.Button16)
@@ -387,6 +572,8 @@ Partial Class GestorReservas
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "LAJS: Gestor de reservas"
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.NumericUpDown2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -420,4 +607,20 @@ Partial Class GestorReservas
     Friend WithEvents Button16 As Button
     Friend WithEvents Label17 As Label
     Friend WithEvents Button6 As Button
+    Friend WithEvents Label18 As Label
+    Friend WithEvents ComboBox4 As ComboBox
+    Friend WithEvents Label19 As Label
+    Friend WithEvents Label20 As Label
+    Friend WithEvents DateTimePicker1 As DateTimePicker
+    Friend WithEvents Label21 As Label
+    Friend WithEvents NumericUpDown1 As NumericUpDown
+    Friend WithEvents ComboBox3 As ComboBox
+    Friend WithEvents Label22 As Label
+    Friend WithEvents Button9 As Button
+    Friend WithEvents Button8 As Button
+    Friend WithEvents NumericUpDown2 As NumericUpDown
+    Friend WithEvents Label23 As Label
+    Friend WithEvents DateTimePicker2 As DateTimePicker
+    Friend WithEvents Label24 As Label
+    Friend WithEvents Button10 As Button
 End Class

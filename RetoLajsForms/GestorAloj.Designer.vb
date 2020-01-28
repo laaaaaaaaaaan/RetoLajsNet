@@ -177,7 +177,7 @@ Partial Class GestorAloj
         '
         Me.Label10.AutoSize = True
         Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label10.Location = New System.Drawing.Point(463, 98)
+        Me.Label10.Location = New System.Drawing.Point(533, 97)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(105, 24)
         Me.Label10.TabIndex = 22
@@ -207,7 +207,7 @@ Partial Class GestorAloj
         '
         Me.Label13.AutoSize = True
         Me.Label13.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label13.Location = New System.Drawing.Point(360, 131)
+        Me.Label13.Location = New System.Drawing.Point(424, 130)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(55, 24)
         Me.Label13.TabIndex = 19
@@ -218,7 +218,7 @@ Partial Class GestorAloj
         Me.Label14.AutoSize = True
         Me.Label14.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label14.ForeColor = System.Drawing.Color.Navy
-        Me.Label14.Location = New System.Drawing.Point(569, 101)
+        Me.Label14.Location = New System.Drawing.Point(639, 100)
         Me.Label14.Name = "Label14"
         Me.Label14.Size = New System.Drawing.Size(85, 20)
         Me.Label14.TabIndex = 30
@@ -254,7 +254,7 @@ Partial Class GestorAloj
         Me.Label17.AutoSize = True
         Me.Label17.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label17.ForeColor = System.Drawing.Color.Navy
-        Me.Label17.Location = New System.Drawing.Point(416, 134)
+        Me.Label17.Location = New System.Drawing.Point(480, 133)
         Me.Label17.Name = "Label17"
         Me.Label17.Size = New System.Drawing.Size(42, 20)
         Me.Label17.TabIndex = 27

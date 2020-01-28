@@ -473,6 +473,7 @@ Partial Class GestorUsuarios
         Me.Label13.Size = New System.Drawing.Size(76, 24)
         Me.Label13.TabIndex = 60
         Me.Label13.Text = "Label13"
+        Me.Label13.Visible = False
         '
         'Label14
         '
@@ -484,6 +485,7 @@ Partial Class GestorUsuarios
         Me.Label14.Size = New System.Drawing.Size(76, 24)
         Me.Label14.TabIndex = 61
         Me.Label14.Text = "Label14"
+        Me.Label14.Visible = False
         '
         'Label15
         '
@@ -495,6 +497,7 @@ Partial Class GestorUsuarios
         Me.Label15.Size = New System.Drawing.Size(76, 24)
         Me.Label15.TabIndex = 62
         Me.Label15.Text = "Label15"
+        Me.Label15.Visible = False
         '
         'Label16
         '
@@ -506,6 +509,7 @@ Partial Class GestorUsuarios
         Me.Label16.Size = New System.Drawing.Size(76, 24)
         Me.Label16.TabIndex = 63
         Me.Label16.Text = "Label16"
+        Me.Label16.Visible = False
         '
         'Label17
         '
@@ -517,6 +521,7 @@ Partial Class GestorUsuarios
         Me.Label17.Size = New System.Drawing.Size(76, 24)
         Me.Label17.TabIndex = 64
         Me.Label17.Text = "Label17"
+        Me.Label17.Visible = False
         '
         'DataGridView2
         '
