@@ -107,7 +107,6 @@ Public Class GestorReservas
                 Label13.Visible = True
             End While
             reader1.Close()
-
         Catch ex As Exception
             MsgBox("No se lograron cargar los datos por: " & ex.Message, MsgBoxStyle.Critical,)
         End Try

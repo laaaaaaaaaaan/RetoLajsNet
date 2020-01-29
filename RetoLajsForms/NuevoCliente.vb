@@ -53,7 +53,6 @@ Public Class NuevoCliente
             'comprueba el resto de campos
             comprobarCampos(cmd, reader, cont, cont2, cont3, seguir)
 
-
         Catch ex As MySqlException
             Console.WriteLine("Error: " & ex.ToString())
         Finally
@@ -107,64 +106,60 @@ Public Class NuevoCliente
     End Function
 
     Protected Sub comprobarCampos(cmd As MySqlCommand, reader As MySqlDataReader, cont As Integer, cont2 As Integer, cont3 As Integer, seguir As Boolean)
-        'If (cont = cont2 And cont = cont3) Then
         reader = cmd.ExecuteReader()
-            While reader.Read()
-                Dim contador As Integer = 0
-                If (seguir = True) Then
-                    If TextBox1.Text = "" Then
-                        TextBox1.BackColor = Color.Red
-                        Label9.Visible = True
-                    Else
+        While reader.Read()
+            Dim contador As Integer = 0
+            If (seguir = True) Then
+                If TextBox1.Text = "" Then
+                    TextBox1.BackColor = Color.Red
+                    Label9.Visible = True
+                Else
+                    contador = contador + 1
+                End If
+                If TextBox3.Text = "" Then
+                    TextBox3.BackColor = Color.Red
+                    Label9.Visible = True
+                Else
+                    contador = contador + 1
+                End If
+                If TextBox4.Text <> "" Then
+                    If TextBox4.Text = TextBox5.Text Then
                         contador = contador + 1
-                    End If
-                    If TextBox3.Text = "" Then
-                        TextBox3.BackColor = Color.Red
-                        Label9.Visible = True
-                    Else
-                        contador = contador + 1
-                    End If
-                    If TextBox4.Text <> "" Then
-                        If TextBox4.Text = TextBox5.Text Then
-                            contador = contador + 1
-                        Else
-                            TextBox4.BackColor = Color.Red
-                            TextBox5.BackColor = Color.Red
-                        End If
                     Else
                         TextBox4.BackColor = Color.Red
-                        Label9.Visible = True
+                        TextBox5.BackColor = Color.Red
                     End If
-                    If (contador = 3) Then
-                        If (cont = cont2 And cont = cont3) Then
-                            Try
-                                reader.Close()
-                                Label9.Visible = False
-                                idMax = idMax + 1
-                                Dim asd As String = "INSERT INTO `usuario`(`idUsr`, `admin`, `apellidos`, `dni`, `fechaNac`, `nombre`, `password`, `username`) VALUES ('" & idMax & "','" & False & "','" & TextBox2.Text & "','" & TextBox6.Text & "','" & Format(DateTimePicker1.Value, "yyyy-MM-dd") & "','" & TextBox1.Text & "','" & GetHash(TextBox4.Text) & "','" & TextBox3.Text & "')"
-                                Dim we As MySqlCommand = New MySqlCommand(asd, conexion.MysqlConexion)
-                                we.ExecuteNonQuery()
-                                seguir = False
-                                MsgBox("¡Usuario administrador creado con éxito!")
-                                limpiarCampos()
-                                Me.Hide()
-                                GestorUsuarios.Show()
-                                Exit While
-                            Catch ex As Exception
-                                MsgBox(ex.ToString)
-                            End Try
-                        End If
-                    Else
-                        MsgBox("Error al insertar usuario en la base de datos")
-                        Exit While
-                    End If
+                Else
+                    TextBox4.BackColor = Color.Red
+                    Label9.Visible = True
                 End If
+                If (contador = 3) Then
+                    If (cont = cont2 And cont = cont3) Then
+                        Try
+                            reader.Close()
+                            Label9.Visible = False
+                            idMax = idMax + 1
+                            Dim asd As String = "INSERT INTO `usuario`(`idUsr`, `admin`, `apellidos`, `dni`, `fechaNac`, `nombre`, `password`, `username`) VALUES ('" & idMax & "','" & False & "','" & TextBox2.Text & "','" & TextBox6.Text & "','" & Format(DateTimePicker1.Value, "yyyy-MM-dd") & "','" & TextBox1.Text & "','" & GetHash(TextBox4.Text) & "','" & TextBox3.Text & "')"
+                            Dim we As MySqlCommand = New MySqlCommand(asd, conexion.MysqlConexion)
+                            we.ExecuteNonQuery()
+                            seguir = False
+                            MsgBox("¡Usuario administrador creado con éxito!")
+                            limpiarCampos()
+                            Me.Hide()
+                            GestorUsuarios.Show()
+                            Exit While
+                        Catch ex As Exception
+                            MsgBox(ex.ToString)
+                        End Try
+                    End If
+                Else
+                    MsgBox("Error al insertar usuario en la base de datos")
+                    Exit While
+                End If
+            End If
         End While
-
         reader.Close()
-        'Else
 
-        'End If
     End Sub
 
 

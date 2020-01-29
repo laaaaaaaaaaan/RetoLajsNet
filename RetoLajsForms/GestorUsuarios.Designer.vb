@@ -91,7 +91,7 @@ Partial Class GestorUsuarios
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.ReadOnly = True
         Me.DataGridView1.Size = New System.Drawing.Size(720, 204)
-        Me.DataGridView1.TabIndex = 1
+        Me.DataGridView1.TabIndex = 25
         '
         'Button1
         '
@@ -100,7 +100,7 @@ Partial Class GestorUsuarios
         Me.Button1.Location = New System.Drawing.Point(610, 111)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(187, 40)
-        Me.Button1.TabIndex = 2
+        Me.Button1.TabIndex = 27
         Me.Button1.Text = "Eliminar usuario seleccionado"
         Me.Button1.UseVisualStyleBackColor = True
         '
@@ -109,14 +109,14 @@ Partial Class GestorUsuarios
         Me.TextBox1.Location = New System.Drawing.Point(78, 581)
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.Size = New System.Drawing.Size(144, 20)
-        Me.TextBox1.TabIndex = 4
+        Me.TextBox1.TabIndex = 6
         '
         'TextBox2
         '
         Me.TextBox2.Location = New System.Drawing.Point(78, 641)
         Me.TextBox2.Name = "TextBox2"
         Me.TextBox2.Size = New System.Drawing.Size(144, 20)
-        Me.TextBox2.TabIndex = 5
+        Me.TextBox2.TabIndex = 8
         '
         'Label4
         '
@@ -175,7 +175,7 @@ Partial Class GestorUsuarios
         Me.Button8.Location = New System.Drawing.Point(460, 111)
         Me.Button8.Name = "Button8"
         Me.Button8.Size = New System.Drawing.Size(144, 40)
-        Me.Button8.TabIndex = 21
+        Me.Button8.TabIndex = 23
         Me.Button8.Text = "Agregar nuevo usuario"
         Me.Button8.UseVisualStyleBackColor = True
         '
@@ -186,7 +186,7 @@ Partial Class GestorUsuarios
         Me.Button9.Location = New System.Drawing.Point(482, 514)
         Me.Button9.Name = "Button9"
         Me.Button9.Size = New System.Drawing.Size(268, 40)
-        Me.Button9.TabIndex = 22
+        Me.Button9.TabIndex = 3
         Me.Button9.Text = "Eliminar filtros"
         Me.Button9.UseVisualStyleBackColor = True
         '
@@ -196,7 +196,7 @@ Partial Class GestorUsuarios
         Me.Button10.Location = New System.Drawing.Point(281, 560)
         Me.Button10.Name = "Button10"
         Me.Button10.Size = New System.Drawing.Size(125, 80)
-        Me.Button10.TabIndex = 23
+        Me.Button10.TabIndex = 10
         Me.Button10.Text = "Filtrar por campos seleccionados"
         Me.Button10.UseVisualStyleBackColor = True
         '
@@ -207,7 +207,7 @@ Partial Class GestorUsuarios
         Me.CheckBox1.Location = New System.Drawing.Point(78, 558)
         Me.CheckBox1.Name = "CheckBox1"
         Me.CheckBox1.Size = New System.Drawing.Size(74, 19)
-        Me.CheckBox1.TabIndex = 24
+        Me.CheckBox1.TabIndex = 5
         Me.CheckBox1.Text = "Nombre:"
         Me.CheckBox1.UseVisualStyleBackColor = True
         '
@@ -218,7 +218,7 @@ Partial Class GestorUsuarios
         Me.CheckBox2.Location = New System.Drawing.Point(78, 618)
         Me.CheckBox2.Name = "CheckBox2"
         Me.CheckBox2.Size = New System.Drawing.Size(73, 19)
-        Me.CheckBox2.TabIndex = 25
+        Me.CheckBox2.TabIndex = 7
         Me.CheckBox2.Text = "Apellido:"
         Me.CheckBox2.UseVisualStyleBackColor = True
         '
@@ -229,7 +229,7 @@ Partial Class GestorUsuarios
         Me.CheckBox3.Location = New System.Drawing.Point(78, 679)
         Me.CheckBox3.Name = "CheckBox3"
         Me.CheckBox3.Size = New System.Drawing.Size(144, 19)
-        Me.CheckBox3.TabIndex = 26
+        Me.CheckBox3.TabIndex = 9
         Me.CheckBox3.Text = "Fecha de nacimiento:"
         Me.CheckBox3.UseVisualStyleBackColor = True
         '
@@ -240,7 +240,7 @@ Partial Class GestorUsuarios
         Me.Button11.Location = New System.Drawing.Point(712, 767)
         Me.Button11.Name = "Button11"
         Me.Button11.Size = New System.Drawing.Size(85, 25)
-        Me.Button11.TabIndex = 27
+        Me.Button11.TabIndex = 28
         Me.Button11.Text = "Atras"
         Me.Button11.UseVisualStyleBackColor = True
         '
@@ -259,7 +259,7 @@ Partial Class GestorUsuarios
         Me.Button2.Location = New System.Drawing.Point(617, 569)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(180, 25)
-        Me.Button2.TabIndex = 30
+        Me.Button2.TabIndex = 15
         Me.Button2.Text = "Filtrar por DNI"
         Me.Button2.UseVisualStyleBackColor = True
         '
@@ -269,7 +269,7 @@ Partial Class GestorUsuarios
         Me.Button3.Location = New System.Drawing.Point(280, 648)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(125, 80)
-        Me.Button3.TabIndex = 31
+        Me.Button3.TabIndex = 11
         Me.Button3.Text = "Modificar por campos seleccionados"
         Me.Button3.UseVisualStyleBackColor = True
         '
@@ -279,7 +279,7 @@ Partial Class GestorUsuarios
         Me.Button4.Location = New System.Drawing.Point(617, 627)
         Me.Button4.Name = "Button4"
         Me.Button4.Size = New System.Drawing.Size(180, 25)
-        Me.Button4.TabIndex = 41
+        Me.Button4.TabIndex = 17
         Me.Button4.Text = "Filtrar por nombre de usuario"
         Me.Button4.UseVisualStyleBackColor = True
         '
@@ -299,7 +299,7 @@ Partial Class GestorUsuarios
         Me.Button5.Location = New System.Drawing.Point(655, 700)
         Me.Button5.Name = "Button5"
         Me.Button5.Size = New System.Drawing.Size(142, 25)
-        Me.Button5.TabIndex = 43
+        Me.Button5.TabIndex = 21
         Me.Button5.Text = "Modificar contraseña"
         Me.Button5.UseVisualStyleBackColor = True
         '
@@ -309,7 +309,7 @@ Partial Class GestorUsuarios
         Me.Button6.Location = New System.Drawing.Point(617, 729)
         Me.Button6.Name = "Button6"
         Me.Button6.Size = New System.Drawing.Size(180, 23)
-        Me.Button6.TabIndex = 44
+        Me.Button6.TabIndex = 22
         Me.Button6.Text = "Resetear contraseña"
         Me.Button6.UseVisualStyleBackColor = True
         '
@@ -318,7 +318,7 @@ Partial Class GestorUsuarios
         Me.TextBox6.Location = New System.Drawing.Point(471, 703)
         Me.TextBox6.Name = "TextBox6"
         Me.TextBox6.Size = New System.Drawing.Size(140, 20)
-        Me.TextBox6.TabIndex = 45
+        Me.TextBox6.TabIndex = 20
         '
         'Label9
         '
@@ -336,7 +336,7 @@ Partial Class GestorUsuarios
         Me.ComboBox1.Location = New System.Drawing.Point(471, 574)
         Me.ComboBox1.Name = "ComboBox1"
         Me.ComboBox1.Size = New System.Drawing.Size(140, 21)
-        Me.ComboBox1.TabIndex = 47
+        Me.ComboBox1.TabIndex = 14
         Me.ComboBox1.Text = "Sin filtro"
         '
         'ComboBox2
@@ -345,7 +345,7 @@ Partial Class GestorUsuarios
         Me.ComboBox2.Location = New System.Drawing.Point(471, 631)
         Me.ComboBox2.Name = "ComboBox2"
         Me.ComboBox2.Size = New System.Drawing.Size(140, 21)
-        Me.ComboBox2.TabIndex = 49
+        Me.ComboBox2.TabIndex = 16
         Me.ComboBox2.Text = "Sin filtro"
         '
         'Button13
@@ -354,7 +354,7 @@ Partial Class GestorUsuarios
         Me.Button13.Location = New System.Drawing.Point(617, 657)
         Me.Button13.Name = "Button13"
         Me.Button13.Size = New System.Drawing.Size(180, 25)
-        Me.Button13.TabIndex = 50
+        Me.Button13.TabIndex = 19
         Me.Button13.Text = "Modificar nombre de usuario"
         Me.Button13.UseVisualStyleBackColor = True
         '
@@ -363,7 +363,7 @@ Partial Class GestorUsuarios
         Me.TextBox3.Location = New System.Drawing.Point(471, 662)
         Me.TextBox3.Name = "TextBox3"
         Me.TextBox3.Size = New System.Drawing.Size(140, 20)
-        Me.TextBox3.TabIndex = 51
+        Me.TextBox3.TabIndex = 18
         '
         'Button14
         '
@@ -372,7 +372,7 @@ Partial Class GestorUsuarios
         Me.Button14.Location = New System.Drawing.Point(78, 767)
         Me.Button14.Name = "Button14"
         Me.Button14.Size = New System.Drawing.Size(150, 25)
-        Me.Button14.TabIndex = 52
+        Me.Button14.TabIndex = 12
         Me.Button14.Text = "Dar permisos"
         Me.Button14.UseVisualStyleBackColor = True
         '
@@ -383,7 +383,7 @@ Partial Class GestorUsuarios
         Me.Button15.Location = New System.Drawing.Point(252, 767)
         Me.Button15.Name = "Button15"
         Me.Button15.Size = New System.Drawing.Size(150, 25)
-        Me.Button15.TabIndex = 53
+        Me.Button15.TabIndex = 13
         Me.Button15.Text = "Quitar permisos"
         Me.Button15.UseVisualStyleBackColor = True
         '
@@ -403,7 +403,7 @@ Partial Class GestorUsuarios
         Me.Button16.Location = New System.Drawing.Point(756, 515)
         Me.Button16.Name = "Button16"
         Me.Button16.Size = New System.Drawing.Size(41, 37)
-        Me.Button16.TabIndex = 55
+        Me.Button16.TabIndex = 4
         Me.Button16.UseVisualStyleBackColor = True
         '
         'Button12
@@ -412,7 +412,7 @@ Partial Class GestorUsuarios
         Me.Button12.Location = New System.Drawing.Point(617, 700)
         Me.Button12.Name = "Button12"
         Me.Button12.Size = New System.Drawing.Size(32, 23)
-        Me.Button12.TabIndex = 48
+        Me.Button12.TabIndex = 20
         Me.Button12.UseVisualStyleBackColor = True
         '
         'Button7
@@ -421,7 +421,7 @@ Partial Class GestorUsuarios
         Me.Button7.Location = New System.Drawing.Point(408, 510)
         Me.Button7.Name = "Button7"
         Me.Button7.Size = New System.Drawing.Size(40, 42)
-        Me.Button7.TabIndex = 39
+        Me.Button7.TabIndex = 2
         Me.Button7.UseVisualStyleBackColor = True
         '
         'Label11
@@ -439,7 +439,7 @@ Partial Class GestorUsuarios
         Me.Button17.Location = New System.Drawing.Point(675, 12)
         Me.Button17.Name = "Button17"
         Me.Button17.Size = New System.Drawing.Size(120, 40)
-        Me.Button17.TabIndex = 56
+        Me.Button17.TabIndex = 1
         Me.Button17.Text = "Cerrar sesión"
         Me.Button17.UseVisualStyleBackColor = True
         '
@@ -450,7 +450,7 @@ Partial Class GestorUsuarios
         Me.DateTimePicker1.MaxDate = New Date(2002, 12, 18, 0, 0, 0, 0)
         Me.DateTimePicker1.Name = "DateTimePicker1"
         Me.DateTimePicker1.Size = New System.Drawing.Size(196, 20)
-        Me.DateTimePicker1.TabIndex = 58
+        Me.DateTimePicker1.TabIndex = 9
         Me.DateTimePicker1.Value = New Date(2000, 1, 1, 0, 0, 0, 0)
         '
         'Label12
@@ -516,7 +516,7 @@ Partial Class GestorUsuarios
         Me.Label17.AutoSize = True
         Me.Label17.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label17.ForeColor = System.Drawing.Color.Navy
-        Me.Label17.Location = New System.Drawing.Point(277, 122)
+        Me.Label17.Location = New System.Drawing.Point(276, 118)
         Me.Label17.Name = "Label17"
         Me.Label17.Size = New System.Drawing.Size(76, 24)
         Me.Label17.TabIndex = 64
@@ -529,7 +529,7 @@ Partial Class GestorUsuarios
         Me.DataGridView2.Location = New System.Drawing.Point(78, 392)
         Me.DataGridView2.Name = "DataGridView2"
         Me.DataGridView2.Size = New System.Drawing.Size(562, 112)
-        Me.DataGridView2.TabIndex = 65
+        Me.DataGridView2.TabIndex = 26
         '
         'Label18
         '

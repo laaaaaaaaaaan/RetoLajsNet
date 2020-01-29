@@ -107,7 +107,7 @@ Partial Class NuevoCliente
         Me.Button1.Location = New System.Drawing.Point(48, 442)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(135, 40)
-        Me.Button1.TabIndex = 8
+        Me.Button1.TabIndex = 18
         Me.Button1.Text = "Cancelar"
         Me.Button1.UseVisualStyleBackColor = True
         '
@@ -117,7 +117,7 @@ Partial Class NuevoCliente
         Me.Button2.Location = New System.Drawing.Point(301, 442)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(135, 40)
-        Me.Button2.TabIndex = 9
+        Me.Button2.TabIndex = 17
         Me.Button2.Text = "Crear"
         Me.Button2.UseVisualStyleBackColor = True
         '

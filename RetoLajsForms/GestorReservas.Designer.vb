@@ -79,7 +79,7 @@ Partial Class GestorReservas
         Me.Button1.Location = New System.Drawing.Point(450, 410)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(122, 37)
-        Me.Button1.TabIndex = 5
+        Me.Button1.TabIndex = 3
         Me.Button1.Text = "Eliminar filtros"
         Me.Button1.UseVisualStyleBackColor = True
         '
@@ -90,7 +90,7 @@ Partial Class GestorReservas
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.ReadOnly = True
         Me.DataGridView1.Size = New System.Drawing.Size(550, 200)
-        Me.DataGridView1.TabIndex = 4
+        Me.DataGridView1.TabIndex = 17
         '
         'Label1
         '
@@ -128,7 +128,7 @@ Partial Class GestorReservas
         Me.Button2.Location = New System.Drawing.Point(432, 146)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(190, 39)
-        Me.Button2.TabIndex = 10
+        Me.Button2.TabIndex = 18
         Me.Button2.Text = "Eliminar reserva seleccionada"
         Me.Button2.UseVisualStyleBackColor = True
         '
@@ -271,7 +271,7 @@ Partial Class GestorReservas
         Me.ComboBox1.Location = New System.Drawing.Point(164, 460)
         Me.ComboBox1.Name = "ComboBox1"
         Me.ComboBox1.Size = New System.Drawing.Size(121, 21)
-        Me.ComboBox1.TabIndex = 33
+        Me.ComboBox1.TabIndex = 5
         Me.ComboBox1.Text = "Sin filtro"
         '
         'ComboBox2
@@ -281,7 +281,7 @@ Partial Class GestorReservas
         Me.ComboBox2.Location = New System.Drawing.Point(163, 512)
         Me.ComboBox2.Name = "ComboBox2"
         Me.ComboBox2.Size = New System.Drawing.Size(121, 21)
-        Me.ComboBox2.TabIndex = 34
+        Me.ComboBox2.TabIndex = 8
         Me.ComboBox2.Text = "Sin filtro"
         '
         'Button3
@@ -291,7 +291,7 @@ Partial Class GestorReservas
         Me.Button3.Location = New System.Drawing.Point(511, 727)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(105, 25)
-        Me.Button3.TabIndex = 35
+        Me.Button3.TabIndex = 20
         Me.Button3.Text = "Atras"
         Me.Button3.UseVisualStyleBackColor = True
         '
@@ -312,7 +312,7 @@ Partial Class GestorReservas
         Me.Button4.Location = New System.Drawing.Point(382, 455)
         Me.Button4.Name = "Button4"
         Me.Button4.Size = New System.Drawing.Size(147, 23)
-        Me.Button4.TabIndex = 37
+        Me.Button4.TabIndex = 6
         Me.Button4.Text = "Filtrar por usuario"
         Me.Button4.UseVisualStyleBackColor = True
         '
@@ -323,7 +323,7 @@ Partial Class GestorReservas
         Me.Button5.Location = New System.Drawing.Point(381, 512)
         Me.Button5.Name = "Button5"
         Me.Button5.Size = New System.Drawing.Size(147, 23)
-        Me.Button5.TabIndex = 38
+        Me.Button5.TabIndex = 9
         Me.Button5.Text = "Filtrar por tipo"
         Me.Button5.UseVisualStyleBackColor = True
         '
@@ -334,7 +334,7 @@ Partial Class GestorReservas
         Me.Button7.Location = New System.Drawing.Point(404, 408)
         Me.Button7.Name = "Button7"
         Me.Button7.Size = New System.Drawing.Size(40, 42)
-        Me.Button7.TabIndex = 40
+        Me.Button7.TabIndex = 2
         Me.Button7.UseVisualStyleBackColor = True
         '
         'Button16
@@ -343,7 +343,7 @@ Partial Class GestorReservas
         Me.Button16.Location = New System.Drawing.Point(575, 410)
         Me.Button16.Name = "Button16"
         Me.Button16.Size = New System.Drawing.Size(41, 37)
-        Me.Button16.TabIndex = 56
+        Me.Button16.TabIndex = 4
         Me.Button16.UseVisualStyleBackColor = True
         '
         'Label17
@@ -361,7 +361,7 @@ Partial Class GestorReservas
         Me.Button6.Location = New System.Drawing.Point(500, 11)
         Me.Button6.Name = "Button6"
         Me.Button6.Size = New System.Drawing.Size(120, 40)
-        Me.Button6.TabIndex = 57
+        Me.Button6.TabIndex = 1
         Me.Button6.Text = "Cerrar sesión"
         Me.Button6.UseVisualStyleBackColor = True
         '
@@ -382,7 +382,7 @@ Partial Class GestorReservas
         Me.ComboBox4.Location = New System.Drawing.Point(163, 650)
         Me.ComboBox4.Name = "ComboBox4"
         Me.ComboBox4.Size = New System.Drawing.Size(126, 21)
-        Me.ComboBox4.TabIndex = 62
+        Me.ComboBox4.TabIndex = 13
         Me.ComboBox4.Text = "Sin filtro"
         '
         'Label19
@@ -411,7 +411,7 @@ Partial Class GestorReservas
         Me.DateTimePicker1.MinDate = New Date(2010, 1, 1, 0, 0, 0, 0)
         Me.DateTimePicker1.Name = "DateTimePicker1"
         Me.DateTimePicker1.Size = New System.Drawing.Size(201, 20)
-        Me.DateTimePicker1.TabIndex = 63
+        Me.DateTimePicker1.TabIndex = 10
         '
         'Label21
         '
@@ -428,7 +428,7 @@ Partial Class GestorReservas
         Me.NumericUpDown1.Maximum = New Decimal(New Integer() {400, 0, 0, 0})
         Me.NumericUpDown1.Name = "NumericUpDown1"
         Me.NumericUpDown1.Size = New System.Drawing.Size(120, 20)
-        Me.NumericUpDown1.TabIndex = 66
+        Me.NumericUpDown1.TabIndex = 11
         '
         'ComboBox3
         '
@@ -437,7 +437,7 @@ Partial Class GestorReservas
         Me.ComboBox3.Location = New System.Drawing.Point(432, 650)
         Me.ComboBox3.Name = "ComboBox3"
         Me.ComboBox3.Size = New System.Drawing.Size(184, 21)
-        Me.ComboBox3.TabIndex = 68
+        Me.ComboBox3.TabIndex = 14
         Me.ComboBox3.Text = "Sin filtro"
         '
         'Label22
@@ -457,7 +457,7 @@ Partial Class GestorReservas
         Me.Button9.Location = New System.Drawing.Point(382, 484)
         Me.Button9.Name = "Button9"
         Me.Button9.Size = New System.Drawing.Size(147, 23)
-        Me.Button9.TabIndex = 69
+        Me.Button9.TabIndex = 7
         Me.Button9.Text = "Modificar usuario"
         Me.Button9.UseVisualStyleBackColor = True
         '
@@ -467,7 +467,7 @@ Partial Class GestorReservas
         Me.Button8.Location = New System.Drawing.Point(382, 541)
         Me.Button8.Name = "Button8"
         Me.Button8.Size = New System.Drawing.Size(147, 49)
-        Me.Button8.TabIndex = 70
+        Me.Button8.TabIndex = 12
         Me.Button8.Text = "Filtrar por fechas"
         Me.Button8.UseVisualStyleBackColor = True
         '
@@ -477,7 +477,7 @@ Partial Class GestorReservas
         Me.NumericUpDown2.Maximum = New Decimal(New Integer() {400, 0, 0, 0})
         Me.NumericUpDown2.Name = "NumericUpDown2"
         Me.NumericUpDown2.Size = New System.Drawing.Size(120, 20)
-        Me.NumericUpDown2.TabIndex = 74
+        Me.NumericUpDown2.TabIndex = 16
         '
         'Label23
         '
@@ -493,7 +493,7 @@ Partial Class GestorReservas
         Me.DateTimePicker2.Location = New System.Drawing.Point(164, 679)
         Me.DateTimePicker2.Name = "DateTimePicker2"
         Me.DateTimePicker2.Size = New System.Drawing.Size(201, 20)
-        Me.DateTimePicker2.TabIndex = 72
+        Me.DateTimePicker2.TabIndex = 15
         '
         'Label24
         '
@@ -511,7 +511,7 @@ Partial Class GestorReservas
         Me.Button10.Location = New System.Drawing.Point(71, 731)
         Me.Button10.Name = "Button10"
         Me.Button10.Size = New System.Drawing.Size(141, 29)
-        Me.Button10.TabIndex = 75
+        Me.Button10.TabIndex = 19
         Me.Button10.Text = "Crear reserva"
         Me.Button10.UseVisualStyleBackColor = True
         '

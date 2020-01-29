@@ -50,7 +50,7 @@ Partial Class Login
         '
         Me.Loging.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Loging.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Loging.Location = New System.Drawing.Point(51, 189)
+        Me.Loging.Location = New System.Drawing.Point(51, 190)
         Me.Loging.Name = "Loging"
         Me.Loging.Size = New System.Drawing.Size(260, 30)
         Me.Loging.TabIndex = 5

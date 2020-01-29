@@ -10,18 +10,6 @@ Public Class Login
         TextBox2.PasswordChar = "*"
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs)
-        GestorAloj.Show()
-    End Sub
-
-    Private Sub Button2_Click(sender As Object, e As EventArgs)
-        GestorUsuarios.Show()
-    End Sub
-
-    Private Sub Button3_Click(sender As Object, e As EventArgs)
-        GestorReservas.Show()
-    End Sub
-
     Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Loging.Click
         Try
             conexion.MysqlConexion.Open()
@@ -73,8 +61,4 @@ Public Class Login
         End Using
     End Function
 
-    Private Sub Button1_Click_1(sender As Object, e As EventArgs)
-        Me.Hide()
-        Gestor.Show()
-    End Sub
 End Class

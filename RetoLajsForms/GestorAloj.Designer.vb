@@ -80,7 +80,7 @@ Partial Class GestorAloj
         Me.Button1.Location = New System.Drawing.Point(464, 490)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(272, 36)
-        Me.Button1.TabIndex = 4
+        Me.Button1.TabIndex = 3
         Me.Button1.Text = "Eliminar filtros"
         Me.Button1.UseVisualStyleBackColor = True
         '
@@ -91,7 +91,7 @@ Partial Class GestorAloj
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.ReadOnly = True
         Me.DataGridView1.Size = New System.Drawing.Size(715, 249)
-        Me.DataGridView1.TabIndex = 3
+        Me.DataGridView1.TabIndex = 16
         '
         'ComboBox1
         '
@@ -99,7 +99,7 @@ Partial Class GestorAloj
         Me.ComboBox1.Location = New System.Drawing.Point(206, 600)
         Me.ComboBox1.Name = "ComboBox1"
         Me.ComboBox1.Size = New System.Drawing.Size(150, 21)
-        Me.ComboBox1.TabIndex = 6
+        Me.ComboBox1.TabIndex = 11
         Me.ComboBox1.Text = "Sin filtro"
         '
         'ComboBox2
@@ -108,7 +108,7 @@ Partial Class GestorAloj
         Me.ComboBox2.Location = New System.Drawing.Point(206, 571)
         Me.ComboBox2.Name = "ComboBox2"
         Me.ComboBox2.Size = New System.Drawing.Size(150, 21)
-        Me.ComboBox2.TabIndex = 8
+        Me.ComboBox2.TabIndex = 9
         Me.ComboBox2.Text = "Sin filtro"
         '
         'Button4
@@ -118,7 +118,7 @@ Partial Class GestorAloj
         Me.Button4.Location = New System.Drawing.Point(698, 622)
         Me.Button4.Name = "Button4"
         Me.Button4.Size = New System.Drawing.Size(85, 25)
-        Me.Button4.TabIndex = 12
+        Me.Button4.TabIndex = 19
         Me.Button4.Text = "Atras"
         Me.Button4.UseVisualStyleBackColor = True
         '
@@ -129,7 +129,7 @@ Partial Class GestorAloj
         Me.Button5.Location = New System.Drawing.Point(584, 179)
         Me.Button5.Name = "Button5"
         Me.Button5.Size = New System.Drawing.Size(200, 40)
-        Me.Button5.TabIndex = 13
+        Me.Button5.TabIndex = 17
         Me.Button5.Text = "Eliminar Alojamiento"
         Me.Button5.UseVisualStyleBackColor = True
         '
@@ -314,7 +314,7 @@ Partial Class GestorAloj
         Me.TextBox1.Location = New System.Drawing.Point(206, 629)
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.Size = New System.Drawing.Size(150, 20)
-        Me.TextBox1.TabIndex = 31
+        Me.TextBox1.TabIndex = 13
         '
         'Button7
         '
@@ -323,7 +323,7 @@ Partial Class GestorAloj
         Me.Button7.Location = New System.Drawing.Point(360, 571)
         Me.Button7.Name = "Button7"
         Me.Button7.Size = New System.Drawing.Size(133, 79)
-        Me.Button7.TabIndex = 33
+        Me.Button7.TabIndex = 14
         Me.Button7.Text = "Filtrar por los campos seleccionados"
         Me.Button7.UseVisualStyleBackColor = True
         '
@@ -333,7 +333,7 @@ Partial Class GestorAloj
         Me.CheckBox1.Location = New System.Drawing.Point(69, 574)
         Me.CheckBox1.Name = "CheckBox1"
         Me.CheckBox1.Size = New System.Drawing.Size(72, 17)
-        Me.CheckBox1.TabIndex = 34
+        Me.CheckBox1.TabIndex = 8
         Me.CheckBox1.Text = "Localidad"
         Me.CheckBox1.UseVisualStyleBackColor = True
         '
@@ -343,7 +343,7 @@ Partial Class GestorAloj
         Me.CheckBox2.Location = New System.Drawing.Point(67, 601)
         Me.CheckBox2.Name = "CheckBox2"
         Me.CheckBox2.Size = New System.Drawing.Size(80, 17)
-        Me.CheckBox2.TabIndex = 35
+        Me.CheckBox2.TabIndex = 10
         Me.CheckBox2.Text = "Alojamiento"
         Me.CheckBox2.UseVisualStyleBackColor = True
         '
@@ -353,7 +353,7 @@ Partial Class GestorAloj
         Me.CheckBox3.Location = New System.Drawing.Point(68, 628)
         Me.CheckBox3.Name = "CheckBox3"
         Me.CheckBox3.Size = New System.Drawing.Size(77, 17)
-        Me.CheckBox3.TabIndex = 36
+        Me.CheckBox3.TabIndex = 12
         Me.CheckBox3.Text = "Capacidad"
         Me.CheckBox3.UseVisualStyleBackColor = True
         '
@@ -373,7 +373,7 @@ Partial Class GestorAloj
         Me.Button3.Location = New System.Drawing.Point(499, 571)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(128, 78)
-        Me.Button3.TabIndex = 39
+        Me.Button3.TabIndex = 15
         Me.Button3.Text = "Modificar los campos seleccionados"
         Me.Button3.UseVisualStyleBackColor = True
         '
@@ -383,7 +383,7 @@ Partial Class GestorAloj
         Me.Button2.Location = New System.Drawing.Point(398, 489)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(40, 42)
-        Me.Button2.TabIndex = 38
+        Me.Button2.TabIndex = 2
         Me.Button2.UseVisualStyleBackColor = True
         '
         'Button16
@@ -392,7 +392,7 @@ Partial Class GestorAloj
         Me.Button16.Location = New System.Drawing.Point(742, 490)
         Me.Button16.Name = "Button16"
         Me.Button16.Size = New System.Drawing.Size(41, 37)
-        Me.Button16.TabIndex = 56
+        Me.Button16.TabIndex = 4
         Me.Button16.UseVisualStyleBackColor = True
         '
         'Label3
@@ -410,7 +410,7 @@ Partial Class GestorAloj
         Me.Button6.Location = New System.Drawing.Point(660, 20)
         Me.Button6.Name = "Button6"
         Me.Button6.Size = New System.Drawing.Size(120, 40)
-        Me.Button6.TabIndex = 57
+        Me.Button6.TabIndex = 1
         Me.Button6.Text = "Cerrar sesión"
         Me.Button6.UseVisualStyleBackColor = True
         '
@@ -420,7 +420,7 @@ Partial Class GestorAloj
         Me.Button8.Location = New System.Drawing.Point(362, 539)
         Me.Button8.Name = "Button8"
         Me.Button8.Size = New System.Drawing.Size(131, 25)
-        Me.Button8.TabIndex = 59
+        Me.Button8.TabIndex = 6
         Me.Button8.Text = "Buscar por nombre"
         Me.Button8.UseVisualStyleBackColor = True
         '
@@ -429,7 +429,7 @@ Partial Class GestorAloj
         Me.TextBox2.Location = New System.Drawing.Point(206, 541)
         Me.TextBox2.Name = "TextBox2"
         Me.TextBox2.Size = New System.Drawing.Size(150, 20)
-        Me.TextBox2.TabIndex = 60
+        Me.TextBox2.TabIndex = 5
         '
         'Label4
         '
@@ -447,7 +447,7 @@ Partial Class GestorAloj
         Me.Button9.Location = New System.Drawing.Point(499, 538)
         Me.Button9.Name = "Button9"
         Me.Button9.Size = New System.Drawing.Size(128, 25)
-        Me.Button9.TabIndex = 62
+        Me.Button9.TabIndex = 7
         Me.Button9.Text = "Modificar nombre"
         Me.Button9.UseVisualStyleBackColor = True
         '
