@@ -298,13 +298,20 @@ Public Class GestorAloj
     End Sub
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+        Dim number As Integer
+        Try
+            number = TextBox1.Text
+        Catch ex As Exception
+            number = 0
+        End Try
+
         If (ComboBox2.Text = "Sin filtro" Or ComboBox2.Text = " ") Then
             CheckBox1.CheckState = CheckState.Unchecked
         End If
         If (ComboBox1.Text = "Sin filtro" Or ComboBox1.Text = " ") Then
             CheckBox2.CheckState = CheckState.Unchecked
         End If
-        If (TextBox1.Text = "" Or Not IsNumeric(TextBox1)) Then
+        If (TextBox1.Text = "" Or number = 0) Then
             CheckBox3.CheckState = CheckState.Unchecked
         End If
 

@@ -369,6 +369,7 @@ Partial Class GestorAloj
         '
         'Button3
         '
+        Me.Button3.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Button3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button3.Location = New System.Drawing.Point(499, 571)
         Me.Button3.Name = "Button3"
@@ -388,6 +389,7 @@ Partial Class GestorAloj
         '
         'Button16
         '
+        Me.Button16.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Button16.Image = Global.RetoLajsForms.My.Resources.Resources.refrescar
         Me.Button16.Location = New System.Drawing.Point(742, 490)
         Me.Button16.Name = "Button16"
@@ -416,6 +418,7 @@ Partial Class GestorAloj
         '
         'Button8
         '
+        Me.Button8.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Button8.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button8.Location = New System.Drawing.Point(362, 539)
         Me.Button8.Name = "Button8"
@@ -443,6 +446,7 @@ Partial Class GestorAloj
         '
         'Button9
         '
+        Me.Button9.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Button9.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button9.Location = New System.Drawing.Point(499, 538)
         Me.Button9.Name = "Button9"

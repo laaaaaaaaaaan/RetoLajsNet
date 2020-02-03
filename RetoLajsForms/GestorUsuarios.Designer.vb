@@ -256,7 +256,7 @@ Partial Class GestorUsuarios
         'Button2
         '
         Me.Button2.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Button2.Location = New System.Drawing.Point(617, 569)
+        Me.Button2.Location = New System.Drawing.Point(617, 571)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(180, 25)
         Me.Button2.TabIndex = 15
@@ -399,6 +399,7 @@ Partial Class GestorUsuarios
         '
         'Button16
         '
+        Me.Button16.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Button16.Image = Global.RetoLajsForms.My.Resources.Resources.refrescar
         Me.Button16.Location = New System.Drawing.Point(756, 515)
         Me.Button16.Name = "Button16"

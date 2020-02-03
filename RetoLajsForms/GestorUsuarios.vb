@@ -274,7 +274,7 @@ Public Class GestorUsuarios
             da.Fill(DT)
             DataGridView1.DataSource = DT
         Catch ex As Exception
-            MsgBox("No se logro realizar la consulta por: " & ex.Message, MsgBoxStyle.Critical,)
+            'MsgBox("No se logro realizar la consulta por: " & ex.Message, MsgBoxStyle.Critical,)
         End Try
     End Sub
 
